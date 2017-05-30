@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema elementFormDefault="qualified"
+    targetNamespace="http://skat.dk/dmr/2007/05/31/" version="1.0"
+    xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:simpleType name="RegistreringNummerRettighedTypeType">
+        <xs:annotation>
+            <xs:documentation>Angiver rettighedstypen på et
+                registreringsnummer, som enten kan være ønskeplade eller
+                fast plade</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="40"/>
+            <xs:enumeration value="Ønskeplade"/>
+            <xs:enumeration value="FastPrøveskilt"/>
+            <xs:enumeration value="Ferietilladelse"/>
+            <xs:enumeration value="Prøvemærke"/>
+            <xs:whiteSpace value="preserve"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

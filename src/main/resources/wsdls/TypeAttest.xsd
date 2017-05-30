@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+    elementFormDefault="qualified"
+    targetNamespace="http://skat.dk/dmr/2007/05/31/" version="1.0"
+    xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:annotation>
+        <xs:documentation>En type attest er en elektronisk version af de
+            typeattester, som Færdselsstyrelsen udsteder. En typeattest
+            har en gyldighed (hvor den må anvendes til oprettelse af køretøjer).</xs:documentation>
+    </xs:annotation>
+    <xs:include schemaLocation="DatoType.xsd"/>
+    <xs:include schemaLocation="TalHelType.xsd"/>
+    <xs:include schemaLocation="TekstKortType.xsd"/>
+    <xs:element name="TypeAttestGyldigFra" type="dmr:DatoType">
+        <xs:annotation>
+            <xs:documentation>En registrering af, hvornår typeattesten
+                er gyldig til oprettelse af køretøjer.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="TypeAttestGyldigTil" type="dmr:DatoType">
+        <xs:annotation>
+            <xs:documentation>En registrering af det tidspunkt (seneste
+                gyldige tidspunkt), hvor typeattesten ikke længere må
+                anvendes til oprettelse af køretøjer.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="TypeAttestNummer" type="dmr:TalHelType">
+        <xs:annotation>
+            <xs:documentation>Et unikt nummer som identificerer den
+                givne typeattest.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="TypeAttestTypeAnmeldelseNummer" type="dmr:TekstKortType">
+        <xs:annotation>
+            <xs:documentation>Et type anmeldelsesnummer f.eks. E14722</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="TypeAttestTypeGodkendelseNummer" type="dmr:TekstKortType">
+        <xs:annotation>
+            <xs:documentation>Et typegodkendelsesnummer f.eks. e1*2001/3*0190</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+</xs:schema>

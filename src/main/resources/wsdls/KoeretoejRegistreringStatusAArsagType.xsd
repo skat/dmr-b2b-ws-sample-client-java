@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema elementFormDefault="qualified"
+    targetNamespace="http://skat.dk/dmr/2007/05/31/" version="1.0"
+    xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:simpleType name="KoeretoejRegistreringStatusAarsagType">
+        <xs:annotation>
+            <xs:documentation>Årsag til en given status er sat.   </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="40"/>
+            <xs:enumeration value="IkkeRelevant"/>
+            <xs:enumeration value="RegistreretAlmindeligt"/>
+            <xs:enumeration value="AfmeldtAlmindeligt"/>
+            <xs:enumeration value="AfmeldtGrundetMangler"/>
+            <xs:enumeration value="NummerpladerOverførtTilAndetKøretøj"/>
+            <xs:enumeration value="AfmeldtUdenAfleveringAfNummerplader"/>
+            <xs:enumeration value="KlargøringTilRegistrering"/>
+            <xs:whiteSpace value="collapse"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

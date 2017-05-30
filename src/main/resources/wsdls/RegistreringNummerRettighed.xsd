@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+    elementFormDefault="qualified"
+    targetNamespace="http://skat.dk/dmr/2007/05/31/" version="1.0"
+    xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:annotation>
+        <xs:documentation>En rettighed vil være tidsbegrænset - dog med
+            mulighed for udvidelse af perioden under hensyntagen til de
+            specificerede regler i de relevante bekendtgørelser.</xs:documentation>
+    </xs:annotation>
+    <xs:include schemaLocation="DatoType.xsd"/>
+    <xs:include schemaLocation="TalHelType.xsd"/>
+    <xs:include schemaLocation="DatoTidType.xsd"/>
+    <xs:include schemaLocation="RegistreringNummerRettighedTypeType.xsd"/>
+    <xs:include schemaLocation="TekstLangType.xsd"/>
+    <xs:element name="RegistreringNummerRettighedGyldigFra" type="dmr:DatoType">
+        <xs:annotation>
+            <xs:documentation>En angivelse af den første dato, hvor
+                rettigheden er gyldig fra (inklusiv).</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="RegistreringNummerRettighedGyldigTil" type="dmr:DatoType">
+        <xs:annotation>
+            <xs:documentation>En angivelse af den sidste dato, hvor
+                rettigheden er gyldig (inklusiv).</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="RegistreringNummerRettighedNummer" type="dmr:TalHelType">
+        <xs:annotation>
+            <xs:documentation>En unik identifikation af rettigheden</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="RegistreringNummerRettighedSidstAdviseretDato" type="dmr:DatoTidType">
+        <xs:annotation>
+            <xs:documentation>En angivelse af hvornår der sidst er sendt
+                en advisering til den juridiske enhed omkring udløb af
+                f.eks. ønskepladelicens</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="RegistreringNummerRettighedType" type="dmr:RegistreringNummerRettighedTypeType">
+        <xs:annotation>
+            <xs:documentation>En registrering af type af plade rettighed.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="RegistreringNummerRettighedKoerselFormaal" type="dmr:TekstLangType">
+        <xs:annotation>
+            <xs:documentation>Indeholder angivelse af kørselsformål og
+                begrundelse herfor. Benyttes ved bestilling af løse
+                prøveskilte i tilfælde hvor standardformålene ikke
+                dækker behovet og dispensation gives.  Feltet må kunne
+                anvendes af beslutningstager vedr. dispensation.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="RegistreringNummerRettighedAntalFerieDageTilbage" type="dmr:TalHelType">
+        <xs:annotation>
+            <xs:documentation>Antal ferie dage som kan tildeles til
+                grænsenummeplade. En tæller der tæller mod Nul, når den
+                er nået Nul kan der ikke tildeles flere dage. </xs:documentation>
+        </xs:annotation>
+    </xs:element>
+</xs:schema>

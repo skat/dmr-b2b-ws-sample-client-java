@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+    elementFormDefault="qualified"
+    targetNamespace="http://skat.dk/dmr/2007/05/31/" version="1.0"
+    xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:annotation>
+        <xs:documentation>En klasse, indeholdende et virksomheds
+            tilknyttede P-enhednumre</xs:documentation>
+    </xs:annotation>
+    <xs:include schemaLocation="ProduktionEnhedNummerType.xsd"/>
+    <xs:include schemaLocation="DatoType.xsd"/>
+    <xs:include schemaLocation="Tekst300Type.xsd"/>
+    <xs:element name="ProduktionEnhedNummer" type="dmr:ProduktionEnhedNummerType">
+        <xs:annotation>
+            <xs:documentation>Det nummer som for SKAT identificerer en produktionsenhed.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="ProduktionEnhedStartDato" type="dmr:DatoType">
+        <xs:annotation>
+            <xs:documentation>Alle gyldige datoer i den danske kalender.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="ProduktionEnhedOphoerDato" type="dmr:DatoType">
+        <xs:annotation>
+            <xs:documentation>Alle gyldige datoer i den danske kalender.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="ProduktionEnhedNavn" type="dmr:Tekst300Type">
+        <xs:annotation>
+            <xs:documentation>Navn på produktionsenhed.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+</xs:schema>

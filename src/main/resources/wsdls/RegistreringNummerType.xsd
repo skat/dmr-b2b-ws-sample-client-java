@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema elementFormDefault="qualified"
+    targetNamespace="http://skat.dk/dmr/2007/05/31/" version="1.0"
+    xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:simpleType name="RegistreringNummerType">
+        <xs:annotation>
+            <xs:documentation>Registreringsnummeret på en given plade
+                eller licens m.v. Feltet understøtter også ønskerplader
+                og udenlanske plader.</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="2"/>
+            <xs:maxLength value="10"/>
+            <xs:pattern value="([A-Z0-9ÅÆØ])*([\*]){0,1}"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema elementFormDefault="qualified"
+    targetNamespace="http://skat.dk/dmr/2007/05/31/" version="1.0"
+    xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:simpleType name="ForsikringStatusType">
+        <xs:annotation>
+            <xs:documentation>Forsikringstatus angives af en tekststreng
+                med en beskrivelse af status'en, f.eks. Aktiv</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="40"/>
+            <xs:enumeration value="Anmodet"/>
+            <xs:enumeration value="Aktiv"/>
+            <xs:enumeration value="Annulleret"/>
+            <xs:enumeration value="Ophørt"/>
+            <xs:enumeration value="Accepteret"/>
+            <xs:enumeration value="Afvis"/>
+            <xs:enumeration value="OphørtFraCRM3"/>
+            <xs:whiteSpace value="collapse"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+    elementFormDefault="qualified"
+    targetNamespace="http://skat.dk/dmr/2007/05/31/" version="1.0"
+    xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:annotation>
+        <xs:documentation>Begrebet dækker over, hvad motorens
+            drivmiddel, størrelse og effekt.</xs:documentation>
+    </xs:annotation>
+    <xs:include schemaLocation="TalHelType.xsd"/>
+    <xs:include schemaLocation="BolskType.xsd"/>
+    <xs:include schemaLocation="TalDecimalType.xsd"/>
+    <xs:include schemaLocation="TalFlydendeType.xsd"/>
+    <xs:include schemaLocation="TekstKortType.xsd"/>
+    <xs:include schemaLocation="FuelmodeTypeType.xsd"/>
+    <xs:element name="KoeretoejMotorCylinderAntal" type="dmr:TalHelType">
+        <xs:annotation>
+            <xs:documentation>Antallet af cylindre</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejMotorKilometerstand" type="dmr:TalHelType">
+        <xs:annotation>
+            <xs:documentation>Angiver hvor mange kilometer køretøjet har
+                kørt inden køretøjet er importeret eller eksporteret.
+                Variablen angiver også hvor mange kilometer køretøjet
+                har kørt når køretøjet er ved syn. Anvendes i
+                forbindelse med registreringsafgiftens fastsættelse.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejMotorKilometerstandDokumentation" type="dmr:BolskType">
+        <xs:annotation>
+            <xs:documentation>Markering af, at dokumentation for
+                kilometerstand er forevist.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejMotorKilometerstandIkkeTilgaengelig" type="dmr:BolskType">
+        <xs:annotation>
+            <xs:documentation>Markering af, at oplysning om
+                kilometerstand ikke er tilgængelig.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejMotorKmPerLiter" type="dmr:TalDecimalType">
+        <xs:annotation>
+            <xs:documentation>Antallet af kilometre per liter med en decimal.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejMotorKMPerLiterPreCalc" type="dmr:TalFlydendeType">
+        <xs:annotation>
+            <xs:documentation>Flydene tal</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejMotorPlugInHybrid" type="dmr:BolskType">
+        <xs:annotation>
+            <xs:documentation>Markering af om et køretøj er
+                PlugInHybrid. </xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejMotorKoerselStoej" type="dmr:TalFlydendeType">
+        <xs:annotation>
+            <xs:documentation>En registrering af køretøjets støjniveau
+                ved kørsel (oplyst blandt andet på køretøjets COC dokument)</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejMotorMaerkning" type="dmr:TekstKortType">
+        <xs:annotation>
+            <xs:documentation>En oplysning omkring motorens mærke
+                (motor'ens stelnummer, pålydende tekst m.v.) Anvendes
+                blandt andet under synskontrol til kontrol af, hvorvidt
+                motoren er udskiftet</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejMotorSlagVolumen" type="dmr:TalFlydendeType">
+        <xs:annotation>
+            <xs:documentation>Er slagvolumen for køretøjet med op til 1 decimal.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejMotorSlagVolumenIkkeTilgaengelig" type="dmr:BolskType">
+        <xs:annotation>
+            <xs:documentation>Markering af, at oplysningen om
+                slagvolumen ikke er tilgængelig.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejMotorStandStoej" type="dmr:TalFlydendeType">
+        <xs:annotation>
+            <xs:documentation>En registrering af køretøjets støjniveau
+                ved standsning.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejMotorStandStoejOmdrejningstal" type="dmr:TalHelType">
+        <xs:annotation>
+            <xs:documentation>Angiver omdrejningstallet, der har været
+                anvendt ved måling af standstøj, for køretøjet målt i
+                antal omdrejninger per minut.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejMotorStoersteEffekt" type="dmr:TalFlydendeType">
+        <xs:annotation>
+            <xs:documentation>Motorens største effekt anføres med op til
+                2 decimaler i (kW)</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejMotorStoersteEffektIkkeTilgaengelig" type="dmr:BolskType">
+        <xs:annotation>
+            <xs:documentation>Markering af, at oplysning om største
+                effekt ikke er tilgængelig.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejMotorInnovativTeknik" type="dmr:BolskType">
+        <xs:annotation>
+            <xs:documentation>Der skal være mulighed for at tage
+                stilling til om køretøjet har Innovativ teknik.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejMotorInnovativTeknikAntal" type="dmr:TalFlydendeType">
+        <xs:annotation>
+            <xs:documentation>Her skal angives, hvor mange gram CO2, der
+                spares på Innovativ teknik</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejMotorElektriskForbrug" type="dmr:TalFlydendeType">
+        <xs:annotation>
+            <xs:documentation>Antallet af kilometre pr. Wh, som skal
+                oplyses, hvis køretøj har Drivkraftype 4 - El.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejMotorFuelmode" type="dmr:FuelmodeTypeType">
+        <xs:annotation>
+            <xs:documentation>En angivelse af hvor mange forskellige
+                drivkrafttyper, der kan anvendes på et køretøj.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+</xs:schema>

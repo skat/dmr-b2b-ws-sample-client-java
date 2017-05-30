@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema elementFormDefault="qualified"
+    targetNamespace="http://skat.dk/dmr/2007/05/31/" version="1.0"
+    xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:simpleType name="AarstalType">
+        <xs:annotation>
+            <xs:documentation>Et årstal f.eks. 1999 eller 2006, 2007
+                eller 2008.</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:integer">
+            <xs:pattern value="[0-9]{4}"/>
+            <xs:maxInclusive value="9999"/>
+            <xs:minInclusive value="1700"/>
+            <xs:totalDigits value="4"/>
+            <xs:fractionDigits value="0"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

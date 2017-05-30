@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+    elementFormDefault="qualified"
+    targetNamespace="http://skat.dk/dmr/2007/05/31/" version="1.0"
+    xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:annotation>
+        <xs:documentation>Et køretøjs art. Indholdet af begrebet er
+            defineret til:  Køretøj art, der er markeret med (x), skal
+            altid have ansvarsforsikring.  01 - Personbil (x) 02 - Stor
+            personbil (x) 03 - Varebil (x) 04 - Lastbil (x) 05 -
+            Påhængsvogn 06 - Sættevogn  07 - Motorcykel (x) 08 - Traktor
+            (x) 09 - Traktorpåhængsvogn 10 - Campingvogn 11 -
+            Påhængsredskab 12 - Motorredskab (x) 16 - Stor knallert (x)
+            17 - Lille knallert (x) 91 - Motordrevet blokvogn (x) 92 -
+            Bloksættevogn 93 - Blokpåhængsvogn 94 - Blokvognsdolly 95 - Blokvognsmodul</xs:documentation>
+    </xs:annotation>
+    <xs:include schemaLocation="TalHelType.xsd"/>
+    <xs:include schemaLocation="TekstKortType.xsd"/>
+    <xs:include schemaLocation="BolskType.xsd"/>
+    <xs:include schemaLocation="TekstLangType.xsd"/>
+    <xs:include schemaLocation="DatoType.xsd"/>
+    <xs:include schemaLocation="ForretningParameterVaerdiStatusType.xsd"/>
+    <xs:element name="KoeretoejArtNummer" type="dmr:TalHelType"/>
+    <xs:element name="KoeretoejArtNavn" type="dmr:TekstKortType">
+        <xs:annotation>
+            <xs:documentation>En mindre tekst - typisk et eller få ord -
+                som unikt giver mulighed for identifikationen af et
+                givet begreb.  I nogle sammenhænge er det også brugt til
+                mindre forklaringer (sætningsniveau)</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejArtKraeverForsikring" type="dmr:BolskType">
+        <xs:annotation>
+            <xs:documentation>Nogle køretøjsarter kræver per automatik
+                en forsikring (ansvar), andre køretøjsarter kræver ikke
+                en forsikring (ansvar). F.eks. kræver en almindelig
+                personbil en ansvarsforsikring, men en påhængsvogn
+                (f.eks. trailer eller campingvogn) kræver lovmæssigt
+                ikke en forsikring, da denne er ansvarsforsikret af det
+                trækkende foranstillede køretøj. Attributten fortæller
+                dermed, hvorvidt der i en registreringsproces er tvunget
+                et valg af forsikringsselskab.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejArtBeskrivelse" type="dmr:TekstLangType"/>
+    <xs:element name="KoeretoejArtGyldigFra" type="dmr:DatoType"/>
+    <xs:element name="KoeretoejArtGyldigTil" type="dmr:DatoType"/>
+    <xs:element name="KoeretoejArtStatus" type="dmr:ForretningParameterVaerdiStatusType"/>
+</xs:schema>

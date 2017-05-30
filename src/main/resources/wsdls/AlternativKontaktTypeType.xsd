@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema elementFormDefault="qualified"
+    targetNamespace="http://skat.dk/dmr/2007/05/31/" version="1.0"
+    xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:simpleType name="AlternativKontaktTypeType">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="25"/>
+            <xs:enumeration value="Person"/>
+            <xs:enumeration value="Virksomhed"/>
+            <xs:enumeration value="Myndighed"/>
+            <xs:enumeration value="Ukendt"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

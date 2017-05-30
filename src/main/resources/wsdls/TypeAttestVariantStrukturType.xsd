@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+    elementFormDefault="qualified"
+    targetNamespace="http://skat.dk/dmr/2007/05/31/" version="1.0"
+    xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:annotation>
+        <xs:documentation/>
+        <xs:documentation>r15009</xs:documentation>
+    </xs:annotation>
+    <xs:include schemaLocation="TypeAttestVariant.xsd"/>
+    <xs:include schemaLocation="KoeretoejVariantType.xsd"/>
+    <xs:include schemaLocation="KoeretoejTypeType.xsd"/>
+    <xs:include schemaLocation="DrivkraftTypeStrukturType.xsd"/>
+    <xs:include schemaLocation="NormTypeStrukturType.xsd"/>
+    <xs:include schemaLocation="KarrosseriTypeStrukturType.xsd"/>
+    <xs:element name="TypeAttestVariantStruktur" type="dmr:TypeAttestVariantStrukturType"/>
+    <xs:complexType name="TypeAttestVariantStrukturType">
+        <xs:sequence>
+            <xs:element ref="dmr:TypeAttestVariantNummer"/>
+            <xs:element minOccurs="0" ref="dmr:TypeAttestVariantSiddepladserMinimum"/>
+            <xs:element minOccurs="0" ref="dmr:TypeAttestVariantSiddepladserMaksimum"/>
+            <xs:element minOccurs="0" ref="dmr:TypeAttestVariantEgenVaegt"/>
+            <xs:element minOccurs="0" ref="dmr:TypeAttestVariantKoereklarVaegtMaksimum"/>
+            <xs:element minOccurs="0" ref="dmr:TypeAttestVariantTekniskTotalVaegt"/>
+            <xs:element minOccurs="0" ref="dmr:TypeAttestVariantTotalVaegt"/>
+            <xs:element minOccurs="0" ref="dmr:TypeAttestVariantStoersteAkselTryk"/>
+            <xs:element minOccurs="0" ref="dmr:TypeAttestVariantTilkoblingsvaegtMedBremser"/>
+            <xs:element minOccurs="0" ref="dmr:TypeAttestVariantTilkoblingsvaegtUdenBremser"/>
+            <xs:element minOccurs="0" ref="dmr:TypeAttestVariantStatus"/>
+            <xs:element minOccurs="0" ref="dmr:TypeAttestVariantStatusDatoTid"/>
+            <xs:element minOccurs="0" ref="dmr:TypeAttestVariantStaapladserMinimum"/>
+            <xs:element minOccurs="0" ref="dmr:TypeAttestVariantStaapladserMaksimum"/>
+            <xs:element minOccurs="0" ref="dmr:TypeAttestVariantPassagerAntal"/>
+            <xs:element ref="dmr:TypeAttestVariantAkselAntal"/>
+            <xs:element minOccurs="0" ref="dmr:TypeAttestVariantFaelgDaek"/>
+            <xs:element minOccurs="0" ref="dmr:TypeAttestVariantMaksimumHastighed"/>
+            <xs:element ref="dmr:TypeAttestVariantStelNummerAnbringelse"/>
+            <xs:element minOccurs="0" ref="dmr:TypeAttestVariantVVaerdiLuft"/>
+            <xs:element minOccurs="0" ref="dmr:TypeAttestVariantVVaerdiMekanisk"/>
+            <xs:element minOccurs="0" ref="dmr:TypeAttestVariantTraekkendeAksler"/>
+            <xs:element minOccurs="0" ref="dmr:TypeAttestVariantAntalGear"/>
+            <xs:element minOccurs="0" ref="dmr:TypeAttestVariantAntalDoere"/>
+            <xs:element minOccurs="0" ref="dmr:TypeAttestVariantCO2Udslip"/>
+            <xs:element minOccurs="0" ref="dmr:TypeAttestVariantRoegtaethed"/>
+            <xs:element minOccurs="0" ref="dmr:TypeAttestVariantRoegtaethedOmdrejningstal"/>
+            <xs:element minOccurs="0" ref="dmr:TypeAttestVariantPartikelFilter"/>
+            <xs:element minOccurs="0" ref="dmr:TypeAttestVariantCylinderAntal"/>
+            <xs:element minOccurs="0" ref="dmr:TypeAttestVariantMaerkning"/>
+            <xs:element minOccurs="0" ref="dmr:TypeAttestVariantStandStoej"/>
+            <xs:element minOccurs="0" ref="dmr:TypeAttestVariantStandStoejOmdrejningstal"/>
+            <xs:element minOccurs="0" ref="dmr:TypeAttestVariantKoerselStoej"/>
+            <xs:element minOccurs="0" ref="dmr:TypeAttestVariantKoereklarVaegtMinimum"/>
+            <xs:element minOccurs="0" ref="dmr:TypeAttestVariantEgnetTilTaxi"/>
+            <xs:element minOccurs="0" ref="dmr:TypeAttestVariantPartikler"/>
+            <xs:element minOccurs="0" ref="dmr:TypeAttestVariantKmPerLiter"/>
+            <xs:element minOccurs="0" ref="dmr:TypeAttestVariantStoersteEffekt"/>
+            <xs:element minOccurs="0" ref="dmr:TypeAttestVariantInnovativTeknik"/>
+            <xs:element minOccurs="0" ref="dmr:TypeAttestVariantInnovativTeknikAntal"/>
+            <xs:element minOccurs="0" ref="dmr:TypeAttestVariantNCAPTest"/>
+            <xs:element minOccurs="0" ref="dmr:TypeAttestVariantSkammelBelastning"/>
+            <xs:element minOccurs="0" ref="dmr:TypeAttestVariantSkatteAkselAntal"/>
+            <xs:element minOccurs="0" ref="dmr:TypeAttestVariantSkatteAkselTryk"/>
+            <xs:element minOccurs="0" ref="dmr:TypeAttestVariantSaettevognTilladtAkselTryk"/>
+            <xs:element minOccurs="0" ref="dmr:TypeAttestVariantVogntogVaegt"/>
+            <xs:element minOccurs="0" ref="dmr:TypeAttestVariantAkselAfstand"/>
+            <xs:element minOccurs="0" ref="dmr:TypeAttestVariantSporviddenForrest"/>
+            <xs:element minOccurs="0" ref="dmr:TypeAttestVariantSporviddenBagest"/>
+            <xs:element minOccurs="0" ref="dmr:TypeAttestVariantSlagVolumen"/>
+            <xs:element minOccurs="0" ref="dmr:TypeAttestVariantElektriskForbrug"/>
+            <xs:element minOccurs="0" ref="dmr:DrivkraftTypeStruktur"/>
+            <xs:element minOccurs="0" ref="dmr:NormTypeStruktur"/>
+            <xs:element minOccurs="0" ref="dmr:KarrosseriTypeStruktur"/>
+            <xs:element ref="dmr:KoeretoejVariantTypeNummer"/>
+            <xs:element ref="dmr:KoeretoejTypeTypeNummer"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

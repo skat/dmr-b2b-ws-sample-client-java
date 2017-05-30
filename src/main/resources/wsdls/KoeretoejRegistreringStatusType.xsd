@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema elementFormDefault="qualified"
+    targetNamespace="http://skat.dk/dmr/2007/05/31/" version="1.0"
+    xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:simpleType name="KoeretoejRegistreringStatusType">
+        <xs:annotation>
+            <xs:documentation>Status på et køretøjs registrering. Hvert
+                element starter med et tal, som medtages af hensyn til
+                sortingen i brugergrænsefladen  </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="100"/>
+            <xs:enumeration value="UnderUdarbejdelse"/>
+            <xs:enumeration value="Registreret"/>
+            <xs:enumeration value="Afmeldt"/>
+            <xs:whiteSpace value="preserve"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+    elementFormDefault="qualified"
+    targetNamespace="http://skat.dk/dmr/2007/05/31/" version="1.0"
+    xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:annotation>
+        <xs:documentation/>
+        <xs:documentation>r15009</xs:documentation>
+    </xs:annotation>
+    <xs:include schemaLocation="DrivkraftType.xsd"/>
+    <xs:element name="DrivkraftTypeStruktur" type="dmr:DrivkraftTypeStrukturType"/>
+    <xs:complexType name="DrivkraftTypeStrukturType">
+        <xs:sequence>
+            <xs:element ref="dmr:DrivkraftTypeNummer"/>
+            <xs:element ref="dmr:DrivkraftTypeNavn"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema elementFormDefault="qualified"
+    targetNamespace="http://skat.dk/dmr/2007/05/31/" version="1.0"
+    xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:include schemaLocation="DatoTidType.xsd"/>
+    <xs:element name="DatoTidSoegFra" type="dmr:DatoTidType">
+        <xs:annotation>
+            <xs:documentation>Angivelse af fra-dato og tidspunkt</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+</xs:schema>

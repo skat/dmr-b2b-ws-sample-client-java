@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema elementFormDefault="qualified"
+    targetNamespace="http://skat.dk/dmr/2007/05/31/" version="1.0"
+    xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:simpleType name="TypeAttestVariantStatusType">
+        <xs:annotation>
+            <xs:documentation>En status på en type attest variant.</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="7"/>
+            <xs:enumeration value="Aktiv"/>
+            <xs:enumeration value="Inaktiv"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

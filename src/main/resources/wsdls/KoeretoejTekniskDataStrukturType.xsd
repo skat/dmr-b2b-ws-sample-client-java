@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+    elementFormDefault="qualified"
+    targetNamespace="http://skat.dk/dmr/2007/05/31/" version="1.0"
+    xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:annotation>
+        <xs:documentation/>
+        <xs:documentation>r15009</xs:documentation>
+    </xs:annotation>
+    <xs:include schemaLocation="Koeretoej.xsd"/>
+    <xs:include schemaLocation="KoeretoejRegistreringGrundlag.xsd"/>
+    <xs:include schemaLocation="KoeretoejOplysningStrukturType.xsd"/>
+    <xs:include schemaLocation="TilladelseSamlingStrukturType.xsd"/>
+    <xs:include schemaLocation="TypeAttestStrukturType.xsd"/>
+    <xs:include schemaLocation="KoeretoejRegistreringGrundlagStrukturType.xsd"/>
+    <xs:include schemaLocation="KoeretoejRegistreringStrukturType.xsd"/>
+    <xs:element name="KoeretoejTekniskDataStruktur" type="dmr:KoeretoejTekniskDataStrukturType"/>
+    <xs:complexType name="KoeretoejTekniskDataStrukturType">
+        <xs:sequence>
+            <xs:element ref="dmr:KoeretoejIdent"/>
+            <xs:element ref="dmr:KoeretoejOplysningStruktur"/>
+            <xs:element ref="dmr:TilladelseSamlingStruktur"/>
+            <xs:element minOccurs="0" ref="dmr:TypeAttestStruktur"/>
+            <xs:element name="KoeretoejRegistreringGrundlag">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" ref="dmr:KoeretoejRegistreringGrundlagIdent"/>
+                        <xs:element minOccurs="0" ref="dmr:KoeretoejRegistreringGrundlagStruktur"/>
+                        <xs:element minOccurs="0" ref="dmr:KoeretoejRegistreringStruktur"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" ref="dmr:KoeretoejRegistreringGrundlagPeriodiskSyn"/>
+            <xs:element minOccurs="0" ref="dmr:KoeretoejRegistreringGrundlagPeriodiskSynGyldigTil"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

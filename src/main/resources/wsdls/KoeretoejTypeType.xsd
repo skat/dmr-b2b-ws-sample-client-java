@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+    elementFormDefault="qualified"
+    targetNamespace="http://skat.dk/dmr/2007/05/31/" version="1.0"
+    xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:annotation>
+        <xs:documentation>Type er en teknisk betegnelse for et køretøj.</xs:documentation>
+    </xs:annotation>
+    <xs:include schemaLocation="TalHelType.xsd"/>
+    <xs:include schemaLocation="TekstKortType.xsd"/>
+    <xs:element name="KoeretoejTypeTypeNummer" type="dmr:TalHelType">
+        <xs:annotation>
+            <xs:documentation>Et nummer, som unikt beskrive den enkelte
+                værdi for en given periode.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejTypeTypeNavn" type="dmr:TekstKortType">
+        <xs:annotation>
+            <xs:documentation>En mindre tekst - typisk et eller få ord -
+                som unikt giver mulighed for identifikationen af et
+                givet begreb.  I nogle sammenhænge er det også brugt til
+                mindre forklaringer (sætningsniveau)</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+</xs:schema>

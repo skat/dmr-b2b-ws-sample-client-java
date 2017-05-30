@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema elementFormDefault="qualified"
+    targetNamespace="http://skat.dk/dmr/2007/05/31/" version="1.0"
+    xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:simpleType name="KoeretoejOplysningStatusType">
+        <xs:annotation>
+            <xs:documentation>Attributten definerer en status for et
+                givet køretøj.  </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="100"/>
+            <xs:enumeration value="UnderOprettelse"/>
+            <xs:enumeration value="Oprettet"/>
+            <xs:enumeration value="Registreret"/>
+            <xs:enumeration value="Afmeldt"/>
+            <xs:enumeration value="Eksportmarkering"/>
+            <xs:enumeration value="Skrottet"/>
+            <xs:enumeration value="Eksporteret"/>
+            <xs:enumeration value="AdministrativOprettelse"/>
+            <xs:enumeration value="Erklæretafimportør"/>
+            <xs:enumeration value="Erklæretafimportørogforhandler"/>
+            <xs:enumeration value="Slettet"/>
+            <xs:enumeration value="HarGennemførtRegistreringssyn"/>
+            <xs:enumeration value="DelvistOprettet"/>
+            <xs:whiteSpace value="preserve"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

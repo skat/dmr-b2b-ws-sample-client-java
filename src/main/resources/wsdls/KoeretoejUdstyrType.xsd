@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+    elementFormDefault="qualified"
+    targetNamespace="http://skat.dk/dmr/2007/05/31/" version="1.0"
+    xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:annotation>
+        <xs:documentation>Da mængden af udstyr for det enkelte køretøj
+            kan være enorm og under løbende forbedringer, er der
+            opbygget muligheden for løbende at definere specialudstyr,
+            som ikke direkte er primærattributter på køretøjet.
+            Udstyrstyperne kan være opbygget i et hierarki. Derudover er
+            udstyret grupperet i udstyrsgrupper.  Udstyr, der altid skal
+            vises er markeret med (x). Udstyr, der ikke er markeret med
+            (x) skal kun vises i forbindelse med syn. Udstyr, der er
+            markeret med (mc) skal kun vises i forbindelse med syn af en
+            motorcykel. ABS skal altid vises ved oprettelse.  Følgende
+            udstyr skal defineres i DMR: (Udstyrsgrupper er skrevet med
+            store bogstaver)  40 - STYREAPPARAT  4001 - opvarmet rat
+            4002 - el-indstilleligt rat 4003 - multifunktionsrat 4004 -
+            højrestyring 4005 - lang forgaffel (mc) 4006 - opvarmet
+            styr(mc)  50 - BREMSER  5001 - keramiske skiver 5002 - ABS
+            bremser (mc) (X) 5003 - skivebremse for (mc) 5004 -
+            skivebremse bag (mc)  60 - EL-ANLÆG  6001 - original
+            tyverialarm 6002 - navigationssystem m. skærm 6003 - HiFi
+            musikanlæg 6004 - stemmestyring 6005 - manuel aircondition
+            6006 - 1 - eller 2-zone klima 6007 - 3- eller 4-zone klima
+            6008 - solcellekøling, kabine 6009 - el-opvarmet forrude
+            6010 - key-less start (nøglefri) 6011 - aktiv fartpilot 6012
+            - afstandsradar 6013 - parkeringskontrol for 6014 -
+            parkeringskontrol bag 6015 - parkeringsassistent 6016 -
+            elektrisk lukning af døre 6017 - vognbaneskift-alarm 6018 -
+            natsyns-udstyr 6019 - head-up display 6020 - selealarm (X)
+            6021 - radio (X) 6022 - bakkamera 6023 - linievogter  71 -
+            MOTOR  7101 - kompressor 7102 - turbo 7103 - tunet/anden
+            motor 7104 - motor/kabinevarmer 7105 - X) 7106 - Motornummer
+            (mc)  73 - TRANSMISSION  7301 - 6-gear manuel 7302 -
+            automatgear 7303 - firehjulstræk (4WD) 7304 - ratbetjent
+            gear  80 - BÆRENDE ELEM.  8001- elektron. dæmpere 8002 -
+            luftaffjedring 8003 - niveauregulering 8004 - større hjul
+            end 20 8005 - stift stel (mc) 8006 - affjedret stel (mc)
+            8007 - ombygget stel (mc)  90 - KARROSSERI  9001 - targa
+            9002 - el-soltag 9003 - ombygget karrosseri 9004 - xenon
+            forlygter 9005 - kurvelys 9006 - 3 el. flere sæderækker 9007
+            - v. siderude i varerum 9008 - dobbeltkabine 9009 -
+            metalfoldetag 9010 - glastag 9011 - aut. Bagklap 9012 -
+            Metallak 9013 - sidevogn (mc)  99 - INDRETNING  9901 -
+            airbags (X) 9902 - memory-sæder for 9903 -
+            sport-/komfortsæder 9904 - el-indst. sæder bag 9905 -
+            ventilation i sæder 9906 - massagesæder 9907 -
+            del-lædersæder 9908 - læder/skindsæder 9909 - el-gardiner i
+            bagrude 9910 - el-gardiner i bagdøre 9911 - faste sidetasker
+            (mc)  100 - ANDET </xs:documentation>
+    </xs:annotation>
+    <xs:include schemaLocation="TalHelType.xsd"/>
+    <xs:include schemaLocation="TekstKortType.xsd"/>
+    <xs:include schemaLocation="BolskType.xsd"/>
+    <xs:element name="KoeretoejUdstyrTypeNummer" type="dmr:TalHelType">
+        <xs:annotation>
+            <xs:documentation>UdstyrType nummer</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejUdstyrTypeNavn" type="dmr:TekstKortType">
+        <xs:annotation>
+            <xs:documentation>UdstyrType navn.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejUdstyrTypeStandardAntal" type="dmr:TalHelType">
+        <xs:annotation>
+            <xs:documentation>Angiver en antalsværdi, som automatisk
+                foreslås i antal-feltet, når dette stykke udstyr tilknyttes.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejUdstyrTypeVisesVedSyn" type="dmr:BolskType">
+        <xs:annotation>
+            <xs:documentation>Er denne attribut sand skal instansen kun
+                vises ved syn.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejUdstyrTypeVisesVedForespoergsel" type="dmr:BolskType">
+        <xs:annotation>
+            <xs:documentation>Er denne attribut sand skal instansen kun
+                vises ved køretøjoprettelse ud fra forespørgelse .</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejUdstyrTypeVisesVedStandardOprettelse" type="dmr:BolskType">
+        <xs:annotation>
+            <xs:documentation>Er denne attribut sand skal instansen kun
+                vises ved køretøjoprettelse ud fra standard oprettelse.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+</xs:schema>

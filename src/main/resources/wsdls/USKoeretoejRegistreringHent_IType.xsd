@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+    elementFormDefault="qualified"
+    targetNamespace="http://skat.dk/dmr/2007/05/31/" version="1.0"
+    xmlns:dmr="http://skat.dk/dmr/2007/05/31/"
+    xmlns:kontekst="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:annotation>
+        <xs:documentation/>
+        <xs:documentation>r15009</xs:documentation>
+    </xs:annotation>
+    <xs:import
+        namespace="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" schemaLocation="HovedOplysninger.xsd"/>
+    <xs:include schemaLocation="DatoTidSoegTidspunkt.xsd"/>
+    <xs:include schemaLocation="KoeretoejGenerelIdentifikatorStrukturType.xsd"/>
+    <xs:element name="USKoeretoejRegistreringHent_I">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="dmr:USKoeretoejRegistreringHent_IType">
+                    <xs:attribute name="revision">
+                        <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                                <xs:pattern value="r15009"/>
+                            </xs:restriction>
+                        </xs:simpleType>
+                    </xs:attribute>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:complexType name="USKoeretoejRegistreringHent_IType">
+        <xs:sequence>
+            <xs:element ref="kontekst:HovedOplysninger"/>
+            <xs:element minOccurs="0" ref="dmr:DatoTidSoegTidspunkt"/>
+            <xs:element ref="dmr:KoeretoejGenerelIdentifikatorStruktur"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

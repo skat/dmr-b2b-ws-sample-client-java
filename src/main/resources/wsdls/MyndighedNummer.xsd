@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema elementFormDefault="qualified"
+    targetNamespace="http://skat.dk/dmr/2007/05/31/" version="1.0"
+    xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:include schemaLocation="MyndighedNummerType.xsd"/>
+    <xs:element name="MyndighedNummer" type="dmr:MyndighedNummerType">
+        <xs:annotation>
+            <xs:documentation>Nummer der entydigt identificerer de for
+                SKAT relevante myndigheder. Nummeret er 4-ciftret og
+                tildeles af Indenrigsministeriet.   Eksempel: Københavns
+                Kommune har nummeret 0101.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+</xs:schema>

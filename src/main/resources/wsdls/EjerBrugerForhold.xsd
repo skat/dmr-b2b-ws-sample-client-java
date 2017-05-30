@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+    elementFormDefault="qualified"
+    targetNamespace="http://skat.dk/dmr/2007/05/31/" version="1.0"
+    xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:annotation>
+        <xs:documentation>Klassen beskriver detaljerne ved relationen,
+            som eksisterer mellem køretøjregistrering og juridisk enhed.
+            En juridisk enhed kan tilknyttes et køretøj på flere måder.
+            Ejer forholdet kan opdeles i to dimensioner - et primært og
+            et sekundært forhold. Der kan kun være en ejer, som er
+            markeret som primær ejer i forhold til en given
+            køretøjsregistrering. Samtidig kan der være flere sekundære
+            ejere. Brugerforholdet er opdelt på samme måde.   En
+            juridisk enhed kan optræde i begge måder (ejer og bruger) på
+            samme tid. Eksempelvis kan en juridisk enhed være en primær
+            ejer og en sekundær bruger. En juridisk enhed kan også være
+            med at være en sekundær bruger uden et ejerforhold.  For et
+            givet forhold mellem køretøjregistrering og en interessent
+            skal der oplyses en adresse, som vil blive anvendt ved
+            kontakt til den juridiske enhed.</xs:documentation>
+    </xs:annotation>
+    <xs:include schemaLocation="EjerBrugerForholdForholdType.xsd"/>
+    <xs:include schemaLocation="BolskType.xsd"/>
+    <xs:element name="EjerBrugerForholdForhold" type="dmr:EjerBrugerForholdForholdType">
+        <xs:annotation>
+            <xs:documentation>Angiver hvilken type ejerbrugerforhold der
+                er tale om.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="EjerBrugerForholdPrimaer" type="dmr:BolskType">
+        <xs:annotation>
+            <xs:documentation>Hvis denne attribut er sand, så angives et
+                primært forhold. Ellers et sekundært forhold.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+</xs:schema>

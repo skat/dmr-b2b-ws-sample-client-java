@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+    elementFormDefault="qualified"
+    targetNamespace="http://skat.dk/dmr/2007/05/31/" version="1.0"
+    xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:annotation>
+        <xs:documentation/>
+        <xs:documentation>r15009</xs:documentation>
+    </xs:annotation>
+    <xs:include schemaLocation="TypeAttest.xsd"/>
+    <xs:include schemaLocation="TilladelseType.xsd"/>
+    <xs:include schemaLocation="KoeretoejArtStrukturType.xsd"/>
+    <xs:include schemaLocation="KoeretoejBetegnelseStrukturType.xsd"/>
+    <xs:include schemaLocation="TypeAttestVariantStrukturType.xsd"/>
+    <xs:element name="TypeAttestStruktur" type="dmr:TypeAttestStrukturType"/>
+    <xs:complexType name="TypeAttestStrukturType">
+        <xs:sequence>
+            <xs:element ref="dmr:TypeAttestGyldigFra"/>
+            <xs:element minOccurs="0" ref="dmr:TypeAttestGyldigTil"/>
+            <xs:element minOccurs="0" ref="dmr:TypeAttestTypeGodkendelseNummer"/>
+            <xs:element ref="dmr:TypeAttestTypeAnmeldelseNummer"/>
+            <xs:element ref="dmr:KoeretoejArtStruktur"/>
+            <xs:element ref="dmr:KoeretoejBetegnelseStruktur"/>
+            <xs:element name="TypeAttestVariantListe">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" ref="dmr:TypeAttestVariantStruktur"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="TilladelseTypeListe">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" ref="dmr:TilladelseTypeNummer"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

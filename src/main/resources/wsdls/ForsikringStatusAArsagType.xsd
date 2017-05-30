@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema elementFormDefault="qualified"
+    targetNamespace="http://skat.dk/dmr/2007/05/31/" version="1.0"
+    xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:simpleType name="ForsikringStatusAarsagType">
+        <xs:annotation>
+            <xs:documentation>Angiver årsagen til en statusændring på  tekstform.</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50"/>
+            <xs:enumeration value="Genetablering"/>
+            <xs:enumeration value="Registrering"/>
+            <xs:enumeration value="OphørtAfForsikringsSelskab"/>
+            <xs:enumeration value="Afmelding"/>
+            <xs:enumeration value="Selskabsskifte"/>
+            <xs:enumeration value="ÆndretLeasingPeriode"/>
+            <xs:enumeration value="EjerBrugerSkifte"/>
+            <xs:enumeration value="PladeskiftUdenEjerBrugerskifte"/>
+            <xs:enumeration value="ÆndringAnvendelse"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

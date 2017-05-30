@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema elementFormDefault="qualified"
+    targetNamespace="http://skat.dk/dmr/2007/05/31/" version="1.0"
+    xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:simpleType name="ForretningParameterVaerdiStatusType">
+        <xs:annotation>
+            <xs:documentation>En status for en given forretingsparameterværdi</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="0"/>
+            <xs:maxLength value="40"/>
+            <xs:pattern value="([a-zA-ZåæøÅÆØ])*"/>
+            <xs:enumeration value="Aktiv"/>
+            <xs:enumeration value="Inaktiv"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

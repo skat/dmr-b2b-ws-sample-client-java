@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema elementFormDefault="qualified"
+    targetNamespace="http://skat.dk/dmr/2007/05/31/" version="1.0"
+    xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:simpleType name="KoeretoejRegistreringGrundlagStatusType">
+        <xs:annotation>
+            <xs:documentation>Status for en given registreringsgrundlag.
+                Hver angivelse starter med et tal, som anvendes af
+                hensyn til sortering i brugergrænsefladen.</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="100"/>
+            <xs:enumeration value="RegistreringsgrundlagUnderUdarbejdelse"/>
+            <xs:enumeration value="RegistreringsgrundlagFastlagt"/>
+            <xs:enumeration value="RegistreringsgrundlagGyldigt"/>
+            <xs:enumeration value="RegistreringsgrundlagForældet"/>
+            <xs:enumeration value="RegistreringsgrundlagUgyldigt"/>
+            <xs:enumeration value="RegistreringsgrundlagTilknyttetRegistrering"/>
+            <xs:enumeration value="RegistreringsgrundlagMidlertidigViaForespørgsel"/>
+            <xs:whiteSpace value="preserve"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

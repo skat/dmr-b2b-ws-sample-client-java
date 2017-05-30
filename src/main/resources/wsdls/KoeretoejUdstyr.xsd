@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+    elementFormDefault="qualified"
+    targetNamespace="http://skat.dk/dmr/2007/05/31/" version="1.0"
+    xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:annotation>
+        <xs:documentation>Et køretøj kan have en del udstyr monteret.
+            Derfor er det relevant at kunne identificere hvilke udstyr,
+            der er monteret, og hvilket udstyr der er afmonteret igen.
+            Der kan forekomme flere tidsmæssige adskilte relationer
+            imellem et specifikt køretøj og et specifikt udstyr.</xs:documentation>
+    </xs:annotation>
+    <xs:include schemaLocation="TalHelType.xsd"/>
+    <xs:element name="KoeretoejUdstyrAntal" type="dmr:TalHelType">
+        <xs:annotation>
+            <xs:documentation>Antallet af forekomster af det givne
+                udstyr. Dette kunne f.eks. være antallet af
+                sikkerhedspuder, antallet af selestrammere m.v.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+</xs:schema>

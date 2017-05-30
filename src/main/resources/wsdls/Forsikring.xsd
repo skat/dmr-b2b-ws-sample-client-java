@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+    elementFormDefault="qualified"
+    targetNamespace="http://skat.dk/dmr/2007/05/31/" version="1.0"
+    xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:annotation>
+        <xs:documentation>Et hvert motordrevet køretøj, som anvendes på
+            offentlig vej, skal have en registreringsattest og en
+            forsikring. Denne klasse indeholder informationer omkring
+            forsikringen af køretøjet (bundet op på
+            registreringsattesten) i form af køretøjs registreringen.
+            Det er nødvendigt at vide, at køretøjet er forsikret og hos
+            hvem, men derudover er de specifikke forsikringsoplysninger
+            ud over policenummeret uvedkommende for dette systems domæne.</xs:documentation>
+    </xs:annotation>
+    <xs:include schemaLocation="DatoTidType.xsd"/>
+    <xs:include schemaLocation="DatoType.xsd"/>
+    <xs:include schemaLocation="Tekst30Type.xsd"/>
+    <xs:include schemaLocation="TalHelType.xsd"/>
+    <xs:include schemaLocation="ForsikringStatusType.xsd"/>
+    <xs:include schemaLocation="BolskType.xsd"/>
+    <xs:include schemaLocation="ForsikringStatusAArsagType.xsd"/>
+    <xs:element name="ForsikringAfgangRegistreretDato" type="dmr:DatoTidType">
+        <xs:annotation>
+            <xs:documentation>Dato og tidspunktet, hvor afgangen er
+                blevet dannet med henblik på afsendelse til et givet forsikringsselskab.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="ForsikringBevisDato" type="dmr:DatoType">
+        <xs:annotation>
+            <xs:documentation>Datoen, hvor forsikringsbeviset blev
+                registreret i DMR (enten fra et papir eller fra en anmodning)</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="ForsikringBevisNummer" type="dmr:Tekst30Type">
+        <xs:annotation>
+            <xs:documentation>Forsikringsbevisnummeret sættes af
+                forsikringsselskabet ved accept af forsikringstageren
+                (anmodning eller på forhånd). Forsikringsbevisnummeret
+                er med til at støtte eventuelle sager, hvor
+                forsikringsselskabet, motorregisteret og
+                forsikringstager er uenige omkring, hvorvidt det
+                aktuelle køretøj er ansvarsforsikret eller ej. Det skal
+                sikres i DMR at et bevisnummer er unikt indenfor et
+                forsikringsselskab.  Procedure for moduluskontrol af
+                forsikringsbevis. Er taget fra CSC's beskrivelse i CRM3.
+                Det 2., 4., 6., 8. og 10. ciffer i v_testnr lægges
+                sammen og summen placeres i v_tot. (Fremtidig: Det 2.,
+                4., 6., 8., 10. og 12. ciffer i v_testnr lægges sammen
+                og summen placeres i v_tot.)  For hvert af 1., 3., 5.,
+                7. og 9. ciffer udføres følgende: (Fremtidig : For hvert
+                af 1., 3., 5., 7., 9. og 11. ciffer udføres følgende: )
+                Cifferet ganges med 2 og hvis resultatet er stoerre end
+                9 trækkes 9 fra resultatet. Resultatet lægges til v_tot.
+                Til slut divideres v_tot med 10.  (Fremtidig : Hvis
+                forsikringsbevisnr uden forsikringsselskabskode  (dvs.
+                pos. 4 til 12) er under 10000000, skal de gamle
+                undtagelsesregler (se nedenstående) for modulus-checket
+                stadig gælde, medens nye bevisnr altid skal give rest =
+                0 fra divisionen).  Hvis rest = 0 eller (rest fra
+                divisionen = 1 og p_forsikselskabnr = 34, 51, 56, 64, 70
+                eller 73) eller  (rest fra divisionen = 2 og
+                p_forsikselskabnr = 34 eller 73) eller    (rest fra
+                divisionen = 3 og p_forsikselskabnr = 34)  returneres
+                (så er checkciffer OK).</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="ForsikringIdent" type="dmr:TalHelType">
+        <xs:annotation>
+            <xs:documentation>En unik identifikation af den enkelte
+                specifikke forsikring</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="ForsikringStatus" type="dmr:ForsikringStatusType">
+        <xs:annotation>
+            <xs:documentation>En oplysning vedrørende forsikringens
+                status, hvor den enten kan være under oprettelse
+                (anmodet), den kan være aktiv (gyldig), eller den kan
+                være ophørt (enten grundet selskabsskifte, grundet
+                afmelding af køretøjet fra registeret eller restance til forsikringsselskabet).</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="ForsikringStatusDato" type="dmr:DatoTidType">
+        <xs:annotation>
+            <xs:documentation>Dato for statusændring, f.eks. når en
+                forsikring ophører, hvor status sættes til Ophørt.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="ForsikringUdstedtDigitalt" type="dmr:BolskType">
+        <xs:annotation>
+            <xs:documentation>Angiver om forsikringen er anmeldt
+                digitalt til DMR.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="ForsikringUdstedtPapir" type="dmr:BolskType">
+        <xs:annotation>
+            <xs:documentation>Angiver om forsikringen er anmeldt på/ved
+                papir til DMR.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="ForsikringTilgangRegistreretDato" type="dmr:DatoTidType">
+        <xs:annotation>
+            <xs:documentation>Tidspunktet, hvor tilgangen er blevet
+                dannet med henblik på afsendelse til et givet forsikringsselskab.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="ForsikringErFejlhaandteret" type="dmr:BolskType">
+        <xs:annotation>
+            <xs:documentation>Oplyser om tilgangen eller afgangen sker i
+                forbindelse med fejlhåndtering.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="ForsikringStatusAendringAarsag" type="dmr:ForsikringStatusAarsagType">
+        <xs:annotation>
+            <xs:documentation>Angiver årsagen til at status ændrede sig.
+                Dette felt giver ikke mening uden Status-feltet, og skal
+                altid ses i relation hertil.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+</xs:schema>

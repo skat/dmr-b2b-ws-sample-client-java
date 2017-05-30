@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+    elementFormDefault="qualified"
+    targetNamespace="http://skat.dk/dmr/2007/05/31/" version="1.0"
+    xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:annotation>
+        <xs:documentation>At hente et køretøjs eller fasteprøveskiltes
+            registreringsmæssige data, dvs. oplysninger om ejer/bruger,
+            forsikringsselskab og art/anvendelse på et givent tidspunkt.</xs:documentation>
+        <xs:documentation>r15009</xs:documentation>
+    </xs:annotation>
+    <xs:include schemaLocation="USKoeretoejRegistreringHent_IType.xsd"/>
+    <xs:include schemaLocation="USKoeretoejRegistreringHent_OType.xsd"/>
+    <xs:include schemaLocation="KompenserTransType.xsd"/>
+    <xs:include schemaLocation="KompenserTransSvarType.xsd"/>
+    <xs:element name="USKoeretoejRegistreringHentInterface" type="dmr:USKoeretoejRegistreringHentInterfaceType"/>
+    <xs:complexType name="USKoeretoejRegistreringHentInterfaceType">
+        <xs:choice>
+            <xs:element ref="dmr:USKoeretoejRegistreringHent_I"/>
+            <xs:element ref="dmr:USKoeretoejRegistreringHent_O"/>
+            <xs:element ref="dmr:KompenserTrans"/>
+            <xs:element ref="dmr:KompenserTransSvar"/>
+        </xs:choice>
+    </xs:complexType>
+</xs:schema>

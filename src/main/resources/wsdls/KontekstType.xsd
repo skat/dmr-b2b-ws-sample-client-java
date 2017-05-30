@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+    elementFormDefault="qualified"
+    targetNamespace="http://skat.dk/dmr/2007/05/31/" version="1.0"
+    xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="Kontekst" type="dmr:KontekstType">
+        <xs:annotation>
+            <xs:documentation source="../meta/Kontekst.xsd.meta.xml"/>
+        </xs:annotation>
+    </xs:element>
+    <xs:complexType name="KontekstType">
+        <xs:sequence>
+            <xs:any namespace="##other" processContents="skip"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+    elementFormDefault="qualified"
+    targetNamespace="http://skat.dk/dmr/2007/05/31/" version="1.0"
+    xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:annotation>
+        <xs:documentation>Model er en angivelse af et køretøjs model
+            (detaljeoplysning under et mærke). Eksempler: V70, Uno,
+            Mondeo osv.</xs:documentation>
+    </xs:annotation>
+    <xs:include schemaLocation="TalHelType.xsd"/>
+    <xs:include schemaLocation="TekstKortType.xsd"/>
+    <xs:element name="KoeretoejModelTypeNummer" type="dmr:TalHelType">
+        <xs:annotation>
+            <xs:documentation>Et unikt nummer, som er nedarvet fra
+                KøretøjBetegnelseHierarki </xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejModelTypeNavn" type="dmr:TekstKortType">
+        <xs:annotation>
+            <xs:documentation>En kort sætning (navn), som beskriver den
+                enkelte type på en simpel og let identificerende måde.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+</xs:schema>

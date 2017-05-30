@@ -1,0 +1,496 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<s0:definitions name="USImportoerService" targetNamespace="http://skat.dk/dmr/2007/05/31/" xmlns="" xmlns:s0="http://schemas.xmlsoap.org/wsdl/" xmlns:s1="http://skat.dk/dmr/2007/05/31/" xmlns:s2="http://schemas.xmlsoap.org/wsdl/soap/">
+  <s0:types>
+    <xsd:schema targetNamespace="http://skat.dk/dmr/2007/05/31/" xmlns:pfx0="http://skat.dk/dmr/2007/05/31/" xmlns:pfx1="http://docs.oasis-open.org/wsrf/rp-2" xmlns:pfx2="http://www.w3.org/2005/08/addressing" xmlns:pfx3="http://schemas.xmlsoap.org/soap/http" xmlns:pfx4="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s0="http://schemas.xmlsoap.org/wsdl/" xmlns:s1="http://skat.dk/dmr/2007/05/31/" xmlns:s2="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:include schemaLocation="USKoeretoejTypeAttestOpretInterface.xsd"/>
+    </xsd:schema>
+    <xsd:schema targetNamespace="http://skat.dk/dmr/2007/05/31/" xmlns:pfx0="http://skat.dk/dmr/2007/05/31/" xmlns:pfx1="http://docs.oasis-open.org/wsrf/rp-2" xmlns:pfx2="http://www.w3.org/2005/08/addressing" xmlns:pfx3="http://schemas.xmlsoap.org/soap/http" xmlns:pfx4="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s0="http://schemas.xmlsoap.org/wsdl/" xmlns:s1="http://skat.dk/dmr/2007/05/31/" xmlns:s2="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:include schemaLocation="USKoeretoejUdstyrTypeListeHentInterface.xsd"/>
+    </xsd:schema>
+    <xsd:schema targetNamespace="http://skat.dk/dmr/2007/05/31/" xmlns:pfx0="http://skat.dk/dmr/2007/05/31/" xmlns:pfx1="http://docs.oasis-open.org/wsrf/rp-2" xmlns:pfx2="http://www.w3.org/2005/08/addressing" xmlns:pfx3="http://schemas.xmlsoap.org/soap/http" xmlns:pfx4="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s0="http://schemas.xmlsoap.org/wsdl/" xmlns:s1="http://skat.dk/dmr/2007/05/31/" xmlns:s2="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:include schemaLocation="USTilladelseTypeListeHentInterface.xsd"/>
+    </xsd:schema>
+    <xsd:schema targetNamespace="http://skat.dk/dmr/2007/05/31/" xmlns:pfx0="http://skat.dk/dmr/2007/05/31/" xmlns:pfx1="http://docs.oasis-open.org/wsrf/rp-2" xmlns:pfx2="http://www.w3.org/2005/08/addressing" xmlns:pfx3="http://schemas.xmlsoap.org/soap/http" xmlns:pfx4="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s0="http://schemas.xmlsoap.org/wsdl/" xmlns:s1="http://skat.dk/dmr/2007/05/31/" xmlns:s2="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:include schemaLocation="USDispensationTypeListeHentInterface.xsd"/>
+    </xsd:schema>
+    <xsd:schema targetNamespace="http://skat.dk/dmr/2007/05/31/" xmlns:pfx0="http://skat.dk/dmr/2007/05/31/" xmlns:pfx1="http://docs.oasis-open.org/wsrf/rp-2" xmlns:pfx2="http://www.w3.org/2005/08/addressing" xmlns:pfx3="http://schemas.xmlsoap.org/soap/http" xmlns:pfx4="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s0="http://schemas.xmlsoap.org/wsdl/" xmlns:s1="http://skat.dk/dmr/2007/05/31/" xmlns:s2="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:include schemaLocation="USDrivkraftTypeListeHentInterface.xsd"/>
+    </xsd:schema>
+    <xsd:schema targetNamespace="http://skat.dk/dmr/2007/05/31/" xmlns:pfx0="http://skat.dk/dmr/2007/05/31/" xmlns:pfx1="http://docs.oasis-open.org/wsrf/rp-2" xmlns:pfx2="http://www.w3.org/2005/08/addressing" xmlns:pfx3="http://schemas.xmlsoap.org/soap/http" xmlns:pfx4="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s0="http://schemas.xmlsoap.org/wsdl/" xmlns:s1="http://skat.dk/dmr/2007/05/31/" xmlns:s2="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:include schemaLocation="USKarrosseriTypeListeHentInterface.xsd"/>
+    </xsd:schema>
+    <xsd:schema targetNamespace="http://skat.dk/dmr/2007/05/31/" xmlns:pfx0="http://skat.dk/dmr/2007/05/31/" xmlns:pfx1="http://docs.oasis-open.org/wsrf/rp-2" xmlns:pfx2="http://www.w3.org/2005/08/addressing" xmlns:pfx3="http://schemas.xmlsoap.org/soap/http" xmlns:pfx4="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s0="http://schemas.xmlsoap.org/wsdl/" xmlns:s1="http://skat.dk/dmr/2007/05/31/" xmlns:s2="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:include schemaLocation="USKoeretoejAnvendelseListeHentInterface.xsd"/>
+    </xsd:schema>
+    <xsd:schema targetNamespace="http://skat.dk/dmr/2007/05/31/" xmlns:pfx0="http://skat.dk/dmr/2007/05/31/" xmlns:pfx1="http://docs.oasis-open.org/wsrf/rp-2" xmlns:pfx2="http://www.w3.org/2005/08/addressing" xmlns:pfx3="http://schemas.xmlsoap.org/soap/http" xmlns:pfx4="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s0="http://schemas.xmlsoap.org/wsdl/" xmlns:s1="http://skat.dk/dmr/2007/05/31/" xmlns:s2="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:include schemaLocation="USKoeretoejArtAnvendelseListeHentInterface.xsd"/>
+    </xsd:schema>
+    <xsd:schema targetNamespace="http://skat.dk/dmr/2007/05/31/" xmlns:pfx0="http://skat.dk/dmr/2007/05/31/" xmlns:pfx1="http://docs.oasis-open.org/wsrf/rp-2" xmlns:pfx2="http://www.w3.org/2005/08/addressing" xmlns:pfx3="http://schemas.xmlsoap.org/soap/http" xmlns:pfx4="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s0="http://schemas.xmlsoap.org/wsdl/" xmlns:s1="http://skat.dk/dmr/2007/05/31/" xmlns:s2="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:include schemaLocation="USKoeretoejArtListeHentInterface.xsd"/>
+    </xsd:schema>
+    <xsd:schema targetNamespace="http://skat.dk/dmr/2007/05/31/" xmlns:pfx0="http://skat.dk/dmr/2007/05/31/" xmlns:pfx1="http://docs.oasis-open.org/wsrf/rp-2" xmlns:pfx2="http://www.w3.org/2005/08/addressing" xmlns:pfx3="http://schemas.xmlsoap.org/soap/http" xmlns:pfx4="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s0="http://schemas.xmlsoap.org/wsdl/" xmlns:s1="http://skat.dk/dmr/2007/05/31/" xmlns:s2="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:include schemaLocation="USKoeretoejBetegnelseHierarkiListeHentInterface.xsd"/>
+    </xsd:schema>
+    <xsd:schema targetNamespace="http://skat.dk/dmr/2007/05/31/" xmlns:pfx0="http://skat.dk/dmr/2007/05/31/" xmlns:pfx1="http://docs.oasis-open.org/wsrf/rp-2" xmlns:pfx2="http://www.w3.org/2005/08/addressing" xmlns:pfx3="http://schemas.xmlsoap.org/soap/http" xmlns:pfx4="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s0="http://schemas.xmlsoap.org/wsdl/" xmlns:s1="http://skat.dk/dmr/2007/05/31/" xmlns:s2="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:include schemaLocation="USKoeretoejBetegnelseOpretInterface.xsd"/>
+    </xsd:schema>
+    <xsd:schema targetNamespace="http://skat.dk/dmr/2007/05/31/" xmlns:pfx0="http://skat.dk/dmr/2007/05/31/" xmlns:pfx1="http://docs.oasis-open.org/wsrf/rp-2" xmlns:pfx2="http://www.w3.org/2005/08/addressing" xmlns:pfx3="http://schemas.xmlsoap.org/soap/http" xmlns:pfx4="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s0="http://schemas.xmlsoap.org/wsdl/" xmlns:s1="http://skat.dk/dmr/2007/05/31/" xmlns:s2="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:include schemaLocation="USKoeretoejCoCOpretInterface.xsd"/>
+    </xsd:schema>
+    <xsd:schema targetNamespace="http://skat.dk/dmr/2007/05/31/" xmlns:pfx0="http://skat.dk/dmr/2007/05/31/" xmlns:pfx1="http://docs.oasis-open.org/wsrf/rp-2" xmlns:pfx2="http://www.w3.org/2005/08/addressing" xmlns:pfx3="http://schemas.xmlsoap.org/soap/http" xmlns:pfx4="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s0="http://schemas.xmlsoap.org/wsdl/" xmlns:s1="http://skat.dk/dmr/2007/05/31/" xmlns:s2="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:include schemaLocation="USKoeretoejErklaeringOpretInterface.xsd"/>
+    </xsd:schema>
+    <xsd:schema targetNamespace="http://skat.dk/dmr/2007/05/31/" xmlns:pfx0="http://skat.dk/dmr/2007/05/31/" xmlns:pfx1="http://docs.oasis-open.org/wsrf/rp-2" xmlns:pfx2="http://www.w3.org/2005/08/addressing" xmlns:pfx3="http://schemas.xmlsoap.org/soap/http" xmlns:pfx4="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s0="http://schemas.xmlsoap.org/wsdl/" xmlns:s1="http://skat.dk/dmr/2007/05/31/" xmlns:s2="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:include schemaLocation="USKoeretoejOprettelseAnnullerInterface.xsd"/>
+    </xsd:schema>
+    <xsd:schema targetNamespace="http://skat.dk/dmr/2007/05/31/" xmlns:pfx0="http://skat.dk/dmr/2007/05/31/" xmlns:pfx1="http://docs.oasis-open.org/wsrf/rp-2" xmlns:pfx2="http://www.w3.org/2005/08/addressing" xmlns:pfx3="http://schemas.xmlsoap.org/soap/http" xmlns:pfx4="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s0="http://schemas.xmlsoap.org/wsdl/" xmlns:s1="http://skat.dk/dmr/2007/05/31/" xmlns:s2="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:include schemaLocation="USNormTypeListeHentInterface.xsd"/>
+    </xsd:schema>
+    <xsd:schema targetNamespace="http://skat.dk/dmr/2007/05/31/" xmlns:pfx0="http://skat.dk/dmr/2007/05/31/" xmlns:pfx1="http://docs.oasis-open.org/wsrf/rp-2" xmlns:pfx2="http://www.w3.org/2005/08/addressing" xmlns:pfx3="http://schemas.xmlsoap.org/soap/http" xmlns:pfx4="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s0="http://schemas.xmlsoap.org/wsdl/" xmlns:s1="http://skat.dk/dmr/2007/05/31/" xmlns:s2="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:include schemaLocation="USSupplerendeKarrosseriTypeListeHentInterface.xsd"/>
+    </xsd:schema>
+    <xsd:schema targetNamespace="http://skat.dk/dmr/2007/05/31/" xmlns:pfx0="http://skat.dk/dmr/2007/05/31/" xmlns:pfx1="http://docs.oasis-open.org/wsrf/rp-2" xmlns:pfx2="http://www.w3.org/2005/08/addressing" xmlns:pfx3="http://schemas.xmlsoap.org/soap/http" xmlns:pfx4="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s0="http://schemas.xmlsoap.org/wsdl/" xmlns:s1="http://skat.dk/dmr/2007/05/31/" xmlns:s2="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:include schemaLocation="USKoeretoejTekniskDataHentInterface.xsd"/>
+    </xsd:schema>
+    <xsd:schema targetNamespace="http://skat.dk/dmr/2007/05/31/" xmlns:pfx0="http://skat.dk/dmr/2007/05/31/" xmlns:pfx1="http://docs.oasis-open.org/wsrf/rp-2" xmlns:pfx2="http://www.w3.org/2005/08/addressing" xmlns:pfx3="http://schemas.xmlsoap.org/soap/http" xmlns:pfx4="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s0="http://schemas.xmlsoap.org/wsdl/" xmlns:s1="http://skat.dk/dmr/2007/05/31/" xmlns:s2="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:include schemaLocation="USFarveTypeListeHentInterface.xsd"/>
+    </xsd:schema>
+    <xsd:schema targetNamespace="http://skat.dk/dmr/2007/05/31/" xmlns:pfx0="http://skat.dk/dmr/2007/05/31/" xmlns:pfx1="http://docs.oasis-open.org/wsrf/rp-2" xmlns:pfx2="http://www.w3.org/2005/08/addressing" xmlns:pfx3="http://schemas.xmlsoap.org/soap/http" xmlns:pfx4="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s0="http://schemas.xmlsoap.org/wsdl/" xmlns:s1="http://skat.dk/dmr/2007/05/31/" xmlns:s2="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:include schemaLocation="USKoeretoejRegistreringHentInterface.xsd"/>
+    </xsd:schema>
+    <xsd:schema targetNamespace="http://skat.dk/dmr/2007/05/31/" xmlns:pfx0="http://skat.dk/dmr/2007/05/31/" xmlns:pfx1="http://docs.oasis-open.org/wsrf/rp-2" xmlns:pfx2="http://www.w3.org/2005/08/addressing" xmlns:pfx3="http://schemas.xmlsoap.org/soap/http" xmlns:pfx4="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s0="http://schemas.xmlsoap.org/wsdl/" xmlns:s1="http://skat.dk/dmr/2007/05/31/" xmlns:s2="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:include schemaLocation="USUkompletKoeretoejOpretInterface.xsd"/>
+    </xsd:schema>
+    <xsd:schema targetNamespace="http://skat.dk/dmr/2007/05/31/" xmlns:pfx0="http://skat.dk/dmr/2007/05/31/" xmlns:pfx1="http://docs.oasis-open.org/wsrf/rp-2" xmlns:pfx2="http://www.w3.org/2005/08/addressing" xmlns:pfx3="http://schemas.xmlsoap.org/soap/http" xmlns:pfx4="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s0="http://schemas.xmlsoap.org/wsdl/" xmlns:s1="http://skat.dk/dmr/2007/05/31/" xmlns:s2="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:include schemaLocation="USKoeretoejBlokeringAArsagTypeListeHentInterface.xsd"/>
+    </xsd:schema>
+  </s0:types>
+  <s0:message name="USKarrosseriTypeListeHentServiceRequest">
+    <s0:part element="s1:USKarrosseriTypeListeHent_I" name="Request"/>
+  </s0:message>
+  <s0:message name="USKoeretoejArtAnvendelseListeHentServiceRequest">
+    <s0:part element="s1:USKoeretoejArtAnvendelseListeHent_I" name="Request"/>
+  </s0:message>
+  <s0:message name="USKoeretoejArtAnvendelseListeHentServiceResponse">
+    <s0:part element="s1:USKoeretoejArtAnvendelseListeHent_O" name="Response"/>
+  </s0:message>
+  <s0:message name="USKoeretoejTypeAttestOpretServiceRequest">
+    <s0:part element="s1:USKoeretoejTypeAttestOpret_I" name="Request"/>
+  </s0:message>
+  <s0:message name="USSupplerendeKarrosseriTypeListeHentServiceRequest">
+    <s0:part element="s1:USSupplerendeKarrosseriTypeListeHent_I" name="Request"/>
+  </s0:message>
+  <s0:message name="USUkompletKoeretoejOpretServiceResponse">
+    <s0:part element="s1:USUkompletKoeretoejOpret_O" name="Response"/>
+  </s0:message>
+  <s0:message name="USKarrosseriTypeListeHentServiceResponse">
+    <s0:part element="s1:USKarrosseriTypeListeHent_O" name="Response"/>
+  </s0:message>
+  <s0:message name="USDispensationTypeListeHentServiceResponse">
+    <s0:part element="s1:USDispensationTypeListeHent_O" name="Response"/>
+  </s0:message>
+  <s0:message name="USKoeretoejOprettelseAnnullerServiceResponse">
+    <s0:part element="s1:USKoeretoejOprettelseAnnuller_O" name="Response"/>
+  </s0:message>
+  <s0:message name="USKoeretoejRegistreringHentServiceResponse">
+    <s0:part element="s1:USKoeretoejRegistreringHent_O" name="Response"/>
+  </s0:message>
+  <s0:message name="USKoeretoejArtListeHentServiceRequest">
+    <s0:part element="s1:USKoeretoejArtListeHent_I" name="Request"/>
+  </s0:message>
+  <s0:message name="USDrivkraftTypeListeHentServiceRequest">
+    <s0:part element="s1:USDrivkraftTypeListeHent_I" name="Request"/>
+  </s0:message>
+  <s0:message name="USKoeretoejBetegnelseOpretServiceRequest">
+    <s0:part element="s1:USKoeretoejBetegnelseOpret_I" name="Request"/>
+  </s0:message>
+  <s0:message name="USTilladelseTypeListeHentServiceRequest">
+    <s0:part element="s1:USTilladelseTypeListeHent_I" name="Request"/>
+  </s0:message>
+  <s0:message name="USKoeretoejCoCOpretServiceResponse">
+    <s0:part element="s1:USKoeretoejCoCOpret_O" name="Response"/>
+  </s0:message>
+  <s0:message name="USFarveTypeListeHentServiceRequest">
+    <s0:part element="s1:USFarveTypeListeHent_I" name="Request"/>
+  </s0:message>
+  <s0:message name="USKoeretoejErklaeringOpretServiceResponse">
+    <s0:part element="s1:USKoeretoejErklaeringOpret_O" name="Response"/>
+  </s0:message>
+  <s0:message name="USSupplerendeKarrosseriTypeListeHentServiceResponse">
+    <s0:part element="s1:USSupplerendeKarrosseriTypeListeHent_O" name="Response"/>
+  </s0:message>
+  <s0:message name="USKoeretoejOprettelseAnnullerServiceRequest">
+    <s0:part element="s1:USKoeretoejOprettelseAnnuller_I" name="Request"/>
+  </s0:message>
+  <s0:message name="USDrivkraftTypeListeHentServiceResponse">
+    <s0:part element="s1:USDrivkraftTypeListeHent_O" name="Response"/>
+  </s0:message>
+  <s0:message name="USKoeretoejRegistreringHentServiceRequest">
+    <s0:part element="s1:USKoeretoejRegistreringHent_I" name="Request"/>
+  </s0:message>
+  <s0:message name="USKoeretoejArtListeHentServiceResponse">
+    <s0:part element="s1:USKoeretoejArtListeHent_O" name="Response"/>
+  </s0:message>
+  <s0:message name="USKoeretoejBetegnelseHierarkiListeHentServiceResponse">
+    <s0:part element="s1:USKoeretoejBetegnelseHierarkiListeHent_O" name="Response"/>
+  </s0:message>
+  <s0:message name="USKoeretoejBetegnelseHierarkiListeHentServiceRequest">
+    <s0:part element="s1:USKoeretoejBetegnelseHierarkiListeHent_I" name="Request"/>
+  </s0:message>
+  <s0:message name="KompenserTransResponse">
+    <s0:part element="s1:KompenserTransSvar" name="Response"/>
+  </s0:message>
+  <s0:message name="USDispensationTypeListeHentServiceRequest">
+    <s0:part element="s1:USDispensationTypeListeHent_I" name="Request"/>
+  </s0:message>
+  <s0:message name="USKoeretoejErklaeringOpretServiceRequest">
+    <s0:part element="s1:USKoeretoejErklaeringOpret_I" name="Request"/>
+  </s0:message>
+  <s0:message name="USKoeretoejTekniskDataHentServiceRequest">
+    <s0:part element="s1:USKoeretoejTekniskDataHent_I" name="Request"/>
+  </s0:message>
+  <s0:message name="USKoeretoejAnvendelseListeHentServiceResponse">
+    <s0:part element="s1:USKoeretoejAnvendelseListeHent_O" name="Response"/>
+  </s0:message>
+  <s0:message name="USKoeretoejUdstyrTypeListeHentServiceResponse">
+    <s0:part element="s1:USKoeretoejUdstyrTypeListeHent_O" name="Response"/>
+  </s0:message>
+  <s0:message name="USTilladelseTypeListeHentServiceResponse">
+    <s0:part element="s1:USTilladelseTypeListeHent_O" name="Response"/>
+  </s0:message>
+  <s0:message name="USKoeretoejAnvendelseListeHentServiceRequest">
+    <s0:part element="s1:USKoeretoejAnvendelseListeHent_I" name="Request"/>
+  </s0:message>
+  <s0:message name="USNormTypeListeHentServiceResponse">
+    <s0:part element="s1:USNormTypeListeHent_O" name="Response"/>
+  </s0:message>
+  <s0:message name="USUkompletKoeretoejOpretServiceRequest">
+    <s0:part element="s1:USUkompletKoeretoejOpret_I" name="Request"/>
+  </s0:message>
+  <s0:message name="USKoeretoejUdstyrTypeListeHentServiceRequest">
+    <s0:part element="s1:USKoeretoejUdstyrTypeListeHent_I" name="Request"/>
+  </s0:message>
+  <s0:message name="USKoeretoejCoCOpretServiceRequest">
+    <s0:part element="s1:USKoeretoejCoCOpret_I" name="Request"/>
+  </s0:message>
+  <s0:message name="USKoeretoejTypeAttestOpretServiceResponse">
+    <s0:part element="s1:USKoeretoejTypeAttestOpret_O" name="Response"/>
+  </s0:message>
+  <s0:message name="USKoeretoejBlokeringAarsagTypeListeHentServiceRequest">
+    <s0:part element="s1:USKoeretoejBlokeringAarsagTypeListeHent_I" name="Request"/>
+  </s0:message>
+  <s0:message name="USNormTypeListeHentServiceRequest">
+    <s0:part element="s1:USNormTypeListeHent_I" name="Request"/>
+  </s0:message>
+  <s0:message name="KompenserTransRequest">
+    <s0:part element="s1:KompenserTrans" name="Request"/>
+  </s0:message>
+  <s0:message name="USFarveTypeListeHentServiceResponse">
+    <s0:part element="s1:USFarveTypeListeHent_O" name="Response"/>
+  </s0:message>
+  <s0:message name="USKoeretoejBetegnelseOpretServiceResponse">
+    <s0:part element="s1:USKoeretoejBetegnelseOpret_O" name="Response"/>
+  </s0:message>
+  <s0:message name="USKoeretoejTekniskDataHentServiceResponse">
+    <s0:part element="s1:USKoeretoejTekniskDataHent_O" name="Response"/>
+  </s0:message>
+  <s0:message name="USKoeretoejBlokeringAarsagTypeListeHentServiceResponse">
+    <s0:part element="s1:USKoeretoejBlokeringAarsagTypeListeHent_O" name="Response"/>
+  </s0:message>
+  <s0:portType name="USImportoerServiceType">
+    <s0:operation name="getKompenserTrans">
+      <s0:input message="s1:KompenserTransRequest"/>
+      <s0:output message="s1:KompenserTransResponse"/>
+    </s0:operation>
+    <s0:operation name="getUSKoeretoejTypeAttestOpret">
+      <s0:input message="s1:USKoeretoejTypeAttestOpretServiceRequest"/>
+      <s0:output message="s1:USKoeretoejTypeAttestOpretServiceResponse"/>
+    </s0:operation>
+    <s0:operation name="getUSKoeretoejUdstyrTypeListeHent">
+      <s0:input message="s1:USKoeretoejUdstyrTypeListeHentServiceRequest"/>
+      <s0:output message="s1:USKoeretoejUdstyrTypeListeHentServiceResponse"/>
+    </s0:operation>
+    <s0:operation name="getUSTilladelseTypeListeHent">
+      <s0:input message="s1:USTilladelseTypeListeHentServiceRequest"/>
+      <s0:output message="s1:USTilladelseTypeListeHentServiceResponse"/>
+    </s0:operation>
+    <s0:operation name="getUSDispensationTypeListeHent">
+      <s0:input message="s1:USDispensationTypeListeHentServiceRequest"/>
+      <s0:output message="s1:USDispensationTypeListeHentServiceResponse"/>
+    </s0:operation>
+    <s0:operation name="getUSDrivkraftTypeListeHent">
+      <s0:input message="s1:USDrivkraftTypeListeHentServiceRequest"/>
+      <s0:output message="s1:USDrivkraftTypeListeHentServiceResponse"/>
+    </s0:operation>
+    <s0:operation name="getUSKarrosseriTypeListeHent">
+      <s0:input message="s1:USKarrosseriTypeListeHentServiceRequest"/>
+      <s0:output message="s1:USKarrosseriTypeListeHentServiceResponse"/>
+    </s0:operation>
+    <s0:operation name="getUSKoeretoejAnvendelseListeHent">
+      <s0:input message="s1:USKoeretoejAnvendelseListeHentServiceRequest"/>
+      <s0:output message="s1:USKoeretoejAnvendelseListeHentServiceResponse"/>
+    </s0:operation>
+    <s0:operation name="getUSKoeretoejArtAnvendelseListeHent">
+      <s0:input message="s1:USKoeretoejArtAnvendelseListeHentServiceRequest"/>
+      <s0:output message="s1:USKoeretoejArtAnvendelseListeHentServiceResponse"/>
+    </s0:operation>
+    <s0:operation name="getUSKoeretoejArtListeHent">
+      <s0:input message="s1:USKoeretoejArtListeHentServiceRequest"/>
+      <s0:output message="s1:USKoeretoejArtListeHentServiceResponse"/>
+    </s0:operation>
+    <s0:operation name="getUSKoeretoejBetegnelseHierarkiListeHent">
+      <s0:input message="s1:USKoeretoejBetegnelseHierarkiListeHentServiceRequest"/>
+      <s0:output message="s1:USKoeretoejBetegnelseHierarkiListeHentServiceResponse"/>
+    </s0:operation>
+    <s0:operation name="getUSKoeretoejBetegnelseOpret">
+      <s0:input message="s1:USKoeretoejBetegnelseOpretServiceRequest"/>
+      <s0:output message="s1:USKoeretoejBetegnelseOpretServiceResponse"/>
+    </s0:operation>
+    <s0:operation name="getUSKoeretoejCoCOpret">
+      <s0:input message="s1:USKoeretoejCoCOpretServiceRequest"/>
+      <s0:output message="s1:USKoeretoejCoCOpretServiceResponse"/>
+    </s0:operation>
+    <s0:operation name="getUSKoeretoejErklaeringOpret">
+      <s0:input message="s1:USKoeretoejErklaeringOpretServiceRequest"/>
+      <s0:output message="s1:USKoeretoejErklaeringOpretServiceResponse"/>
+    </s0:operation>
+    <s0:operation name="getUSKoeretoejOprettelseAnnuller">
+      <s0:input message="s1:USKoeretoejOprettelseAnnullerServiceRequest"/>
+      <s0:output message="s1:USKoeretoejOprettelseAnnullerServiceResponse"/>
+    </s0:operation>
+    <s0:operation name="getUSNormTypeListeHent">
+      <s0:input message="s1:USNormTypeListeHentServiceRequest"/>
+      <s0:output message="s1:USNormTypeListeHentServiceResponse"/>
+    </s0:operation>
+    <s0:operation name="getUSSupplerendeKarrosseriTypeListeHent">
+      <s0:input message="s1:USSupplerendeKarrosseriTypeListeHentServiceRequest"/>
+      <s0:output message="s1:USSupplerendeKarrosseriTypeListeHentServiceResponse"/>
+    </s0:operation>
+    <s0:operation name="getUSKoeretoejTekniskDataHent">
+      <s0:input message="s1:USKoeretoejTekniskDataHentServiceRequest"/>
+      <s0:output message="s1:USKoeretoejTekniskDataHentServiceResponse"/>
+    </s0:operation>
+    <s0:operation name="getUSFarveTypeListeHent">
+      <s0:input message="s1:USFarveTypeListeHentServiceRequest"/>
+      <s0:output message="s1:USFarveTypeListeHentServiceResponse"/>
+    </s0:operation>
+    <s0:operation name="getUSKoeretoejRegistreringHent">
+      <s0:input message="s1:USKoeretoejRegistreringHentServiceRequest"/>
+      <s0:output message="s1:USKoeretoejRegistreringHentServiceResponse"/>
+    </s0:operation>
+    <s0:operation name="getUSUkompletKoeretoejOpret">
+      <s0:input message="s1:USUkompletKoeretoejOpretServiceRequest"/>
+      <s0:output message="s1:USUkompletKoeretoejOpretServiceResponse"/>
+    </s0:operation>
+    <s0:operation name="getUSKoeretoejBlokeringAarsagTypeListeHent">
+      <s0:input message="s1:USKoeretoejBlokeringAarsagTypeListeHentServiceRequest"/>
+      <s0:output message="s1:USKoeretoejBlokeringAarsagTypeListeHentServiceResponse"/>
+    </s0:operation>
+  </s0:portType>
+  <s0:binding name="Binding" type="s1:USImportoerServiceType">
+    <s2:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <s0:operation name="getKompenserTrans">
+      <s2:operation soapAction="getKompenserTrans"/>
+      <s0:input>
+        <s2:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal"/>
+      </s0:input>
+      <s0:output>
+        <s2:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal"/>
+      </s0:output>
+    </s0:operation>
+    <s0:operation name="getUSKoeretoejTypeAttestOpret">
+      <s2:operation soapAction="getUSKoeretoejTypeAttestOpret"/>
+      <s0:input>
+        <s2:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal"/>
+      </s0:input>
+      <s0:output>
+        <s2:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal"/>
+      </s0:output>
+    </s0:operation>
+    <s0:operation name="getUSKoeretoejUdstyrTypeListeHent">
+      <s2:operation soapAction="getUSKoeretoejUdstyrTypeListeHent"/>
+      <s0:input>
+        <s2:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal"/>
+      </s0:input>
+      <s0:output>
+        <s2:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal"/>
+      </s0:output>
+    </s0:operation>
+    <s0:operation name="getUSTilladelseTypeListeHent">
+      <s2:operation soapAction="getUSTilladelseTypeListeHent"/>
+      <s0:input>
+        <s2:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal"/>
+      </s0:input>
+      <s0:output>
+        <s2:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal"/>
+      </s0:output>
+    </s0:operation>
+    <s0:operation name="getUSDispensationTypeListeHent">
+      <s2:operation soapAction="getUSDispensationTypeListeHent"/>
+      <s0:input>
+        <s2:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal"/>
+      </s0:input>
+      <s0:output>
+        <s2:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal"/>
+      </s0:output>
+    </s0:operation>
+    <s0:operation name="getUSDrivkraftTypeListeHent">
+      <s2:operation soapAction="getUSDrivkraftTypeListeHent"/>
+      <s0:input>
+        <s2:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal"/>
+      </s0:input>
+      <s0:output>
+        <s2:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal"/>
+      </s0:output>
+    </s0:operation>
+    <s0:operation name="getUSKarrosseriTypeListeHent">
+      <s2:operation soapAction="getUSKarrosseriTypeListeHent"/>
+      <s0:input>
+        <s2:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal"/>
+      </s0:input>
+      <s0:output>
+        <s2:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal"/>
+      </s0:output>
+    </s0:operation>
+    <s0:operation name="getUSKoeretoejAnvendelseListeHent">
+      <s2:operation soapAction="getUSKoeretoejAnvendelseListeHent"/>
+      <s0:input>
+        <s2:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal"/>
+      </s0:input>
+      <s0:output>
+        <s2:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal"/>
+      </s0:output>
+    </s0:operation>
+    <s0:operation name="getUSKoeretoejArtAnvendelseListeHent">
+      <s2:operation soapAction="getUSKoeretoejArtAnvendelseListeHent"/>
+      <s0:input>
+        <s2:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal"/>
+      </s0:input>
+      <s0:output>
+        <s2:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal"/>
+      </s0:output>
+    </s0:operation>
+    <s0:operation name="getUSKoeretoejArtListeHent">
+      <s2:operation soapAction="getUSKoeretoejArtListeHent"/>
+      <s0:input>
+        <s2:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal"/>
+      </s0:input>
+      <s0:output>
+        <s2:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal"/>
+      </s0:output>
+    </s0:operation>
+    <s0:operation name="getUSKoeretoejBetegnelseHierarkiListeHent">
+      <s2:operation soapAction="getUSKoeretoejBetegnelseHierarkiListeHent"/>
+      <s0:input>
+        <s2:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal"/>
+      </s0:input>
+      <s0:output>
+        <s2:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal"/>
+      </s0:output>
+    </s0:operation>
+    <s0:operation name="getUSKoeretoejBetegnelseOpret">
+      <s2:operation soapAction="getUSKoeretoejBetegnelseOpret"/>
+      <s0:input>
+        <s2:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal"/>
+      </s0:input>
+      <s0:output>
+        <s2:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal"/>
+      </s0:output>
+    </s0:operation>
+    <s0:operation name="getUSKoeretoejCoCOpret">
+      <s2:operation soapAction="getUSKoeretoejCoCOpret"/>
+      <s0:input>
+        <s2:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal"/>
+      </s0:input>
+      <s0:output>
+        <s2:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal"/>
+      </s0:output>
+    </s0:operation>
+    <s0:operation name="getUSKoeretoejErklaeringOpret">
+      <s2:operation soapAction="getUSKoeretoejErklaeringOpret"/>
+      <s0:input>
+        <s2:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal"/>
+      </s0:input>
+      <s0:output>
+        <s2:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal"/>
+      </s0:output>
+    </s0:operation>
+    <s0:operation name="getUSKoeretoejOprettelseAnnuller">
+      <s2:operation soapAction="getUSKoeretoejOprettelseAnnuller"/>
+      <s0:input>
+        <s2:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal"/>
+      </s0:input>
+      <s0:output>
+        <s2:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal"/>
+      </s0:output>
+    </s0:operation>
+    <s0:operation name="getUSNormTypeListeHent">
+      <s2:operation soapAction="getUSNormTypeListeHent"/>
+      <s0:input>
+        <s2:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal"/>
+      </s0:input>
+      <s0:output>
+        <s2:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal"/>
+      </s0:output>
+    </s0:operation>
+    <s0:operation name="getUSSupplerendeKarrosseriTypeListeHent">
+      <s2:operation soapAction="getUSSupplerendeKarrosseriTypeListeHent"/>
+      <s0:input>
+        <s2:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal"/>
+      </s0:input>
+      <s0:output>
+        <s2:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal"/>
+      </s0:output>
+    </s0:operation>
+    <s0:operation name="getUSKoeretoejTekniskDataHent">
+      <s2:operation soapAction="getUSKoeretoejTekniskDataHent"/>
+      <s0:input>
+        <s2:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal"/>
+      </s0:input>
+      <s0:output>
+        <s2:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal"/>
+      </s0:output>
+    </s0:operation>
+    <s0:operation name="getUSFarveTypeListeHent">
+      <s2:operation soapAction="getUSFarveTypeListeHent"/>
+      <s0:input>
+        <s2:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal"/>
+      </s0:input>
+      <s0:output>
+        <s2:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal"/>
+      </s0:output>
+    </s0:operation>
+    <s0:operation name="getUSKoeretoejRegistreringHent">
+      <s2:operation soapAction="getUSKoeretoejRegistreringHent"/>
+      <s0:input>
+        <s2:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal"/>
+      </s0:input>
+      <s0:output>
+        <s2:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal"/>
+      </s0:output>
+    </s0:operation>
+    <s0:operation name="getUSUkompletKoeretoejOpret">
+      <s2:operation soapAction="getUSUkompletKoeretoejOpret"/>
+      <s0:input>
+        <s2:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal"/>
+      </s0:input>
+      <s0:output>
+        <s2:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal"/>
+      </s0:output>
+    </s0:operation>
+    <s0:operation name="getUSKoeretoejBlokeringAarsagTypeListeHent">
+      <s2:operation soapAction="getUSKoeretoejBlokeringAarsagTypeListeHent"/>
+      <s0:input>
+        <s2:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal"/>
+      </s0:input>
+      <s0:output>
+        <s2:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal"/>
+      </s0:output>
+    </s0:operation>
+  </s0:binding>
+  <s0:service name="USImportoerService">
+    <s0:port binding="s1:Binding" name="Port">
+      <s2:address location="http://localhost:9001/USImportoerService"/>
+    </s0:port>
+  </s0:service>
+</s0:definitions>

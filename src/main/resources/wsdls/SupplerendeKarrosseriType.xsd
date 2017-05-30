@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+    elementFormDefault="qualified"
+    targetNamespace="http://skat.dk/dmr/2007/05/31/" version="1.0"
+    xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:annotation>
+        <xs:documentation>SupplerendeKarrosseri er en angivelse af
+            køretøjets supplerende karrosseri. Altså enkeltdele af
+            karrosseriets udformning.  Supplerende karrosserier: 59 -
+            Åbent lad uden sidefjæle  60 - Åbent lad med sidefjæle 61 -
+            Lukket kasse 62 - Tank 63 - Veksellad / container 64 -
+            Tippelad 65 - Køleanlæg 66 - Presenningsopbygning 67 -
+            Læssekran 68 - Bjærgningsanordning 69 - Læssebagsmæk 70 -
+            Ladlængde under 3.00 M 71 - Ladlængde 3.00- 3.99 M 72 -
+            Ladlængde 4.00- 4.99 M 73 - Ladlængde 5.00- 5.99 M 74 -
+            Ladlængde over 5.99 M 75 - Ladlængde over 4.99 M 80 -
+            Renovationsaggregat 81 - Betonkanon 82 - Længde over 8 M 83
+            - Længde max 8 M 84 - Sikkerhedsseler eftermonteret</xs:documentation>
+    </xs:annotation>
+    <xs:include schemaLocation="TalHelType.xsd"/>
+    <xs:include schemaLocation="TekstKortType.xsd"/>
+    <xs:element name="SupplerendeKarrosseriTypeNummer" type="dmr:TalHelType"/>
+    <xs:element name="SupplerendeKarrosseriTypeNavn" type="dmr:TekstKortType"/>
+</xs:schema>

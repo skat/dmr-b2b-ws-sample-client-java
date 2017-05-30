@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+    elementFormDefault="qualified"
+    targetNamespace="http://skat.dk/dmr/2007/05/31/" version="1.0"
+    xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:annotation>
+        <xs:documentation>At hente en liste over alle mulige
+            køretøjsarter, som man kan vælge under oprettelsen af et nyt køretøj.</xs:documentation>
+        <xs:documentation>r15009</xs:documentation>
+    </xs:annotation>
+    <xs:include schemaLocation="USKoeretoejArtListeHent_IType.xsd"/>
+    <xs:include schemaLocation="USKoeretoejArtListeHent_OType.xsd"/>
+    <xs:include schemaLocation="KompenserTransType.xsd"/>
+    <xs:include schemaLocation="KompenserTransSvarType.xsd"/>
+    <xs:element name="USKoeretoejArtListeHentInterface" type="dmr:USKoeretoejArtListeHentInterfaceType"/>
+    <xs:complexType name="USKoeretoejArtListeHentInterfaceType">
+        <xs:choice>
+            <xs:element ref="dmr:USKoeretoejArtListeHent_I"/>
+            <xs:element ref="dmr:USKoeretoejArtListeHent_O"/>
+            <xs:element ref="dmr:KompenserTrans"/>
+            <xs:element ref="dmr:KompenserTransSvar"/>
+        </xs:choice>
+    </xs:complexType>
+</xs:schema>

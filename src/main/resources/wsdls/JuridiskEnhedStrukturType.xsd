@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+    elementFormDefault="qualified"
+    targetNamespace="http://skat.dk/dmr/2007/05/31/" version="1.0"
+    xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:annotation>
+        <xs:documentation/>
+        <xs:documentation>r15009</xs:documentation>
+    </xs:annotation>
+    <xs:include schemaLocation="Person.xsd"/>
+    <xs:include schemaLocation="PersonNavn.xsd"/>
+    <xs:include schemaLocation="Virksomhed.xsd"/>
+    <xs:include schemaLocation="ProduktionEnhed.xsd"/>
+    <xs:include schemaLocation="AlternativKontakt.xsd"/>
+    <xs:include schemaLocation="AlternativKontaktPerson.xsd"/>
+    <xs:include schemaLocation="PersonAdresseStrukturType.xsd"/>
+    <xs:include schemaLocation="VirksomhedNavnStrukturType.xsd"/>
+    <xs:include schemaLocation="VirksomhedAdresseStrukturType.xsd"/>
+    <xs:element name="JuridiskEnhedStruktur" type="dmr:JuridiskEnhedStrukturType"/>
+    <xs:complexType name="JuridiskEnhedStrukturType">
+        <xs:sequence>
+            <xs:element name="JuridiskEnhedValg">
+                <xs:complexType>
+                    <xs:choice>
+                        <xs:sequence>
+                            <xs:element name="Person">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                    <xs:element minOccurs="0" ref="dmr:PersonNavnAdresseBeskyttelseMarkering"/>
+                                    <xs:element minOccurs="0" ref="dmr:PersonCPRNummer"/>
+                                    <xs:element minOccurs="0" ref="dmr:PersonFoedselDato"/>
+                                    <xs:element minOccurs="0" ref="dmr:PersonKoen"/>
+                                    <xs:element minOccurs="0" ref="dmr:PersonNavnNavn"/>
+                                    <xs:element minOccurs="0" ref="dmr:PersonAdresseStruktur"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                        <xs:sequence>
+                            <xs:element name="Virksomhed">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                    <xs:element minOccurs="0" ref="dmr:VirksomhedCVRNummer"/>
+                                    <xs:element minOccurs="0" ref="dmr:VirksomhedSENummer"/>
+                                    <xs:element minOccurs="0" ref="dmr:ProduktionEnhedNummer"/>
+                                    <xs:element ref="dmr:VirksomhedNavnStruktur"/>
+                                    <xs:element ref="dmr:VirksomhedAdresseStruktur"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                        <xs:sequence>
+                            <xs:element name="UdenlandskPerson">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                    <xs:element minOccurs="0" ref="dmr:AlternativKontaktID"/>
+                                    <xs:element minOccurs="0" ref="dmr:AlternativKontaktPersonFoedselDato"/>
+                                    <xs:element minOccurs="0" ref="dmr:AlternativKontaktPersonKoen"/>
+                                    <xs:element ref="dmr:AlternativKontaktNavn"/>
+                                    <xs:element minOccurs="0" ref="dmr:AlternativKontaktPersonNavnAdresseBeskyttelseMarkering"/>
+                                    <xs:element ref="dmr:PersonAdresseStruktur"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                        <xs:sequence>
+                            <xs:element name="UdenlandskVirksomhed">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                    <xs:element minOccurs="0" ref="dmr:AlternativKontaktID"/>
+                                    <xs:element ref="dmr:AlternativKontaktNavn"/>
+                                    <xs:element ref="dmr:VirksomhedAdresseStruktur"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:choice>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

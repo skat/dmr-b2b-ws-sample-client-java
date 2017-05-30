@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema elementFormDefault="qualified"
+    targetNamespace="http://skat.dk/dmr/2007/05/31/" version="1.0"
+    xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:simpleType name="RegistreringNummerTypeType">
+        <xs:annotation>
+            <xs:documentation>En angivelse af type af
+                registreringsnummer (hvorvidt indholdet særskilt skal godkendes.)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="40"/>
+            <xs:enumeration value="Normal"/>
+            <xs:enumeration value="Historisk"/>
+            <xs:enumeration value="Ønske"/>
+            <xs:whiteSpace value="preserve"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

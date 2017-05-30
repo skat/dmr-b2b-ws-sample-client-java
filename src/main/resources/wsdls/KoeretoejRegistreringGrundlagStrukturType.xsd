@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+    elementFormDefault="qualified"
+    targetNamespace="http://skat.dk/dmr/2007/05/31/" version="1.0"
+    xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:annotation>
+        <xs:documentation/>
+        <xs:documentation>r15009</xs:documentation>
+    </xs:annotation>
+    <xs:include schemaLocation="KoeretoejRegistreringGrundlag.xsd"/>
+    <xs:include schemaLocation="KoeretoejGenerelIdentifikatorStrukturType.xsd"/>
+    <xs:include schemaLocation="KoeretoejArtStrukturType.xsd"/>
+    <xs:include schemaLocation="KoeretoejAnvendelseStrukturType.xsd"/>
+    <xs:include schemaLocation="KoeretoejAnvendelseSamlingStrukturType.xsd"/>
+    <xs:element name="KoeretoejRegistreringGrundlagStruktur" type="dmr:KoeretoejRegistreringGrundlagStrukturType"/>
+    <xs:complexType name="KoeretoejRegistreringGrundlagStrukturType">
+        <xs:sequence>
+            <xs:element ref="dmr:KoeretoejRegistreringGrundlagStatus"/>
+            <xs:element ref="dmr:KoeretoejRegistreringGrundlagStatusDato"/>
+            <xs:element ref="dmr:KoeretoejRegistreringGrundlagGyldigFra"/>
+            <xs:element minOccurs="0" ref="dmr:KoeretoejRegistreringGrundlagGyldigTil"/>
+            <xs:element minOccurs="0" ref="dmr:KoeretoejRegistreringGrundlagKode"/>
+            <xs:element ref="dmr:KoeretoejGenerelIdentifikatorStruktur"/>
+            <xs:element ref="dmr:KoeretoejArtStruktur"/>
+            <xs:element minOccurs="0" ref="dmr:KoeretoejAnvendelseStruktur"/>
+            <xs:element minOccurs="0" ref="dmr:KoeretoejAnvendelseSamlingStruktur"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

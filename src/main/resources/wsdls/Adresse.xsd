@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+    elementFormDefault="qualified"
+    targetNamespace="http://skat.dk/dmr/2007/05/31/" version="1.0"
+    xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:annotation>
+        <xs:documentation>En superklasse i forhold til de specialiserede
+            klasser: VirksomhedAdresse og PersonAdresse. Indeholder
+            ordnede adresselagringer, hvor hvert adresseelement udfyldes
+            særskilt. Fritekst-adresser benyttes i stedet for, klassen AlternativeAdresse.</xs:documentation>
+    </xs:annotation>
+    <xs:include schemaLocation="VirksomhedAdresseLoebeNummerType.xsd"/>
+    <xs:include schemaLocation="AdresseAnvendelseKodeType.xsd"/>
+    <xs:include schemaLocation="TekstKortType.xsd"/>
+    <xs:include schemaLocation="VejKodeType.xsd"/>
+    <xs:include schemaLocation="HusNummerType.xsd"/>
+    <xs:include schemaLocation="HusBogstavType.xsd"/>
+    <xs:include schemaLocation="LigeUligeType.xsd"/>
+    <xs:include schemaLocation="NavnType.xsd"/>
+    <xs:include schemaLocation="EtageType.xsd"/>
+    <xs:include schemaLocation="EtageTekstType.xsd"/>
+    <xs:include schemaLocation="SideDoerTekstType.xsd"/>
+    <xs:include schemaLocation="PostNummerType.xsd"/>
+    <xs:include schemaLocation="PostDistriktType.xsd"/>
+    <xs:include schemaLocation="LandsDelType.xsd"/>
+    <xs:include schemaLocation="PostBoksNummerType.xsd"/>
+    <xs:include schemaLocation="DatoType.xsd"/>
+    <xs:element name="AdresseFortloebendeNummer" type="dmr:VirksomhedAdresseLoebeNummerType">
+        <xs:annotation>
+            <xs:documentation>Angiver fortløbende nummerering ved flere
+                adresser af samme type og på samme tidspunkt.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="AdresseAnvendelseKode" type="dmr:AdresseAnvendelseKodeType">
+        <xs:annotation>
+            <xs:documentation>Kode som angiver adresseringsmuligheder. 0
+                = Adressen kan anvendes til direkte adressering 1 =
+                Adressen kan ikke anvendes til direkte adressering 8 =
+                Adressen består kun af navn 9 = Ingen adresse pga. nyt personnummer</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="AdresseVejNavn" type="dmr:TekstKortType">
+        <xs:annotation>
+            <xs:documentation>Angiver navnet  på en vej/gade  i Danmark</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="AdresseVejKode" type="dmr:VejKodeType">
+        <xs:annotation>
+            <xs:documentation>Kode der sammen med kommunenummer entydigt
+                identificerer en vej eller en del af en vej i Danmark.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="AdresseFraHusNummer" type="dmr:HusNummerType">
+        <xs:annotation>
+            <xs:documentation>Angiver 1. husnummer i et vejafsnit i
+                gaden eller på vejen.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="AdresseFraHusBogstav" type="dmr:HusBogstavType">
+        <xs:annotation>
+            <xs:documentation>Angiver bogstav tilknyttet husnummeret.
+                Ifølge bekendtgørelse om vejnavne og adresser må kun
+                værdierne A-Z benyttes. På grund af risikoen for
+                forveksling bør bogstaverne I, J, O og Q dog ikke benyttes</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="AdresseTilHusNummer" type="dmr:HusNummerType">
+        <xs:annotation>
+            <xs:documentation>Angiver sidste lige husnummer i et
+                vejafsnit i gaden eller på vejen.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="AdresseTilHusBogstav" type="dmr:HusBogstavType">
+        <xs:annotation>
+            <xs:documentation>Angiver bogstav tilknyttet husnummeret.
+                Ifølge bekendtgørelse om vejnavne og adresser må kun
+                værdierne A-Z benyttes. På grund af risikoen for
+                forveksling bør bogstaverne I, J, O og Q dog ikke benyttes</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="AdresseLigeUlige" type="dmr:LigeUligeType">
+        <xs:annotation>
+            <xs:documentation>Angivelse om tal er lige eller ulige.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="AdresseLejlighedNummer" type="dmr:HusNummerType"/>
+    <xs:element name="AdresseHusNavn" type="dmr:NavnType"/>
+    <xs:element name="AdresseEtage" type="dmr:EtageType"/>
+    <xs:element name="AdresseEtageTekst" type="dmr:EtageTekstType">
+        <xs:annotation>
+            <xs:documentation>Angiver etagen tilknyttet husnummer/husbogstav</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="AdresseSideDoerTekst" type="dmr:SideDoerTekstType">
+        <xs:annotation>
+            <xs:documentation>Angiver side/dør tilknyttet husnummer/husbogstav</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="AdresseCONavn" type="dmr:NavnType">
+        <xs:annotation>
+            <xs:documentation>Angiver navn for en CO-adresse (for virksomheder)</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="AdressePostNummer" type="dmr:PostNummerType">
+        <xs:annotation>
+            <xs:documentation>Angiver postnummer (4-cifre)</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="AdressePostDistrikt" type="dmr:PostDistriktType">
+        <xs:annotation>
+            <xs:documentation>Angiver postdistriktnavn for postnummer</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="AdresseLandsBy" type="dmr:NavnType"/>
+    <xs:element name="AdresseByNavn" type="dmr:NavnType">
+        <xs:annotation>
+            <xs:documentation>Angiver bynavn (lokalt stednavn)</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="AdresseLandsDel" type="dmr:LandsDelType"/>
+    <xs:element name="AdressePostBox" type="dmr:PostBoksNummerType">
+        <xs:annotation>
+            <xs:documentation>Angiver postboksnummer</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="AdresseGyldigFra" type="dmr:DatoType">
+        <xs:annotation>
+            <xs:documentation>Angiver startdato for adresse (år md dg)</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="AdresseGyldigTil" type="dmr:DatoType">
+        <xs:annotation>
+            <xs:documentation>Angiver slutdato for adressen (år md dg)</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+</xs:schema>

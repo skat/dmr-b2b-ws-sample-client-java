@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema elementFormDefault="qualified"
+    targetNamespace="http://skat.dk/dmr/2007/05/31/" version="1.0"
+    xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:simpleType name="JuridiskEnhedIDType">
+        <xs:annotation>
+            <xs:documentation>JuridiskEnhedID udgør et samlet datadomæne
+                for datadomæner CVRNummer, SENummer, CPRNummer,
+                UdenlandskPersonNummer og UdenlandskVirksomhedNummer.
+                Således afspejler domænet forholdet mellem begrebet
+                JuriskEnhed og dets  specialiseringer Virksomhed,
+                Person, UdenlandskVirksomhed og UdenlandskPerson.</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="20"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

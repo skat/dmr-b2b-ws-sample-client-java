@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+    elementFormDefault="qualified"
+    targetNamespace="http://skat.dk/dmr/2007/05/31/" version="1.0"
+    xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:annotation>
+        <xs:documentation/>
+        <xs:documentation>r15009</xs:documentation>
+    </xs:annotation>
+    <xs:include schemaLocation="Person.xsd"/>
+    <xs:include schemaLocation="Virksomhed.xsd"/>
+    <xs:include schemaLocation="ProduktionEnhed.xsd"/>
+    <xs:include schemaLocation="AlternativKontakt.xsd"/>
+    <xs:element name="JuridiskEnhedIdentifikatorStruktur" type="dmr:JuridiskEnhedIdentifikatorStrukturType"/>
+    <xs:complexType name="JuridiskEnhedIdentifikatorStrukturType">
+        <xs:sequence>
+            <xs:element name="JuridiskEnhedValg">
+                <xs:complexType>
+                    <xs:choice>
+                        <xs:element ref="dmr:PersonCPRNummer"/>
+                        <xs:element ref="dmr:VirksomhedSENummer"/>
+                        <xs:sequence>
+                            <xs:element name="PENummerCVR">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                    <xs:element ref="dmr:VirksomhedCVRNummer"/>
+                                    <xs:element minOccurs="0" ref="dmr:ProduktionEnhedNummer"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                        <xs:element ref="dmr:AlternativKontaktID"/>
+                    </xs:choice>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

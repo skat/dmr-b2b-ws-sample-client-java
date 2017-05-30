@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+    elementFormDefault="qualified"
+    targetNamespace="http://skat.dk/dmr/2007/05/31/" version="1.0"
+    xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:annotation>
+        <xs:documentation>Angiver virksomhedens primære (officielle)
+            navn, der knytter sig til den primære (officielle) adresse
+            (virksomhedsadressen) og identificerer virksomheden.</xs:documentation>
+    </xs:annotation>
+    <xs:include schemaLocation="NavnType.xsd"/>
+    <xs:include schemaLocation="FirmaNavnKortType.xsd"/>
+    <xs:include schemaLocation="DatoType.xsd"/>
+    <xs:element name="VirksomhedNavnFirmaNavn" type="dmr:NavnType">
+        <xs:annotation>
+            <xs:documentation>Angiver virksomhedens fulde navn.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="VirksomhedNavnFirmaNavnKort" type="dmr:FirmaNavnKortType">
+        <xs:annotation>
+            <xs:documentation>Angiver virksomhedens forkortede navn (max
+                34 karakterer)</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="VirksomhedNavnGyldigFra" type="dmr:DatoType">
+        <xs:annotation>
+            <xs:documentation>Angiver startdato for virksomhedens navn
+                (år md dg)</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="VirksomhedNavnGyldigTil" type="dmr:DatoType">
+        <xs:annotation>
+            <xs:documentation>Angiver slutdato for virksomhedens navn
+                (år md dg)</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+</xs:schema>

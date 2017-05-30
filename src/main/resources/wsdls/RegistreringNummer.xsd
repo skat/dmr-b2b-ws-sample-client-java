@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+    elementFormDefault="qualified"
+    targetNamespace="http://skat.dk/dmr/2007/05/31/" version="1.0"
+    xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:annotation>
+        <xs:documentation>Angiver indholdet på en plade (enten fysisk,
+            under tilblivelse eller virtuel (f.eks. udenlandsk plade
+            eller pseudo plade til f.eks. øvelseskøretøjer m.v.)
+            Indholdet skal altid være repræsenteret i en samlet række,
+            men ligeledes vil der være plader med flere rækker
+            (motorcykelplader m.v.). I disse situationer vil indholdet
+            dels være at finde som en samlet hele (i nummer), men
+            ligeledes vil man i de enkelte rækker kunne se, hvilke dele
+            der optræder på række 1 og 2. Det skal særligt oplyses, at
+            hvis der er tale om en plade, hvor årstallet vises
+            (PladeType), så skal dette årstal medtages i
+            registreringsnummeret under vurdering af, om nummeret er i
+            cirkulation (ved genbrug).</xs:documentation>
+    </xs:annotation>
+    <xs:include schemaLocation="TalHelType.xsd"/>
+    <xs:include schemaLocation="TekstKortType.xsd"/>
+    <xs:include schemaLocation="DatoType.xsd"/>
+    <xs:include schemaLocation="RegistreringNummerType.xsd"/>
+    <xs:include schemaLocation="RegistreringNummerStatusType.xsd"/>
+    <xs:include schemaLocation="DatoTidType.xsd"/>
+    <xs:include schemaLocation="RegistreringNummerTypeType.xsd"/>
+    <xs:include schemaLocation="BolskType.xsd"/>
+    <xs:element name="RegistreringNummerIdent" type="dmr:TalHelType">
+        <xs:annotation>
+            <xs:documentation>En unik identifkation af den pågældende
+                version af et RegistreringNummer. Dette nummer er
+                internt i DMR og må ikke udstilles.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="RegistreringNummerAflangIndhold" type="dmr:TekstKortType">
+        <xs:annotation>
+            <xs:documentation>Hvis der kun er én række mulig på den
+                aktuelle plade, så vil indholdet alene fremkomme af
+                denne attribut.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="RegistreringNummerGraensepladeDkDato" type="dmr:DatoType">
+        <xs:annotation>
+            <xs:documentation>Udløbsdatoen for tilladelelse til kørsel i
+                DK. GrænsepladeDkDato skal være mindre end UdløbDato og
+                UdløbDato skal være udfyldt.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="RegistreringNummerKvadratiskIndhold1" type="dmr:TekstKortType">
+        <xs:annotation>
+            <xs:documentation>Hvis der kun er én række mulig på den
+                aktuelle plade, så vil indholdet fremkomme af denne
+                attribut og Nummer attributten. Er der derimod tale om
+                en plade, som understøtter to rækker, så vil denne
+                attribut kun indeholde det indhold, som skal præsenteres
+                på den øverste række på pladen. </xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="RegistreringNummerKvadratiskIndhold2" type="dmr:TekstKortType">
+        <xs:annotation>
+            <xs:documentation>Kun i det tilfælde hvor pladen
+                understøtter flere (2) rækker, vil der være angive
+                indhold i denne række. Rækken beskriver det indhold, som
+                skal præsenteres i den nederste linie på pladen.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="RegistreringNummerNummer" type="dmr:RegistreringNummerType">
+        <xs:annotation>
+            <xs:documentation>Et registreringsnummer kan være opdelt i
+                en eller to rækker. Da man eksempelvis i forhold til
+                ønskeplader selv kan vælge indholdet på række 1 og række
+                2, vil det være relevant at have et felt, som samler de
+                to rækker i en samlet indholdsattribut.  Hvis der kun er
+                en enkelt række, så vil indholdet både stå i række 1 og
+                i den samlede række. Denne attribut kan afledes af det
+                samlede indhold i række 1 og række 2. </xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="RegistreringNummerStatus" type="dmr:RegistreringNummerStatusType">
+        <xs:annotation>
+            <xs:documentation>Ejer har mulighed for at bestille
+                ønskeplade. Ønskenummerplader er nummerplader, hvor man
+                selv kan besteme hvilke tal og bogstaver, der skal
+                anføres på nummerpladen.  Man kan få ønskenummerplader
+                til personbil og motorcykel også til personbil, der skal
+                anvendes til beboelse.  Når man får en ønskenummerplade,
+                køber man retten til at bruge ønskenummerplader i 8 år
+                fra den dag, hvor man får udleveret nummerpladen. Man
+                kan betale for at få forlænget retten til ønskenummeret
+                i yderligere 8 år. Der skal søges om forlængelse hos
+                Skattecenter, før retten udløber og der kan tidligst
+                ansøges om forlængelse 3 måneder, før retten til
+                nummerpladen udløber. Ønskenummerplader er personlige.
+                Det betyder, at man kun kan få ønskenummerplader til et
+                køretøj, som man ejer.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="RegistreringNummerStatusDato" type="dmr:DatoTidType">
+        <xs:annotation>
+            <xs:documentation>Dato og tidsmarkering for det tidspunkt,
+                hvor registreringsnummeret ændrede tilstand. Grundet de
+                generelle krav vedrørende fuld historik vil man kunne
+                følge registreringsnummerets statuser (tilstande) over tid.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="RegistreringNummerType" type="dmr:RegistreringNummerTypeType">
+        <xs:annotation>
+            <xs:documentation>Angiver typen af registreringnummer
+                (normal (dækker over en del serier), historisk eller ønskeplade).</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="RegistreringNummerUdloebDato" type="dmr:DatoType">
+        <xs:annotation>
+            <xs:documentation>Udløbsdato for en given registrering.
+                Udløbsdatoen sættes til afmeldingsdato ved afmelding.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="RegistreringNummerFigurantPlade" type="dmr:BolskType">
+        <xs:annotation>
+            <xs:documentation>Et flag som kan angive om en plade er
+                figurantplade. </xs:documentation>
+        </xs:annotation>
+    </xs:element>
+</xs:schema>

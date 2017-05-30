@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+    elementFormDefault="qualified"
+    targetNamespace="http://skat.dk/dmr/2007/05/31/" version="1.0"
+    xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:annotation>
+        <xs:documentation>For at kunne registrere en gyldig forsikring i
+            forbindelse med registreringen eller
+            forsikringsselskabsskifte, så er det en væsentlig del af
+            systemet, at der er en liste med de selskaber, som er
+            godkendt til udstedelse af køretøjers ansvarsforsikringer i
+            Danmark. Forsikringsselskabet kan enten være digitalt
+            opkoblet via anmodningen eller på forhånd kræve et
+            forsikringsbevisnummer (som køretøjets ejer/bruger så skal
+            skaffe på forhånd). Hvorvidt de mere forsikringsspecifikke
+            kommunikationer (tilgange, afgange m.v.) tilgår
+            forsikringsselskabet elektronisk eller via en
+            brugergrænseflade styres af oplysninger inde i IP'ens
+            service kataloger m.v. Udenlandske forsikringsselskaber
+            (f.eks. til grænseplader m.v.) kan oprettes af brugerne,
+            blot der er tale om en markering af forsikringsselskabet som
+            midlertidigt (det kan ikke vælges under en almindelig registrering).</xs:documentation>
+    </xs:annotation>
+    <xs:include schemaLocation="Tekst30Type.xsd"/>
+    <xs:include schemaLocation="TekstLangType.xsd"/>
+    <xs:include schemaLocation="BolskType.xsd"/>
+    <xs:element name="ForsikringSelskabNummer" type="dmr:Tekst30Type">
+        <xs:annotation>
+            <xs:documentation>Forsikring selskabets nummer.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="ForsikringSelskabNavn" type="dmr:TekstLangType">
+        <xs:annotation>
+            <xs:documentation>Navnet på forsikringsselskab.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="ForsikringSelskabErMidlertidig" type="dmr:BolskType">
+        <xs:annotation>
+            <xs:documentation>Hvis dette flag er sat, så skal
+                forsikringsselskabet opfattes som midlertidigt i forhold
+                til en simpel anvendelse til f.eks. grænseplader.
+                Selskabet må ikke kunne vælges i forhold til en
+                almindelig registrering.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+</xs:schema>

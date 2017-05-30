@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+    elementFormDefault="qualified"
+    targetNamespace="http://skat.dk/dmr/2007/05/31/" version="1.0"
+    xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:annotation>
+        <xs:documentation>En registrering af relevante miljø oplysninger.</xs:documentation>
+    </xs:annotation>
+    <xs:include schemaLocation="TalFlydendeType.xsd"/>
+    <xs:include schemaLocation="BolskType.xsd"/>
+    <xs:include schemaLocation="TalHelType.xsd"/>
+    <xs:element name="KoeretoejMiljoeOplysningCO2Udslip" type="dmr:TalFlydendeType">
+        <xs:annotation>
+            <xs:documentation>En registrering af CO2 udslippet fra køretøjet</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejMiljoeOplysningEmissionCO" type="dmr:TalFlydendeType">
+        <xs:annotation>
+            <xs:documentation>En registrering af CO udledningen fra køretøjet</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejMiljoeOplysningEmissionHCPlusNOX" type="dmr:TalFlydendeType">
+        <xs:annotation>
+            <xs:documentation>En registrering af HC+NOX udledningen fra køretøjet</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejMiljoeOplysningEmissionNOX" type="dmr:TalFlydendeType">
+        <xs:annotation>
+            <xs:documentation>En registrering af NOX udledningen fra køretøjet</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejMiljoeOplysningPartikler" type="dmr:TalFlydendeType">
+        <xs:annotation>
+            <xs:documentation>En registrering af partikel udledningen
+                fra køretøjet</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejMiljoeOplysningPartikelFilter" type="dmr:BolskType">
+        <xs:annotation>
+            <xs:documentation>En registrering af, hvorvidt der er et
+                partikelfilter monteret eller ej.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejMiljoeOplysningRoegtaethed" type="dmr:TalFlydendeType">
+        <xs:annotation>
+            <xs:documentation>En registrering af røgtætheden udledningen
+                fra køretøjet</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejMiljoeOplysningRoegtaethedOmdrejningstal" type="dmr:TalHelType">
+        <xs:annotation>
+            <xs:documentation>Angiver omdrejningstallet, der har været
+                anvendt ved måling af røgtæthed, for køretøjet målt i
+                antal omdrejninger per minut.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element
+        name="KoeretoejMiljoeOplysningEftermonteretPartikelfilter" type="dmr:BolskType">
+        <xs:annotation>
+            <xs:documentation>Angiver hvorvidt et partikelfilter er
+                eftermonteret på køretøjet. Oplysningen angives i
+                forbindelse med syn af køretøjet.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+</xs:schema>

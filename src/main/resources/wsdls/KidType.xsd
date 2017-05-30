@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema elementFormDefault="qualified"
+    targetNamespace="http://skat.dk/dmr/2007/05/31/" version="1.0"
+    xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:simpleType name="KidType">
+        <xs:annotation>
+            <xs:documentation>Et positivt heltal, der kan repræsenterer
+                værdier i intervallet 0 til 9.999.999.999.999.999</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:integer">
+            <xs:pattern value="([0-9])*([\*]){0,1}"/>
+            <xs:totalDigits value="16"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+    elementFormDefault="qualified"
+    targetNamespace="http://skat.dk/dmr/2007/05/31/" version="1.0"
+    xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:annotation>
+        <xs:documentation>Gør det muligt at angive prisoplysninger for
+            køretøjer der skal færdigoprettes ved registreringssyn.</xs:documentation>
+        <xs:documentation>r15009</xs:documentation>
+    </xs:annotation>
+    <xs:include schemaLocation="USUkompletKoeretoejOpret_IType.xsd"/>
+    <xs:include schemaLocation="USUkompletKoeretoejOpret_OType.xsd"/>
+    <xs:include schemaLocation="KompenserTransType.xsd"/>
+    <xs:include schemaLocation="KompenserTransSvarType.xsd"/>
+    <xs:element name="USUkompletKoeretoejOpretInterface" type="dmr:USUkompletKoeretoejOpretInterfaceType"/>
+    <xs:complexType name="USUkompletKoeretoejOpretInterfaceType">
+        <xs:choice>
+            <xs:element ref="dmr:USUkompletKoeretoejOpret_I"/>
+            <xs:element ref="dmr:USUkompletKoeretoejOpret_O"/>
+            <xs:element ref="dmr:KompenserTrans"/>
+            <xs:element ref="dmr:KompenserTransSvar"/>
+        </xs:choice>
+    </xs:complexType>
+</xs:schema>

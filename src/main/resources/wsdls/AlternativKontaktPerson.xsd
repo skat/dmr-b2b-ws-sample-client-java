@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+    elementFormDefault="qualified"
+    targetNamespace="http://skat.dk/dmr/2007/05/31/" version="1.0"
+    xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:include schemaLocation="DatoType.xsd"/>
+    <xs:include schemaLocation="KoenType.xsd"/>
+    <xs:include schemaLocation="MarkeringType.xsd"/>
+    <xs:element name="AlternativKontaktPersonFoedselDato" type="dmr:DatoType">
+        <xs:annotation>
+            <xs:documentation>Dato for hvornår en alternativ kontakt er
+                født for det tilfælde, hvor kontakten er en person.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="AlternativKontaktPersonKoen" type="dmr:KoenType"/>
+    <xs:element
+        name="AlternativKontaktPersonNavnAdresseBeskyttelseMarkering" type="dmr:MarkeringType">
+        <xs:annotation>
+            <xs:documentation>Angiver om en alternativ kontaktpersons
+                navn og adresse er beskyttet for offentligheden. Det er
+                således kun myndigheder med lovmæssigt grundlag, som har
+                adgang til disse data (fx i forbindelse med sagsbehandling).</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+</xs:schema>

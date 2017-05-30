@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+    elementFormDefault="qualified"
+    targetNamespace="http://skat.dk/dmr/2007/05/31/" version="1.0"
+    xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:annotation>
+        <xs:documentation>Indeholder alle adresseformtyper, fx
+            Udenlandsk adresse. Må ikke forveksles med
+            VirksomedAdresseType. Klassen beskriver udformningen af
+            adressen, ikke adressens anvendelse.</xs:documentation>
+    </xs:annotation>
+    <xs:include schemaLocation="AdresseTypeKodeType.xsd"/>
+    <xs:include schemaLocation="TekstKortType.xsd"/>
+    <xs:include schemaLocation="TekstLangType.xsd"/>
+    <xs:include schemaLocation="DatoType.xsd"/>
+    <xs:element name="AdresseTypeKode" type="dmr:AdresseTypeKodeType">
+        <xs:annotation>
+            <xs:documentation>Unik kode som identificerer en
+                adressetype. Koder omfatter:  001 = Vejregisteradresse
+                002 = Postboksadresse 003 = Dansk adresse 004 =
+                Udenlandsk adresse 005 = Ufuldstændig adresse</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="AdresseTypeTekst" type="dmr:TekstKortType">
+        <xs:annotation>
+            <xs:documentation>En kort beskrivelse af adressetypen, såsom
+                Udenlandsk adresse.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="AdresseTypeBeskrivelse" type="dmr:TekstLangType">
+        <xs:annotation>
+            <xs:documentation>En hjælpetekst til adressetypen</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="AdresseTypeGyldigFra" type="dmr:DatoType">
+        <xs:annotation>
+            <xs:documentation>En adressetypes gyldighedsstartdato</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="AdresseTypeGyldigTil" type="dmr:DatoType">
+        <xs:annotation>
+            <xs:documentation>En adressetypes gyldighedsslutdato</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+</xs:schema>

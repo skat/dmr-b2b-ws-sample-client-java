@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+    elementFormDefault="qualified"
+    targetNamespace="http://skat.dk/dmr/2007/05/31/" version="1.0"
+    xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:annotation>
+        <xs:documentation/>
+        <xs:documentation>r15009</xs:documentation>
+    </xs:annotation>
+    <xs:include schemaLocation="FarveType.xsd"/>
+    <xs:element name="FarveTypeStruktur" type="dmr:FarveTypeStrukturType"/>
+    <xs:complexType name="FarveTypeStrukturType">
+        <xs:sequence>
+            <xs:element ref="dmr:FarveTypeNummer"/>
+            <xs:element ref="dmr:FarveTypeNavn"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

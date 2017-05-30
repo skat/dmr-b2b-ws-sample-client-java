@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+    elementFormDefault="qualified"
+    targetNamespace="http://skat.dk/dmr/2007/05/31/" version="1.0"
+    xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:annotation>
+        <xs:documentation>Indeholder oplysninger som identificerer et land.</xs:documentation>
+    </xs:annotation>
+    <xs:include schemaLocation="AdresseLandKodeType.xsd"/>
+    <xs:include schemaLocation="TekstKortType.xsd"/>
+    <xs:include schemaLocation="LandeNummerKodeType.xsd"/>
+    <xs:element name="LandKode" type="dmr:AdresseLandKodeType">
+        <xs:annotation>
+            <xs:documentation>Landekode</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="LandNavn" type="dmr:TekstKortType">
+        <xs:annotation>
+            <xs:documentation>Navnet på landet</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="LandNummerKode" type="dmr:LandeNummerKodeType">
+        <xs:annotation>
+            <xs:documentation>Landenummerkode</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+</xs:schema>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+    elementFormDefault="qualified"
+    targetNamespace="http://skat.dk/dmr/2007/05/31/" version="1.0"
+    xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:annotation>
+        <xs:documentation>Et køretøj kan have Dispensationtyper
+            tilknyttet. Derfor er det nødvendigt at skrive kommentar for
+            hver tilknyttet dispensention.  </xs:documentation>
+    </xs:annotation>
+    <xs:include schemaLocation="TekstLangType.xsd"/>
+    <xs:element name="KoeretoejDispensationTypeKommentar" type="dmr:TekstLangType">
+        <xs:annotation>
+            <xs:documentation>Kommentar på dispensationstypen somknyttes
+                til køretøjet ved køretøj oprettelse.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+</xs:schema>

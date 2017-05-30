@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+    elementFormDefault="qualified"
+    targetNamespace="http://skat.dk/dmr/2007/05/31/" version="1.0"
+    xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:annotation>
+        <xs:documentation>Begrebet dækker over et køretøjs farvekode,
+            som er på bilens stamoplysninger. (Producenter har deres
+            egne farvekoder) En farvekode kan godt anvendes på flere
+            modeller indenfor samme mærke og der kan være flere f.eks.
+            sorte farvekoder for det enkelte mærke. Feltet skal specielt
+            anvendes til at give gode råd om, hvorledes der skelnes
+            mellem beslægtede farver for at undgå fejloplysninger.
+            Farverne er defineret til følgende: 1 - Ukendt 2 - Hvid 3 -
+            Grå 4 - Sort 5 - Rød 6 - Brun 7 - Gul 8 - Grøn 9 - Blå 10 -
+            Orange 11 - Lilla/Violet</xs:documentation>
+    </xs:annotation>
+    <xs:include schemaLocation="TalHelType.xsd"/>
+    <xs:include schemaLocation="TekstKortType.xsd"/>
+    <xs:element name="FarveTypeNummer" type="dmr:TalHelType"/>
+    <xs:element name="FarveTypeNavn" type="dmr:TekstKortType"/>
+</xs:schema>

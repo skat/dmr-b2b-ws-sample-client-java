@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema elementFormDefault="qualified"
+    targetNamespace="http://skat.dk/dmr/2007/05/31/" version="1.0"
+    xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:simpleType name="CVRNummerType">
+        <xs:annotation>
+            <xs:documentation>Det nummer der tildeles juridiske enheder
+                i et Centralt Virksomheds Register (CVR).</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="8"/>
+            <xs:pattern value="[0-9]{8}"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

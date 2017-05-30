@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+    elementFormDefault="qualified"
+    targetNamespace="http://skat.dk/dmr/2007/05/31/" version="1.0"
+    xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:annotation>
+        <xs:documentation/>
+        <xs:documentation>r15009</xs:documentation>
+    </xs:annotation>
+    <xs:include schemaLocation="KoeretoejUdstyrTypeStrukturType.xsd"/>
+    <xs:element name="KoeretoejUdstyrTypeSamlingStruktur" type="dmr:KoeretoejUdstyrTypeSamlingStrukturType"/>
+    <xs:complexType name="KoeretoejUdstyrTypeSamlingStrukturType">
+        <xs:sequence>
+            <xs:element name="KoeretoejUdstyrTypeSamling">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" ref="dmr:KoeretoejUdstyrTypeStruktur"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

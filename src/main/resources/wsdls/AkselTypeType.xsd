@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema elementFormDefault="qualified"
+    targetNamespace="http://skat.dk/dmr/2007/05/31/" version="1.0"
+    xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:simpleType name="AkselTypeType">
+        <xs:annotation>
+            <xs:documentation>Akseltype i form af hjulmontering for
+                akslen med størst akseltryk.</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="40"/>
+            <xs:enumeration value="Enkeltmontering"/>
+            <xs:enumeration value="Storvolumendæk"/>
+            <xs:enumeration value="Dobbeltmontering"/>
+            <xs:enumeration value="Pendelaksel"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

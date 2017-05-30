@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+    elementFormDefault="qualified"
+    targetNamespace="http://skat.dk/dmr/2007/05/31/" version="1.0"
+    xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:annotation>
+        <xs:documentation>En tilladelse er en forekomst af en given
+            tilladelse i forhold til en given tilladelsestype knyttet
+            til enten et køretøj, en interessent eller begge. En
+            tilladelse kan være tidsbegrænset.</xs:documentation>
+    </xs:annotation>
+    <xs:include schemaLocation="DatoTidType.xsd"/>
+    <xs:include schemaLocation="TekstLangType.xsd"/>
+    <xs:include schemaLocation="TalHelType.xsd"/>
+    <xs:include schemaLocation="JuridiskEnhedIDType.xsd"/>
+    <xs:include schemaLocation="KidType.xsd"/>
+    <xs:element name="TilladelseGyldigFra" type="dmr:DatoTidType">
+        <xs:annotation>
+            <xs:documentation>Dato og tidspunkt hvor tilladelsen er
+                gyldig fra (inkl.)</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="TilladelseGyldigTil" type="dmr:DatoTidType">
+        <xs:annotation>
+            <xs:documentation>Dato og tidspunkt hvor tilladelsen er
+                gyldig til (inkl.)</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="TilladelseKommentar" type="dmr:TekstLangType">
+        <xs:annotation>
+            <xs:documentation>Et valgfrit kommentarfelt, hvor
+                tilladelsen kan uddybes, hvis der er behov for det.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="TilladelseNummer" type="dmr:TalHelType">
+        <xs:annotation>
+            <xs:documentation>Et nummer, der unikt identificerer en tilladelse.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="TilladelseKunGodkendtForRegistreretEjer" type="dmr:JuridiskEnhedIDType">
+        <xs:annotation>
+            <xs:documentation>Registreret ejer for køretøjet.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="TilladelseKombinationKoeretoejIdent" type="dmr:KidType"/>
+</xs:schema>

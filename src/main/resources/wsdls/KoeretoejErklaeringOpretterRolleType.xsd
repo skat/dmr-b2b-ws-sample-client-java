@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema elementFormDefault="qualified"
+    targetNamespace="http://skat.dk/dmr/2007/05/31/" version="1.0"
+    xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:simpleType name="KoeretoejErklaeringOpretterRolleType">
+        <xs:annotation>
+            <xs:documentation>Angiver de mulige roller en JuridiskEnhed
+                kan antage, når en KøretøjErklæring oprettes (med andre
+                ord: Er erklæringen oprettet af en Forhandler eller en Importør?)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50"/>
+            <xs:enumeration value="Importør"/>
+            <xs:enumeration value="Forhandler"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

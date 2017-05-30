@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema elementFormDefault="qualified"
+    targetNamespace="http://skat.dk/dmr/2007/05/31/" version="1.0"
+    xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:simpleType name="VirksomhedAdresseTypeKodeType">
+        <xs:annotation>
+            <xs:documentation>01 Virksomhed 02 Fors. (selsk. selvang.)
+                03 Hjemstedadr - selskab mfl 04 Lager for T 1 varer 05
+                Fjernregistrering 06 Bo 07 Postboks 08 Harpunadresse 09
+                Regnskab 10 Lager 12 Udenlandsk 13 Fors. (moms/lønsum)
+                14 Gammel virksomhedsadresse 15 Frivillig registrering
+                16 Spillestedsadresse </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:integer">
+            <xs:totalDigits value="2"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

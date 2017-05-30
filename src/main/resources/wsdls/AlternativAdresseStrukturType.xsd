@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+    elementFormDefault="qualified"
+    targetNamespace="http://skat.dk/dmr/2007/05/31/" version="1.0"
+    xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:annotation>
+        <xs:documentation/>
+        <xs:documentation>r15009</xs:documentation>
+    </xs:annotation>
+    <xs:include schemaLocation="AlternativAdresse.xsd"/>
+    <xs:include schemaLocation="AdresseType.xsd"/>
+    <xs:include schemaLocation="Land.xsd"/>
+    <xs:element name="AlternativAdresseStruktur" type="dmr:AlternativAdresseStrukturType"/>
+    <xs:complexType name="AlternativAdresseStrukturType">
+        <xs:sequence>
+            <xs:element name="AlternativAdresse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" ref="dmr:AlternativAdresseFortloebendeNummer"/>
+                        <xs:element minOccurs="0" ref="dmr:AlternativAdresseAnvendelseKode"/>
+                        <xs:element minOccurs="0" ref="dmr:AlternativAdresseAdresseLinie1"/>
+                        <xs:element minOccurs="0" ref="dmr:AlternativAdresseAdresseLinie2"/>
+                        <xs:element minOccurs="0" ref="dmr:AlternativAdresseAdresseLinie3"/>
+                        <xs:element minOccurs="0" ref="dmr:AlternativAdresseAdresseLinie4"/>
+                        <xs:element minOccurs="0" ref="dmr:AlternativAdresseAdresseLinie5"/>
+                        <xs:element minOccurs="0" ref="dmr:AlternativAdresseAdresseLinie6"/>
+                        <xs:element minOccurs="0" ref="dmr:AlternativAdresseAdresseLinie7"/>
+                        <xs:element minOccurs="0" ref="dmr:AlternativAdresseGyldigFra"/>
+                        <xs:element minOccurs="0" ref="dmr:AlternativAdresseGyldigTil"/>
+                        <xs:element minOccurs="0" ref="dmr:AdresseTypeKode"/>
+                        <xs:element minOccurs="0" ref="dmr:AdresseTypeTekst"/>
+                        <xs:element minOccurs="0" ref="dmr:AdresseTypeGyldigFra"/>
+                        <xs:element minOccurs="0" ref="dmr:AdresseTypeGyldigTil"/>
+                        <xs:element minOccurs="0" ref="dmr:LandKode"/>
+                        <xs:element minOccurs="0" ref="dmr:LandNavn"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

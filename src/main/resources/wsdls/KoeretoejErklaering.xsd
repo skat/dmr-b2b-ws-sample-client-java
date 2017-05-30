@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+    elementFormDefault="qualified"
+    targetNamespace="http://skat.dk/dmr/2007/05/31/" version="1.0"
+    xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:annotation>
+        <xs:documentation>En importør skal erklære, at det fysiske
+            køretøj er i overensstemmelse med de registrerede data samt
+            angive eventuelle ændringer, der er foretaget på køretøjet.
+            For at køretøjet kan registreres, så skal både forhandleren
+            og importøren erklære køretøjet.</xs:documentation>
+    </xs:annotation>
+    <xs:include schemaLocation="TekstLangType.xsd"/>
+    <xs:include schemaLocation="TalHelType.xsd"/>
+    <xs:include schemaLocation="KoeretoejErklaeringOpretterRolleType.xsd"/>
+    <xs:include schemaLocation="DatoTidType.xsd"/>
+    <xs:element name="KoeretoejErklaeringForetagneAendringer" type="dmr:TekstLangType">
+        <xs:annotation>
+            <xs:documentation>En registrering af de foretagne ændringer
+                i tekstform.  Hvis der er angivet ændringer, så skal
+                køretøjet til syn, før dette kan registreres.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejErklaeringNummer" type="dmr:TalHelType">
+        <xs:annotation>
+            <xs:documentation>Unik identifikation af en
+                køretøjserklæring. Nødvendig, da forhandler og importør
+                (de to erklærere) kan være samme juridiske enhed.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejErklaeringOprettetAfRolle" type="dmr:KoeretoejErklaeringOpretterRolleType">
+        <xs:annotation>
+            <xs:documentation>Angiver rollen hvormed den tilknyttede
+                JuridiskeEnhed optræder. Mulige værdi er: Importør, Forhandler</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejErklaeringGyldigFra" type="dmr:DatoTidType">
+        <xs:annotation>
+            <xs:documentation>Angiver datoen og tidspunktet for hvornår
+                køretøjserklæringen er gyldig fra (typisk
+                oprettelsestidspunktet). </xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejErklaeringGyldigTil" type="dmr:DatoTidType">
+        <xs:annotation>
+            <xs:documentation>Angiver datoen og tidspunktet for hvornår
+                køretøjserklæringen er gyldig til (med andre ord:
+                hvornår den udløber). Dette vil for importører typisk
+                være 1 år og for forhandlere 7 dage fra oprettelsen (fra
+                datoen KøretøjErklæringGyldigFra). Dette behøver dog
+                ikke altid at være tilfældet og perioden kan angives arbitrært.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+</xs:schema>

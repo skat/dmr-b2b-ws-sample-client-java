@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema elementFormDefault="qualified"
+    targetNamespace="http://skat.dk/dmr/2007/05/31/" version="1.0"
+    xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:simpleType name="PeriodiskSynTypeType">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="20"/>
+            <xs:enumeration value="IkkeUnderlagt"/>
+            <xs:enumeration value="Periodisk1plus1"/>
+            <xs:enumeration value="Periodisk2plus2"/>
+            <xs:enumeration value="Periodisk4plus2"/>
+            <xs:enumeration value="Periodisk40plus8"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

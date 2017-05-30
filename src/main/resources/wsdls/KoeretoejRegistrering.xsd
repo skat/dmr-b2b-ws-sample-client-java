@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+    elementFormDefault="qualified"
+    targetNamespace="http://skat.dk/dmr/2007/05/31/" version="1.0"
+    xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:annotation>
+        <xs:documentation>Et hvert køretøj, som anvendes på offentlig
+            vej, skal have en registreringsattest og et
+            registreringsnummer. Denne klasse indeholder informationer
+            omkring registreringen af køretøjet (bundet op på registreringsattesten).</xs:documentation>
+    </xs:annotation>
+    <xs:include schemaLocation="DatoTidType.xsd"/>
+    <xs:include schemaLocation="TalHelType.xsd"/>
+    <xs:include schemaLocation="KoeretoejRegistreringStatusType.xsd"/>
+    <xs:include schemaLocation="KoeretoejRegistreringStatusAArsagType.xsd"/>
+    <xs:include schemaLocation="KodeEtCifferStartNulType.xsd"/>
+    <xs:include schemaLocation="KoeretoejRegistreringHaendelserType.xsd"/>
+    <xs:element name="KoeretoejRegistreringGyldigFra" type="dmr:DatoTidType">
+        <xs:annotation>
+            <xs:documentation>Denne dato angiver datoen for
+                registreringen af et køretøj.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejRegistreringGyldigTil" type="dmr:DatoTidType">
+        <xs:annotation>
+            <xs:documentation>Denne dato angiver datoen for ophøret af
+                registreringen for et køretøj, enten ved
+                afmeldingsdatoen, udløb af grænsenummerplade tilladelse
+                eller ny registreringsdato.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejRegistreringNummer" type="dmr:TalHelType">
+        <xs:annotation>
+            <xs:documentation>Et nummer, som unikt identificerer en
+                given forekomst.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejRegistreringStatus" type="dmr:KoeretoejRegistreringStatusType">
+        <xs:annotation>
+            <xs:documentation>Status på et køretøjs registrering</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejRegistreringStatusDato" type="dmr:DatoTidType">
+        <xs:annotation>
+            <xs:documentation>Tidspunktet hvor den nyeste status blev sat.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejRegistreringStatusAarsag" type="dmr:KoeretoejRegistreringStatusAarsagType">
+        <xs:annotation>
+            <xs:documentation>En registrering af årsagen til ændringen.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejRegistreringKontrolTal" type="dmr:KodeEtCifferStartNulType">
+        <xs:annotation>
+            <xs:documentation>Er kontroltallet, der er konverteret fra
+                CMR3 og findes på alle køretøjer. Findes på de fleste registreringsattester.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejRegistreringSenesteHaendelse" type="dmr:KoeretoejRegistreringHaendelserType">
+        <xs:annotation>
+            <xs:documentation>Angiver den seneste hændelse der er
+                foretaget på registreringen. </xs:documentation>
+        </xs:annotation>
+    </xs:element>
+</xs:schema>

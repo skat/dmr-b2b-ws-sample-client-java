@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+    elementFormDefault="qualified"
+    targetNamespace="http://skat.dk/dmr/2007/05/31/" version="1.0"
+    xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:annotation>
+        <xs:documentation>Begrebet dækker over en angivelse af
+            køretøjets drivmiddel. Dette kunne f.eks. være benzin,
+            diesel, el, damp, brændselscelle m.v. Følgende
+            drivkrafttyper er identificeret:  1 - Benzin 2 - Diesel 3 -
+            F-gas 4 - El 5 - Petroleum 6 - N-gas 7 - Brint </xs:documentation>
+    </xs:annotation>
+    <xs:include schemaLocation="TalHelType.xsd"/>
+    <xs:include schemaLocation="TekstKortType.xsd"/>
+    <xs:element name="DrivkraftTypeNummer" type="dmr:TalHelType"/>
+    <xs:element name="DrivkraftTypeNavn" type="dmr:TekstKortType"/>
+</xs:schema>

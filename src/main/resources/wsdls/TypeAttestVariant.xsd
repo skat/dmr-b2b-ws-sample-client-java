@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+    elementFormDefault="qualified"
+    targetNamespace="http://skat.dk/dmr/2007/05/31/" version="1.0"
+    xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:annotation>
+        <xs:documentation>Per variant for en given typeattest skal der
+            registreres en del oplysninger. Gyldigheden for disse
+            oplysninger er afhængig af de datoer, som er defineret i typeattesten.</xs:documentation>
+    </xs:annotation>
+    <xs:include schemaLocation="TalHelType.xsd"/>
+    <xs:include schemaLocation="TekstKortType.xsd"/>
+    <xs:include schemaLocation="TalFlydendeType.xsd"/>
+    <xs:include schemaLocation="TekstLangType.xsd"/>
+    <xs:include schemaLocation="BolskType.xsd"/>
+    <xs:include schemaLocation="TypeAttestVariantStatusType.xsd"/>
+    <xs:include schemaLocation="DatoTidType.xsd"/>
+    <xs:element name="TypeAttestVariantAkselAntal" type="dmr:TalHelType">
+        <xs:annotation>
+            <xs:documentation>Er det antal aksler, der er på køretøj.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="TypeAttestVariantTraekkendeAksler" type="dmr:TekstKortType">
+        <xs:annotation>
+            <xs:documentation>Angiver den eller de aksler hvorpå der
+                trækkes. De relevante aksler angives med et nummer som
+                tælles fra første aksel med tallet ét regnet ud fra
+                kørselsretningen. Hvilke aksler der er tale om skrives
+                som en tekstbesked som fx Aksel 1 og 3 eller som fx 1, 3.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="TypeAttestVariantAntalDoere" type="dmr:TalHelType">
+        <xs:annotation>
+            <xs:documentation>En registrering af antallet af dører på et
+                givet køretøj.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="TypeAttestVariantAntalGear" type="dmr:TalHelType">
+        <xs:annotation>
+            <xs:documentation>Antallet af gear.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="TypeAttestVariantCO2Udslip" type="dmr:TalFlydendeType">
+        <xs:annotation>
+            <xs:documentation>En registrering af CO2 udslippet fra køretøjet</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="TypeAttestVariantCylinderAntal" type="dmr:TalHelType">
+        <xs:annotation>
+            <xs:documentation>Antallet af cylindrer</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="TypeAttestVariantEgenVaegt" type="dmr:TalHelType">
+        <xs:annotation>
+            <xs:documentation>For køretøjer, der registreres første gang
+                den 5. december 2005 eller senere, skal egenvægt kun
+                anføres, hvor den er afgiftsrelevant. Det er tilfældet
+                for personbiler uden fremlagt brændstof-forbrug, for
+                store personbiler (busser), for vare- og lastbiler
+                indrettet som mandskabsvogn, for motorcykler og for campingvogne.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="TypeAttestVariantFaelgDaek" type="dmr:TekstLangType">
+        <xs:annotation>
+            <xs:documentation>Et fritekstfelt for fælge og dæk.
+                Dokumentet importeres direkte fra CoC dokumentet.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="TypeAttestVariantKoerselStoej" type="dmr:TalFlydendeType">
+        <xs:annotation>
+            <xs:documentation>En registrering af køretøjets støjniveau
+                ved kørsel (oplyst blandt andet på køretøjets COC dokument)</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="TypeAttestVariantKoereklarVaegtMaksimum" type="dmr:TalHelType">
+        <xs:annotation>
+            <xs:documentation>Køretøjets maksimum køreklare vægt anføres
+                (i kg).</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="TypeAttestVariantKoereklarVaegtMinimum" type="dmr:TalHelType">
+        <xs:annotation>
+            <xs:documentation>Køretøjets køreklare vægt anføres (i kg).
+                Køreklar vægt er køretøjets vægt i køreklar stand som
+                defineret i EF-direktiverne om typegod-kendelse: 70/156
+                om biler og påhængskøretøjer hertil, 2002/24 om
+                knallerter og motorcykler mv. samt 2003/37 om traktorer
+                og påhængskøretøjer hertil. Køreklar vægt omfatter
+                således vægten af føreren, idet den dog for knallerter,
+                motorcykler og trehjulede biler samt lette firehjulede
+                biler (quadricykler) omfattet af direktiv 2002/24 er
+                uden vægten af føreren. Køreklar vægt omfatter vægten af
+                tilbehør, som køretøjet normalt medfører, samt vægten af
+                driftsmidler, herunder brændstof, smøreolie og kølevand.
+                Brændstofbeholderen skal være fyldt til 90 % af det af
+                fabrikanten opgivne volumen, og de øvrige væskeholdige
+                systemer (undtagen systemer til spildevand) skal være
+                fyldt til 100 % af det opgivne volumen. Vægten af
+                føreren sættes til 75 kg. For store personbiler (busser)
+                omfatter køreklar vægt tillige vægten af ét
+                personalemedlem (75 kg), hvis bilen er forsynet med et
+                personalesæde (fx rejseledersæde). Hvis der er tale om
+                personbiler eller andre køretøjer kun med én køreklar
+                vægt, så anvendes denne attribut som gældende, og
+                køreklar vægt maksimum anvendes ikke for den forekomst.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="TypeAttestVariantMaksimumHastighed" type="dmr:TalHelType">
+        <xs:annotation>
+            <xs:documentation>Køretøjets oplyste maksimale hastighed
+                (modtaget fra COC dokumentet)</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="TypeAttestVariantMaerkning" type="dmr:TekstKortType">
+        <xs:annotation>
+            <xs:documentation>En oplysning omkring motorens mærke
+                (motor'ens stelnummer, pålydende tekst m.v.) Anvendes
+                blandt andet under synskontrol til kontrol af, hvorvidt
+                motoren er udskiftet</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="TypeAttestVariantNummer" type="dmr:TalHelType">
+        <xs:annotation>
+            <xs:documentation>En identifikation af den enkelte variant
+                inden for en given typeattest ved et heltalsnummer.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="TypeAttestVariantPartikelFilter" type="dmr:BolskType">
+        <xs:annotation>
+            <xs:documentation>En registrering af, hvorvidt der er et
+                partikelfilter monteret eller ej.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="TypeAttestVariantPassagerAntal" type="dmr:TalHelType">
+        <xs:annotation>
+            <xs:documentation>Er det antal passager der må være i
+                erhvervskøretøjer. Dette flag angiver antal siddepladser.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="TypeAttestVariantRoegtaethed" type="dmr:TalFlydendeType">
+        <xs:annotation>
+            <xs:documentation>En registrering af røgtætheden udledningen
+                fra køretøjet</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="TypeAttestVariantRoegtaethedOmdrejningstal" type="dmr:TalHelType">
+        <xs:annotation>
+            <xs:documentation>Angiver omdrejningstallet, der har været
+                anvendt ved måling af røgtæthed, for køretøjet målt i
+                antal omdrejninger per minut.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="TypeAttestVariantStandStoej" type="dmr:TalFlydendeType">
+        <xs:annotation>
+            <xs:documentation>En registrering af køretøjets støjniveau
+                ved standsning.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="TypeAttestVariantSiddepladserMinimum" type="dmr:TalHelType">
+        <xs:annotation>
+            <xs:documentation>Antal siddepladser inklusive førerens
+                plads Køretøjets antal siddepladser inklusive førerens
+                plads anføres. </xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="TypeAttestVariantSiddepladserMaksimum" type="dmr:TalHelType">
+        <xs:annotation>
+            <xs:documentation>Kan være udfyldt, hvis der er flere
+                udførelser tilknyttet køretøj. SiddepladserMinimum skal
+                være udfyldt.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="TypeAttestVariantStatus" type="dmr:TypeAttestVariantStatusType">
+        <xs:annotation>
+            <xs:documentation>Status på type attest variant.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="TypeAttestVariantStatusDatoTid" type="dmr:DatoTidType">
+        <xs:annotation>
+            <xs:documentation>En markering af det tidspunkt og dato for,
+                hvornår statusen ændrede sig (eller forekomsten blev oprettet)</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="TypeAttestVariantStelNummerAnbringelse" type="dmr:TekstLangType">
+        <xs:annotation>
+            <xs:documentation>En kort og præcis oplysning, som gør det
+                muligt at finde stelnummeret (et eller flere af samme)
+                på et givet køretøj.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="TypeAttestVariantStandStoejOmdrejningstal" type="dmr:TalHelType">
+        <xs:annotation>
+            <xs:documentation>Angiver omdrejningstallet, der har været
+                anvendt ved måling af standstøj, for køretøjet målt i
+                antal omdrejninger per minut.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="TypeAttestVariantStoersteAkselTryk" type="dmr:TalHelType">
+        <xs:annotation>
+            <xs:documentation>En registrering af det maksimale største
+                aksel tryk i kg.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="TypeAttestVariantStaapladserMinimum" type="dmr:TalHelType">
+        <xs:annotation>
+            <xs:documentation>Køretøjets antal ståpladser anføres. Der
+                anføres kun ståpladser, der er beregnet til normal brug
+                under kørsel.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="TypeAttestVariantStaapladserMaksimum" type="dmr:TalHelType">
+        <xs:annotation>
+            <xs:documentation>Kan være udfyldt, hvis der er flere
+                udførelser tilknyttet køretøj. StåpladserMinimum skal
+                være udfyldt.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="TypeAttestVariantTekniskTotalVaegt" type="dmr:TalHelType">
+        <xs:annotation>
+            <xs:documentation>Angiver køretøjets tekniske totalvægt.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="TypeAttestVariantTilkoblingsvaegtMedBremser" type="dmr:TalHelType">
+        <xs:annotation>
+            <xs:documentation>Påhængskøretøjet med bremser - hænger
+                sammen med synsfri sammenkobling</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="TypeAttestVariantTilkoblingsvaegtUdenBremser" type="dmr:TalHelType">
+        <xs:annotation>
+            <xs:documentation>Påhængskøretøjet uden bremser - hænger
+                sammen med synsfri sammenkobling</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="TypeAttestVariantTotalVaegt" type="dmr:TalHelType">
+        <xs:annotation>
+            <xs:documentation>Er køretøjs total i kg.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="TypeAttestVariantVVaerdiLuft" type="dmr:TalFlydendeType">
+        <xs:annotation>
+            <xs:documentation>V-værdien luft er et udtryk for den
+                dynamiske lodrette belastning når køretøj har vejvenlig affedring(luftaffedring).</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="TypeAttestVariantVVaerdiMekanisk" type="dmr:TalFlydendeType">
+        <xs:annotation>
+            <xs:documentation>V-værdien mekanisk er et udtryk for den
+                dynamiske lodrette belastning når køretøj har mekanisk affjedring.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="TypeAttestVariantEgnetTilTaxi" type="dmr:BolskType">
+        <xs:annotation>
+            <xs:documentation>Anføres for bil, der opfylder de
+                indretningsmæssige krav for at kunne anvendes som taxi.
+                Disse biler kan kun få anvendelse Taxi ved et syn. </xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="TypeAttestVariantPartikler" type="dmr:TalFlydendeType">
+        <xs:annotation>
+            <xs:documentation>En registrering af partikel udledningen
+                fra køretøjet</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="TypeAttestVariantKmPerLiter" type="dmr:TalFlydendeType">
+        <xs:annotation>
+            <xs:documentation>Antallet af kilometre per liter med en decimal.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="TypeAttestVariantStoersteEffekt" type="dmr:TalFlydendeType">
+        <xs:annotation>
+            <xs:documentation>Motorens største effekt anføres med op til
+                2 decimaler i (kW)</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="TypeAttestVariantInnovativTeknik" type="dmr:BolskType">
+        <xs:annotation>
+            <xs:documentation>Der skal være mulighed for at tage
+                stilling til om køretøjet har Innovativ teknik.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="TypeAttestVariantInnovativTeknikAntal" type="dmr:TalFlydendeType">
+        <xs:annotation>
+            <xs:documentation>Her skal angives, hvor mange gram CO2, der
+                spares på Innovativ teknik</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="TypeAttestVariantNCAPTest" type="dmr:BolskType">
+        <xs:annotation>
+            <xs:documentation>Denne værdi angiver om køretøjet har
+                bestået en EURO NCAP test med 5 stjerner eller ej.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="TypeAttestVariantSkammelBelastning" type="dmr:TalHelType">
+        <xs:annotation>
+            <xs:documentation>Er udtryk for hvor mange kg. skammelen på
+                en Lastbil til sættevogn må udsættes for. </xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="TypeAttestVariantSkatteAkselAntal" type="dmr:TalHelType">
+        <xs:annotation>
+            <xs:documentation>Er et vogntogs (forvogn + påhængsvogn)
+                antal aksler til beregning af vægtafgift og vejafgift. </xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="TypeAttestVariantSkatteAkselTryk" type="dmr:TalHelType">
+        <xs:annotation>
+            <xs:documentation>Er en påhængsvogns totalvægt eller
+                akseltryk på en sættevogn eller en kærre. </xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="TypeAttestVariantSaettevognTilladtAkselTryk" type="dmr:TalHelType">
+        <xs:annotation>
+            <xs:documentation>På en lastbil til sættevogn skal det
+                fremgå største tilladte akseltryk, som en sættevogn må
+                have i forbindelse med sammenkobling. </xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="TypeAttestVariantVogntogVaegt" type="dmr:TalHelType">
+        <xs:annotation>
+            <xs:documentation>Hvis feltet skal bruges, skal
+                Færdselsstyrelsen definere hvad der skal stå i feltet.
+                Feltet er frivilligt i følge Rådets direktiv 1999/37/EF
+                af 29. april 1999 felt F.3.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="TypeAttestVariantAkselAfstand" type="dmr:TalHelType">
+        <xs:annotation>
+            <xs:documentation>Er afstanden mellem for- og bagaksel i mm.
+                Hentes fra et CoC-dokument pkt. 3.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="TypeAttestVariantSporviddenForrest" type="dmr:TalHelType">
+        <xs:annotation>
+            <xs:documentation>Er afstanden fra dækmidte til dækmidte i
+                mm.  Første tal i CoC-dokument pkt. 5</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="TypeAttestVariantSporviddenBagest" type="dmr:TalHelType">
+        <xs:annotation>
+            <xs:documentation>Er afstanden fra dækmidte til dækmidte i
+                mm.  Andet tal i CoC-dokument pkt. 5</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="TypeAttestVariantSlagVolumen" type="dmr:TalFlydendeType">
+        <xs:annotation>
+            <xs:documentation>Er slagvolumen for køretøjet med op til 1 decimal.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="TypeAttestVariantElektriskForbrug" type="dmr:TalFlydendeType">
+        <xs:annotation>
+            <xs:documentation>Antallet af kilometre pr. Wh, som skal
+                oplyses, hvis køretøj har Drivkraftype 4 - El</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+</xs:schema>

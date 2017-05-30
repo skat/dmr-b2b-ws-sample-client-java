@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+    elementFormDefault="qualified"
+    targetNamespace="http://skat.dk/dmr/2007/05/31/" version="1.0"
+    xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:annotation>
+        <xs:documentation/>
+        <xs:documentation>r15009</xs:documentation>
+    </xs:annotation>
+    <xs:include schemaLocation="KoeretoejOplysning.xsd"/>
+    <xs:include schemaLocation="KoeretoejOplysningFrikoert.xsd"/>
+    <xs:include schemaLocation="KoeretoejOplysningFredetForPladeInddragelse.xsd"/>
+    <xs:include schemaLocation="Koeretoej.xsd"/>
+    <xs:include schemaLocation="RegistreringNummer.xsd"/>
+    <xs:include schemaLocation="KoeretoejBetegnelseStrukturType.xsd"/>
+    <xs:include schemaLocation="KoeretoejFarveStrukturType.xsd"/>
+    <xs:include schemaLocation="KarrosseriTypeStrukturType.xsd"/>
+    <xs:include schemaLocation="KoeretoejSupplerendeKarrosseriSamlingStrukturType.xsd"/>
+    <xs:include schemaLocation="KoeretoejNormStrukturType.xsd"/>
+    <xs:include schemaLocation="KoeretoejMiljoeOplysningStrukturType.xsd"/>
+    <xs:include schemaLocation="KoeretoejMotorStrukturType.xsd"/>
+    <xs:include schemaLocation="DispensationTypeSamlingStrukturType.xsd"/>
+    <xs:include schemaLocation="KoeretoejUdstyrSamlingStrukturType.xsd"/>
+    <xs:include schemaLocation="KoeretoejBlokeringAArsagListeStrukturType.xsd"/>
+    <xs:include schemaLocation="PrisOplysningerStrukturType.xsd"/>
+    <xs:element name="KoeretoejOplysningStruktur" type="dmr:KoeretoejOplysningStrukturType"/>
+    <xs:complexType name="KoeretoejOplysningStrukturType">
+        <xs:sequence>
+            <xs:element ref="dmr:KoeretoejOplysningOprettetUdFra"/>
+            <xs:element ref="dmr:KoeretoejOplysningStatus"/>
+            <xs:element ref="dmr:KoeretoejOplysningStatusDato"/>
+            <xs:element minOccurs="0" ref="dmr:KoeretoejOplysningFoersteRegistreringDato"/>
+            <xs:element ref="dmr:KoeretoejOplysningStelNummer"/>
+            <xs:element minOccurs="0" ref="dmr:KoeretoejOplysningStelNummerAnbringelse"/>
+            <xs:element minOccurs="0" ref="dmr:KoeretoejOplysningModelAar"/>
+            <xs:element minOccurs="0" ref="dmr:KoeretoejOplysningTotalVaegt"/>
+            <xs:element minOccurs="0" ref="dmr:KoeretoejOplysningEgenVaegt"/>
+            <xs:element minOccurs="0" ref="dmr:KoeretoejOplysningKoereklarVaegtMinimum"/>
+            <xs:element minOccurs="0" ref="dmr:KoeretoejOplysningKoereklarVaegtMaksimum"/>
+            <xs:element minOccurs="0" ref="dmr:KoeretoejOplysningTekniskTotalVaegt"/>
+            <xs:element minOccurs="0" ref="dmr:KoeretoejOplysningVogntogVaegt"/>
+            <xs:element minOccurs="0" ref="dmr:KoeretoejOplysningAkselAntal"/>
+            <xs:element minOccurs="0" ref="dmr:KoeretoejOplysningStoersteAkselTryk"/>
+            <xs:element minOccurs="0" ref="dmr:KoeretoejOplysningSkatteAkselAntal"/>
+            <xs:element minOccurs="0" ref="dmr:KoeretoejOplysningSkatteAkselTryk"/>
+            <xs:element minOccurs="0" ref="dmr:KoeretoejOplysningPassagerAntal"/>
+            <xs:element minOccurs="0" ref="dmr:KoeretoejOplysningSiddepladserMinimum"/>
+            <xs:element minOccurs="0" ref="dmr:KoeretoejOplysningSiddepladserMaksimum"/>
+            <xs:element minOccurs="0" ref="dmr:KoeretoejOplysningStaapladserMinimum"/>
+            <xs:element minOccurs="0" ref="dmr:KoeretoejOplysningStaapladserMaksimum"/>
+            <xs:element minOccurs="0" ref="dmr:KoeretoejOplysningTilkoblingMulighed"/>
+            <xs:element minOccurs="0" ref="dmr:KoeretoejOplysningTilkoblingsvaegtUdenBremser"/>
+            <xs:element minOccurs="0" ref="dmr:KoeretoejOplysningTilkoblingsvaegtMedBremser"/>
+            <xs:element minOccurs="0" ref="dmr:KoeretoejOplysningPaahaengVognTotalVaegt"/>
+            <xs:element minOccurs="0" ref="dmr:KoeretoejOplysningSkammelBelastning"/>
+            <xs:element minOccurs="0" ref="dmr:KoeretoejOplysningSaettevognTilladtAkselTryk"/>
+            <xs:element minOccurs="0" ref="dmr:KoeretoejOplysningMaksimumHastighed"/>
+            <xs:element minOccurs="0" ref="dmr:KoeretoejOplysningFaelgDaek"/>
+            <xs:element minOccurs="0" ref="dmr:KoeretoejOplysningTilkobletSidevognStelnr"/>
+            <xs:element minOccurs="0" ref="dmr:KoeretoejOplysningNCAPTest"/>
+            <xs:element minOccurs="0" ref="dmr:KoeretoejOplysningVVaerdiLuft"/>
+            <xs:element minOccurs="0" ref="dmr:KoeretoejOplysningVVaerdiMekanisk"/>
+            <xs:element minOccurs="0" ref="dmr:KoeretoejOplysningOevrigtUdstyr"/>
+            <xs:element minOccurs="0" ref="dmr:KoeretoejOplysningKoeretoejstand"/>
+            <xs:element minOccurs="0" ref="dmr:KoeretoejOplysning30PctVarevogn"/>
+            <xs:element minOccurs="0" ref="dmr:KoeretoejOplysningTraekkendeAksler"/>
+            <xs:element minOccurs="0" ref="dmr:KoeretoejOplysningEgnetTilTaxi"/>
+            <xs:element minOccurs="0" ref="dmr:KoeretoejOplysningAkselAfstand"/>
+            <xs:element minOccurs="0" ref="dmr:KoeretoejOplysningSporviddenForrest"/>
+            <xs:element minOccurs="0" ref="dmr:KoeretoejOplysningSporviddenBagest"/>
+            <xs:element minOccurs="0" ref="dmr:KoeretoejOplysningTypeAnmeldelseNummer"/>
+            <xs:element minOccurs="0" ref="dmr:KoeretoejOplysningTypeGodkendelseNummer"/>
+            <xs:element minOccurs="0" ref="dmr:KoeretoejOplysningEUVariant"/>
+            <xs:element minOccurs="0" ref="dmr:KoeretoejOplysningEUVersion"/>
+            <xs:element minOccurs="0" ref="dmr:KoeretoejOplysningKommentar"/>
+            <xs:element minOccurs="0" ref="dmr:KoeretoejOplysningTypegodkendtKategori"/>
+            <xs:element minOccurs="0" ref="dmr:KoeretoejOplysningAntalGear"/>
+            <xs:element minOccurs="0" ref="dmr:KoeretoejOplysningAntalDoere"/>
+            <xs:element minOccurs="0" ref="dmr:KoeretoejOplysningFabrikant"/>
+            <xs:element minOccurs="0" ref="dmr:KoeretoejOplysningFrikoert"/>
+            <xs:element minOccurs="0" ref="dmr:KoeretoejOplysningFredetForPladeInddragelse"/>
+            <xs:element minOccurs="0" ref="dmr:KoeretoejOplysningVejvenligLuftaffjedring"/>
+            <xs:element minOccurs="0" ref="dmr:KoeretoejOplysningDanskGodkendelseNummer"/>
+            <xs:element minOccurs="0" ref="dmr:KoeretoejOplysningAargang"/>
+            <xs:element minOccurs="0" ref="dmr:KoeretoejOplysningIbrugtagningDato"/>
+            <xs:element minOccurs="0" ref="dmr:KoeretoejOplysningTrafikskade"/>
+            <xs:element minOccurs="0" ref="dmr:KoeretoejOplysningVeteranKoeretoejOriginal"/>
+            <xs:element minOccurs="0" name="KoeretoejFastKombination">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element ref="dmr:KoeretoejIdent"/>
+                        <xs:element minOccurs="0" ref="dmr:RegistreringNummerNummer"/>
+                        <xs:element minOccurs="0" ref="dmr:RegistreringNummerIdent"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" ref="dmr:KoeretoejBetegnelseStruktur"/>
+            <xs:element minOccurs="0" ref="dmr:KoeretoejFarveStruktur"/>
+            <xs:element minOccurs="0" ref="dmr:KarrosseriTypeStruktur"/>
+            <xs:element minOccurs="0" ref="dmr:KoeretoejSupplerendeKarrosseriSamlingStruktur"/>
+            <xs:element minOccurs="0" ref="dmr:KoeretoejNormStruktur"/>
+            <xs:element minOccurs="0" ref="dmr:KoeretoejMiljoeOplysningStruktur"/>
+            <xs:element minOccurs="0" ref="dmr:KoeretoejMotorStruktur"/>
+            <xs:element minOccurs="0" ref="dmr:DispensationTypeSamlingStruktur"/>
+            <xs:element minOccurs="0" ref="dmr:KoeretoejUdstyrSamlingStruktur"/>
+            <xs:element minOccurs="0" ref="dmr:KoeretoejBlokeringAarsagListeStruktur"/>
+            <xs:element minOccurs="0" ref="dmr:PrisOplysningerStruktur"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

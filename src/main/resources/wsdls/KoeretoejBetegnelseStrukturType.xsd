@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+    elementFormDefault="qualified"
+    targetNamespace="http://skat.dk/dmr/2007/05/31/" version="1.0"
+    xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:annotation>
+        <xs:documentation/>
+        <xs:documentation>r15009</xs:documentation>
+    </xs:annotation>
+    <xs:include schemaLocation="KoeretoejMaerkeType.xsd"/>
+    <xs:include schemaLocation="KoeretoejModelType.xsd"/>
+    <xs:include schemaLocation="KoeretoejVariantType.xsd"/>
+    <xs:include schemaLocation="KoeretoejTypeType.xsd"/>
+    <xs:element name="KoeretoejBetegnelseStruktur" type="dmr:KoeretoejBetegnelseStrukturType"/>
+    <xs:complexType name="KoeretoejBetegnelseStrukturType">
+        <xs:sequence>
+            <xs:element minOccurs="0" ref="dmr:KoeretoejMaerkeTypeNummer"/>
+            <xs:element minOccurs="0" ref="dmr:KoeretoejMaerkeTypeNavn"/>
+            <xs:element minOccurs="0" name="Model">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element ref="dmr:KoeretoejModelTypeNummer"/>
+                        <xs:element ref="dmr:KoeretoejModelTypeNavn"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" name="Variant">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element ref="dmr:KoeretoejVariantTypeNummer"/>
+                        <xs:element ref="dmr:KoeretoejVariantTypeNavn"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" name="Type">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element ref="dmr:KoeretoejTypeTypeNummer"/>
+                        <xs:element ref="dmr:KoeretoejTypeTypeNavn"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

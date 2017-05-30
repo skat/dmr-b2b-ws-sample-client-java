@@ -1,0 +1,560 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+    elementFormDefault="qualified"
+    targetNamespace="http://skat.dk/dmr/2007/05/31/" version="1.0"
+    xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:annotation>
+        <xs:documentation>Et hvert registreringspligtigt køretøj, skal
+            forsynes med nummerplader og der skal udstedes en
+            registreringsattest. Som en del af indholdet på en
+            registreringsattest og som en del af fastsættelse af diverse
+            afgifter m.v. ligger der en del informationer, som skal
+            gemmes i DMR for at de rette beslutninger kan foretages og
+            de rette informationer kan udskrives. Et køretøjs
+            oplysninger kan ændres over tid - hvilket betyder, at der
+            til et køretøj kan være registreret flere samlede
+            oplysninger for køretøjet, men der vil altid være et
+            tidsmæssigt gyldigt køretøj. Der er ikke noget datafelt til
+            henholdsvis Last og Nyttelast. Det er værdier, der skal
+            fremgå af reg.att., men de kan dog beregnes.  Last =
+            Totalvægt minus Egenvægt.  Nytte-last = Totalvægt minus KøreklarVægt.</xs:documentation>
+    </xs:annotation>
+    <xs:include schemaLocation="TalHelType.xsd"/>
+    <xs:include schemaLocation="TekstKortType.xsd"/>
+    <xs:include schemaLocation="TekstLangType.xsd"/>
+    <xs:include schemaLocation="DatoType.xsd"/>
+    <xs:include schemaLocation="KoeretoejstandType.xsd"/>
+    <xs:include schemaLocation="AArstalType.xsd"/>
+    <xs:include schemaLocation="BolskType.xsd"/>
+    <xs:include schemaLocation="KoeretoejOplysningOprettetUdFraType.xsd"/>
+    <xs:include schemaLocation="KoeretoejOplysningStatusType.xsd"/>
+    <xs:include schemaLocation="DatoTidType.xsd"/>
+    <xs:include schemaLocation="StelNummerType.xsd"/>
+    <xs:include schemaLocation="TalFlydendeType.xsd"/>
+    <xs:include schemaLocation="AkselTypeType.xsd"/>
+    <xs:element name="KoeretoejOplysningAkselAntal" type="dmr:TalHelType">
+        <xs:annotation>
+            <xs:documentation>Er det antal aksler, der er på køretøj.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejOplysningTraekkendeAksler" type="dmr:TekstKortType">
+        <xs:annotation>
+            <xs:documentation>Det akselnummer, hvorpå der trækkes.
+                Bemærk at der godt kan registreres flere trækkende
+                aksler - så er der blot tale om flere forekomster af
+                objekter (rækker) i denne klasse. Akselnummeret tælles
+                fra første aksel med tallet én regnet ud fra
+                kørselsretningen. </xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejOplysningEgenVaegt" type="dmr:TalHelType">
+        <xs:annotation>
+            <xs:documentation>Egenvægt er vægten af et køretøj med
+                tilbehør, som køretøjet normalt medfører. Vægten af
+                driftsmidler herunder brændstof, smøreolie og kølevand
+                samt fører medregnes ikke til vægten. Egenvægt bruges i
+                forbindelse med opkrævning af vægtafgift for visse art/anvendelser.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejOplysningFaelgDaek" type="dmr:TekstLangType">
+        <xs:annotation>
+            <xs:documentation>Et fritekstfelt for fælge og dæk.
+                Dokumentet importeres direkte fra CoC dokumentet.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejOplysningFoersteRegistreringDato" type="dmr:DatoType">
+        <xs:annotation>
+            <xs:documentation>Er datoen for hvornår et køretøj første
+                gang er registreret enten i Danmark eller i udlandet
+                (ved brugt importerede køretøjet)</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejOplysningKommentar" type="dmr:TekstLangType">
+        <xs:annotation>
+            <xs:documentation>En kommentar til køretøj oplysning.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejOplysningKoereklarVaegtMaksimum" type="dmr:TalHelType">
+        <xs:annotation>
+            <xs:documentation>Køretøjets køreklare vægt anføres (i kg).
+                Køreklar vægt er køretøjets vægt i køreklar stand som
+                defineret i EF-direktiverne om typegodkendelse: 70/156
+                om biler og påhængskøretøjer hertil, 2002/24 om
+                knallerter og motorcykler mv. samt 2003/37 om traktorer
+                og påhængskøretøjer hertil. Køreklar vægt omfatter
+                således vægten af føreren, idet den dog for knallerter,
+                motorcykler og trehjulede biler samt lette firehjulede
+                biler (quadricykler) omfattet af direktiv 2002/24 er
+                uden vægten af føreren. Køreklar vægt omfatter vægten af
+                tilbehør, som køretøjet normalt medfører, samt vægten af
+                driftsmidler, herunder brændstof, smøreolie og kølevand.
+                Brændstofbeholderen skal være fyldt til 90 % af det af
+                fabrikanten opgivne volumen, og de øvrige væskeholdige
+                systemer (undtagen systemer til spildevand) skal være
+                fyldt til 100 % af det opgivne volumen. Vægten af
+                føreren sættes til 75 kg. For store personbiler (busser)
+                omfatter køreklar vægt tillige vægten af ét
+                personalemedlem (75 kg), hvis bilen er forsynet med et
+                personalesæde (fx rejseledersæde). Hvis der er tale om
+                personbiler eller andre køretøjer kun med én køreklar
+                vægt, så anvendes kun køreklarvægtminimum attributten
+                som gældende, og køreklar vægt maksimum anvendes ikke
+                for den forekomst.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejOplysningKoereklarVaegtMinimum" type="dmr:TalHelType">
+        <xs:annotation>
+            <xs:documentation>Køretøjets køreklare vægt anføres (i kg).
+                Køreklar vægt er køretøjets vægt i køreklar stand som
+                defineret i EF-direktiverne om typegodkendelse: 70/156
+                om biler og påhængskøretøjer hertil, 2002/24 om
+                knallerter og motorcykler mv. samt 2003/37 om traktorer
+                og påhængskøretøjer hertil. Køreklar vægt omfatter
+                således vægten af føreren, idet den dog for knallerter,
+                motorcykler og trehjulede biler samt lette firehjulede
+                biler (quadricykler) omfattet af direktiv 2002/24 er
+                uden vægten af føreren. Køreklar vægt omfatter vægten af
+                tilbehør, som køretøjet normalt medfører, samt vægten af
+                driftsmidler, herunder brændstof, smøreolie og kølevand.
+                Brændstofbeholderen skal være fyldt til 90 % af det af
+                fabrikanten opgivne volumen, og de øvrige væskeholdige
+                systemer (undtagen systemer til spildevand) skal være
+                fyldt til 100 % af det opgivne volumen. Vægten af
+                føreren sættes til 75 kg. For store personbiler (busser)
+                omfatter køreklar vægt tillige vægten af ét
+                personalemedlem (75 kg), hvis bilen er forsynet med et
+                personalesæde (fx rejseledersæde). Hvis der er tale om
+                personbiler eller andre køretøjer kun med én køreklar
+                vægt, så anvendes denne attribut som gældende, og
+                køreklar vægt maksimum anvendes ikke for den forekomst.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejOplysningKoeretoejstand" type="dmr:KoeretoejstandType">
+        <xs:annotation>
+            <xs:documentation>Benyttes til at angive køretøjets stand i
+                forbindelse med Toldsynsrapporten.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejOplysningMaksimumHastighed" type="dmr:TalHelType">
+        <xs:annotation>
+            <xs:documentation>Køretøjets oplyste maksimale hastighed
+                (modtaget fra COC dokumentet)</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejOplysningModelAar" type="dmr:AarstalType">
+        <xs:annotation>
+            <xs:documentation>Stammer fra certifikat fabriksnyt køretøj,
+                angiver året, hvor modellen blev markedsført. en ford
+                focus 2003 kan sagtens blive solgt som fabriksnyt
+                køretøj i 2004 - modelåret vil være 2003.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejOplysningNCAPTest" type="dmr:BolskType">
+        <xs:annotation>
+            <xs:documentation>Denne værdi angiver om køretøjet har
+                bestået en EURO NCAP test med mindst 5 stjerner.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejOplysningOprettetUdFra" type="dmr:KoeretoejOplysningOprettetUdFraType">
+        <xs:annotation>
+            <xs:documentation>Angiver hvordan køretøjer blev oprettet i systemet.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejOplysningPassagerAntal" type="dmr:TalHelType">
+        <xs:annotation>
+            <xs:documentation>Er det antal passager der må være i
+                erhvervskøretøjer. Dette flag angiver antal siddepladser.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejOplysningPaahaengVognTotalVaegt" type="dmr:TalHelType">
+        <xs:annotation>
+            <xs:documentation>Påhængsvognens totalvægt er et felt til
+                Lastbil til godstransport, som skal være udfyldt i
+                forbindelse med, at der er tilkoblingsanordning på lastbilen.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejOplysningSiddepladserMaksimum" type="dmr:TalHelType">
+        <xs:annotation>
+            <xs:documentation>Kan være udfyldt, hvis der er flere
+                udførelser tilknyttet køretøj. SiddepladserMinimum skal
+                være udfyldt.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejOplysningSiddepladserMinimum" type="dmr:TalHelType">
+        <xs:annotation>
+            <xs:documentation>Antal siddepladser inklusive førerens
+                plads Køretøjets antal siddepladser inklusive førerens
+                plads anføres.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejOplysningSkammelBelastning" type="dmr:TalHelType">
+        <xs:annotation>
+            <xs:documentation>Er udtryk for hvor mange kg. skammelen på
+                en Lastbil til sættevogn må udsættes for. </xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejOplysningSkatteAkselAntal" type="dmr:TalHelType">
+        <xs:annotation>
+            <xs:documentation>Er en påhængs- eller sættevogns akselantal
+                til beregning af vægtafgift og vejafgift.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejOplysningSkatteAkselTryk" type="dmr:TalHelType">
+        <xs:annotation>
+            <xs:documentation>Er en påhængsvogns totalvægt eller
+                akseltryk på en sættevogn eller en kærre.  </xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejOplysningStatus" type="dmr:KoeretoejOplysningStatusType">
+        <xs:annotation>
+            <xs:documentation>Beskriver status for et givet køretøj.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejOplysningStatusDato" type="dmr:DatoTidType">
+        <xs:annotation>
+            <xs:documentation>En registrering af det præcise tidspunkt,
+                hvor køretøjet skiftede status.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejOplysningStelNummer" type="dmr:StelNummerType">
+        <xs:annotation>
+            <xs:documentation>Ethvert registreringspligtigt køretøj kan
+                være forsynet med 17-20-tegns stelnummer (VIN-mærkning).
+                Det er den internationale standard.  Bemærk at ikke alle
+                køretøjer har det nye internationale format for
+                stelnumre. Der er en del historiske stelnumre, som er
+                mindre en 17 tegn lange. Der findes enkelte køretøjer,
+                som ikke har noget stelnummer.  0 (nul) eller O har
+                samme betydning i stelnummer, når der søges. Det betyder
+                at en søgning på stelnummer med 0 / O vil give samme
+                resultat i DMR.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejOplysningStelNummerAnbringelse" type="dmr:TekstLangType">
+        <xs:annotation>
+            <xs:documentation>En kort og præcis oplysning, som gør det
+                muligt at finde stelnummeret (et eller flere af samme)
+                på et givet køretøj.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejOplysningStaapladserMaksimum" type="dmr:TalHelType">
+        <xs:annotation>
+            <xs:documentation>Kan være udfyldt, hvis der er flere
+                udførelser tilknyttet køretøj. StåpladserMinimum skal
+                være udfyldt.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejOplysningStaapladserMinimum" type="dmr:TalHelType">
+        <xs:annotation>
+            <xs:documentation>Køretøjets antal ståpladser anføres.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejOplysningStoersteAkselTryk" type="dmr:TalHelType">
+        <xs:annotation>
+            <xs:documentation>Det er oplysning om køretøjets største
+                akseltryk (eller bogietryk!), uanset om det er for-
+                eller bagaksel.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejOplysningSaettevognTilladtAkselTryk" type="dmr:TalHelType">
+        <xs:annotation>
+            <xs:documentation>På en lastbil til sættevogn skal det
+                fremgå største tilladte akseltryk, som en sættevogn må
+                have i forbindelse med sammenkobling. </xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejOplysningTotalVaegt" type="dmr:TalHelType">
+        <xs:annotation>
+            <xs:documentation>Totalvægt bruges i forbindelse med
+                opkrævning af vægtafgift for visse art/anvendelser.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejOplysningTekniskTotalVaegt" type="dmr:TalHelType">
+        <xs:annotation>
+            <xs:documentation>Rubrikken udfyldes ikke for motorcykel og
+                knallert. For øvrige køretøjer anføres køretøjets
+                teknisk tilladte totalvægt (i kg). Hvis teknisk tilladt
+                totalvægt ikke er anført på køretøjets typegodkendelse
+                mv., anføres i stedet den på godkendelsen anførte
+                tilladte totalvægt.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejOplysningTilkoblingMulighed" type="dmr:BolskType">
+        <xs:annotation>
+            <xs:documentation>En angivelse af, hvorvidt der er
+                tilkoblingsanordning (trækkrog) på et køretøj.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejOplysningTilkoblingsvaegtUdenBremser" type="dmr:TalHelType">
+        <xs:annotation>
+            <xs:documentation>Den maksimale vægt for det tilkoblede
+                køretøj, hvis køretøjet ikke selvstændigt har bremser.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejOplysningTilkoblingsvaegtMedBremser" type="dmr:TalHelType">
+        <xs:annotation>
+            <xs:documentation>Den maksimale vægt for det tilkoblede
+                køretøj, hvis køretøjet selvstændigt har bremser.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejOplysningTilkobletSidevognStelnr" type="dmr:StelNummerType">
+        <xs:annotation>
+            <xs:documentation>Er stelnummeret fra sidevognen som er
+                registreret til en motorcykel</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejOplysningTypeGodkendelseNummer" type="dmr:TekstKortType">
+        <xs:annotation>
+            <xs:documentation>Et typegodkendelsesnummer f.eks. e1*2001/3*0190</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejOplysningVogntogVaegt" type="dmr:TalHelType">
+        <xs:annotation>
+            <xs:documentation>Det er fabrikanten, der ved oprettelsens
+                oplyser dette tal.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejOplysningVVaerdiLuft" type="dmr:TalFlydendeType">
+        <xs:annotation>
+            <xs:documentation>V-værdien luft er et udtryk for den
+                dynamiske lodrette belastning når køretøj har vejvenlig affjedring(luftaffjedring).</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejOplysningVVaerdiMekanisk" type="dmr:TalFlydendeType">
+        <xs:annotation>
+            <xs:documentation>V-værdien mekanisk er et udtryk for den
+                dynamiske lodrette belastning når køretøj har mekanisk affjedring.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejOplysningOevrigtUdstyr" type="dmr:TekstLangType">
+        <xs:annotation>
+            <xs:documentation>En beskrivelse af øvrigt udstyr som ikke
+                har beregningsmæssige konsekvenser(registreringsafgift).
+                Øvrigt udstyr modtages fra importøren som en lang
+                kommasepareret tekststreng.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejOplysning30PctVarevogn" type="dmr:BolskType">
+        <xs:annotation>
+            <xs:documentation>Her markeres at importøren hos SKAT har
+                fået godkendt, at varebilen kan afgiftsberigtiges med
+                nedsat afgiftssats  30%</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejOplysningBlokvognAkselType" type="dmr:AkselTypeType">
+        <xs:annotation>
+            <xs:documentation>Akseltype i form af hjulmontering for
+                akslen med størst akseltryk anføres: Enkeltmontering,
+                storvolumendæk, dobbeltmontering eller pendelaksel.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejOplysningBlokvognHovedboltTryk" type="dmr:TalHelType">
+        <xs:annotation>
+            <xs:documentation>Det største tilladelige hovedbolttryk
+                henholdsvis skammeltryk anføres ved hver af de fem
+                tilladelige hastigheder. Værdierne må hverken overstige
+                de af fabrikanten tilladte(og for lastbiler i
+                typegodkendelsen anførte) eller de i henhold til § 10
+                tilladelig hastigheder For blokpåhængsvogn og lastbil,
+                der trækker en sådan, sættes en streg.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejOplysningBlokvognSkammelTryk" type="dmr:TalHelType">
+        <xs:annotation>
+            <xs:documentation>Det største tilladelige hovedbolttryk
+                henholdsvis skammeltryk anføres ved hver af de fem
+                tilladelige hastigheder. Værdierne må hverken overstige
+                de af fabrikanten tilladte(og for lastbiler i
+                typegodkendelsen anførte) eller de i henhold til § 10
+                tilladelig hastigheder For blokpåhængsvogn og lastbil,
+                der trækker en sådan, sættes en streg.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejOplysningBlokvognSamletAkselTryk" type="dmr:TalHelType">
+        <xs:annotation>
+            <xs:documentation>Det samlede, tilladelige akseltryk for
+                alle køretøjets aksler anføres for hver af de fem
+                tilladelig hastigheder. Værdierne må hverken overstige
+                de af fabrikanten tilladte(og for lastbiler i
+                typegodkendelsen anførte) eller den i henhold til § 10
+                tilladelig totalvægt. I felter, der ikke udfyldes,
+                sættes en streg. </xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejOplysningBlokvognMaxVogntog" type="dmr:TalHelType">
+        <xs:annotation>
+            <xs:documentation>Køretøjets tilladelige vogntogsvægt
+                anføres for hver af de fem tilladelige hastigheder.
+                Værdierne må ikke overstige de af fabrikanten tilladte,
+                men kan overstige de værdier, som fremgår af en lastbils
+                typegodkendelse, såfremt der medbringes dokumentation
+                fra køretøjsfabrikanten eller dennes repræsentant ved
+                synet, hvor godkendelsen foretages. Værdierne må ej
+                heller overstige den i § 10 tilladelige totalvægt. I
+                felter, der ikke udfyldes, sættes en streg. </xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejOplysningBlokvognBreddeFra" type="dmr:TalFlydendeType">
+        <xs:annotation>
+            <xs:documentation>Køretøjets bredde anføres. Der angives et
+                interval, hvis køretøjet kan trækkes ud eller lignende.
+                Ved fast mål anføres samme mål to gange. På trækkraft
+                for blokvogn skal kun anføres et mål.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejOplysningBlokvognKoblingshoejdeFra" type="dmr:TalFlydendeType">
+        <xs:annotation>
+            <xs:documentation>Køretøjets koblingshøjde i ubelæsset stand
+                anføres som midtpunktets højde over vejbanen(ikke for
+                skammel/hovedbolt, hvor der i stedet sættes en streg).
+                Der angives et interval, hvis koblingens højde er
+                variabel. Ved fast mål anføres samme mål to gang. </xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejOplysningBlokvognKoblingslaengdeFra" type="dmr:TalFlydendeType">
+        <xs:annotation>
+            <xs:documentation>Køretøjets koblinglængde anføres. Der
+                angives et interval, hvis koblingslængden er variabel.
+                Ved fast mål anføres samme mål to gang.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejOplysningBlokvognSammenkoblingType" type="dmr:TekstKortType">
+        <xs:annotation>
+            <xs:documentation>Køretøjets sammenkoblingstype( ikke
+                typebetegnelsen) anføres fx 2  hovedbolt eller 3.5 hovedbolt.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejOplysningBlokvognTilladeligHastighed" type="dmr:TalHelType">
+        <xs:annotation>
+            <xs:documentation>Tilladelig hastighed for en ubelæsset blokvogn.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejOplysningBlokvognBreddeTil" type="dmr:TalFlydendeType">
+        <xs:annotation>
+            <xs:documentation>Køretøjets bredde anføres. Der angives et
+                interval, hvis køretøjet kan trækkes ud eller lignende.
+                Ved fast mål anføres samme mål to gange. På trækkraft
+                for blokvogn skal kun anføres et mål.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejOplysningBlokvognKoblingshoejdeTil" type="dmr:TalFlydendeType">
+        <xs:annotation>
+            <xs:documentation>Køretøjets koblingshøjde i ubelæsset stand
+                anføres som midtpunktets højde over vejbanen(ikke for
+                skammel/hovedbolt, hvor der i stedet sættes en streg).
+                Der angives et interval, hvis koblingens højde er
+                variabel. Ved fast mål anføres samme mål to gang. </xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejOplysningBlokvognKoblingslaengdeTil" type="dmr:TalFlydendeType">
+        <xs:annotation>
+            <xs:documentation>Køretøjets koblinglængde anføres. Der
+                angives et interval, hvis koblingslængden er variabel.
+                Ved fast mål anføres samme mål to gang.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejOplysningEgnetTilTaxi" type="dmr:BolskType">
+        <xs:annotation>
+            <xs:documentation>Anføres for bil, der opfylder de
+                indretningsmæssige krav for at kunne anvendes som taxi.
+                Disse biler kan kun få anvendelse Taxi ved et syn.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejOplysningAkselAfstand" type="dmr:TalHelType">
+        <xs:annotation>
+            <xs:documentation>Er afstanden mellem for- og bagaksel i mm.
+                Hentes fra et CoC-dokument pkt. 3.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejOplysningSporviddenForrest" type="dmr:TalHelType">
+        <xs:annotation>
+            <xs:documentation>Er afstanden fra dækmidte til dækmidte i
+                mm.  Første tal i CoC-dokument pkt. 5</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejOplysningSporviddenBagest" type="dmr:TalHelType">
+        <xs:annotation>
+            <xs:documentation>Er afstanden fra dækmidte til dækmidte i
+                mm.  Andet tal i CoC-dokument pkt. 5</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejOplysningTypeAnmeldelseNummer" type="dmr:TekstKortType">
+        <xs:annotation>
+            <xs:documentation>Et type anmeldelsesnummer f.eks. E14722</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejOplysningEUVariant" type="dmr:TekstKortType">
+        <xs:annotation>
+            <xs:documentation>Dette en en importør relevant information,
+                som dækker over COC dokumentets 0.2 </xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejOplysningEUVersion" type="dmr:TekstKortType">
+        <xs:annotation>
+            <xs:documentation>Dette dækker over en del af en importørs
+                COC dokuments felt 0.2 </xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejOplysningTypegodkendtKategori" type="dmr:TekstKortType">
+        <xs:annotation>
+            <xs:documentation>Køretøjets EF-typegodkendte kategori: M1,
+                N1 osv.(Tekst kort)</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejOplysningAntalGear" type="dmr:TalHelType">
+        <xs:annotation>
+            <xs:documentation>Antal gear på køretøjet. </xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejOplysningAntalDoere" type="dmr:TalHelType">
+        <xs:annotation>
+            <xs:documentation>En registrering af antallet af dører på et
+                givet køretøj.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejOplysningFabrikant" type="dmr:TekstLangType">
+        <xs:annotation>
+            <xs:documentation>Her skal fabrikantens navn og adresse
+                fremgå. Hentes fra CoC-dokument pkt. 0.5</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejOplysningVejvenligLuftaffjedring" type="dmr:BolskType">
+        <xs:annotation>
+            <xs:documentation>En angivelse af, hvorvidt køretøjet har en
+                vejvenlig luftaffjedring</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejOplysningDanskGodkendelseNummer" type="dmr:TekstKortType">
+        <xs:annotation>
+            <xs:documentation>Dansk godkendelse nummer.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejOplysningAargang" type="dmr:DatoType">
+        <xs:annotation>
+            <xs:documentation>Årgang.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejOplysningIbrugtagningDato" type="dmr:DatoType">
+        <xs:annotation>
+            <xs:documentation>Ved brugte køretøjer hvor første
+                registreringsdato er ukendt sættes ibrugtagningsdato til
+                indeværende år. Det vil sige, at køretøjet er årgangs
+                bestemt til indeværende år.  Attributten
+                FørsteRegistreringDato kan som følge ikke udfyldes,
+                fordi den efter reglerne skal sættes til 31.12.
+                indeværende år.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejOplysningTrafikskade" type="dmr:BolskType">
+        <xs:annotation>
+            <xs:documentation>Markering af, at køretøjet er synligt
+                repareret efter en større trafikskade.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejOplysningVeteranKoeretoejOriginal" type="dmr:BolskType">
+        <xs:annotation>
+            <xs:documentation>Markering af, at veterankøretøjet fremstår
+                i original stand.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+</xs:schema>

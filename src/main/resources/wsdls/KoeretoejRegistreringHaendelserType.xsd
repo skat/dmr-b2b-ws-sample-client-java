@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema elementFormDefault="qualified"
+    targetNamespace="http://skat.dk/dmr/2007/05/31/" version="1.0"
+    xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:simpleType name="KoeretoejRegistreringHaendelserType">
+        <xs:annotation>
+            <xs:documentation>Angiver liste af mulige hændelser der kan
+                ske på en registrering. Værdierne bruges til at angive
+                den sidste hændelse på en registrering (på KøretøjRegistrering)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50"/>
+            <xs:enumeration value="Registrering"/>
+            <xs:enumeration value="EjerBrugerskifte"/>
+            <xs:enumeration value="Afmelding"/>
+            <xs:enumeration value="TilbagedateretRegistrering"/>
+            <xs:enumeration value="TilbagedateretEjerBrugerskifte"/>
+            <xs:enumeration value="TilbagedateretAfmelding"/>
+            <xs:enumeration value="TilbagedateringEksisterendeRegistrering"/>
+            <xs:enumeration value="TilbagedateringEksisterendeEjerBrugerskifte"/>
+            <xs:enumeration value="TilbagedateringEksisterendeAfmelding"/>
+            <xs:enumeration value="AnnulleringRegistrering"/>
+            <xs:enumeration value="AnnulleringEjerBrugerskifte"/>
+            <xs:enumeration value="AnnulleringAfmelding"/>
+            <xs:enumeration value="KonverteretRegistrering"/>
+            <xs:enumeration value="Pladeskift"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

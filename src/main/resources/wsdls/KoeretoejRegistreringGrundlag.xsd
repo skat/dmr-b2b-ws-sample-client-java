@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+    elementFormDefault="qualified"
+    targetNamespace="http://skat.dk/dmr/2007/05/31/" version="1.0"
+    xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:annotation>
+        <xs:documentation>Et registreringsgrundlag er fundamentet for
+            fastsættelsen af registreringsafgiften herunder en angivelse
+            af køretøjets art og anvendelse. Ændringer i art og
+            anvendelse m.v. vil medføre oprettelse af et nyt køretøjregistreringsgrundlag.</xs:documentation>
+    </xs:annotation>
+    <xs:include schemaLocation="DatoTidType.xsd"/>
+    <xs:include schemaLocation="TalHelType.xsd"/>
+    <xs:include schemaLocation="KodeType.xsd"/>
+    <xs:include schemaLocation="KoeretoejRegistreringGrundlagStatusType.xsd"/>
+    <xs:include schemaLocation="BolskType.xsd"/>
+    <xs:include schemaLocation="PeriodiskSynTypeType.xsd"/>
+    <xs:include schemaLocation="DatoType.xsd"/>
+    <xs:element name="KoeretoejRegistreringGrundlagGyldigFra" type="dmr:DatoTidType">
+        <xs:annotation>
+            <xs:documentation>Det tidspunkt, hvor
+                registreringsgrundlaget blev gyldigt til videre
+                anvendelse (registreringsgrundlaget blev godkendt til
+                registrering (og/eller) afgiftsberigtigelse)</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejRegistreringGrundlagGyldigTil" type="dmr:DatoTidType">
+        <xs:annotation>
+            <xs:documentation>Tidspunktet (dato + tid), hvor
+                registreringsgrundlaget var gyldigt til.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejRegistreringGrundlagIdent" type="dmr:TalHelType">
+        <xs:annotation>
+            <xs:documentation>En unik identifikation af det enkelte
+                køretøjs registrerings grundlag.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejRegistreringGrundlagKode" type="dmr:KodeType">
+        <xs:annotation>
+            <xs:documentation>Koden, som skal anvendes ved køretøjets
+                første registrering. Dette er importørkoden (IRK-kode)</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejRegistreringGrundlagStatus" type="dmr:KoeretoejRegistreringGrundlagStatusType">
+        <xs:annotation>
+            <xs:documentation>En statusmarkering for det enkelte
+                køretøjs registreringsgrundlag.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejRegistreringGrundlagStatusDato" type="dmr:DatoTidType">
+        <xs:annotation>
+            <xs:documentation>Det tidspunkt (dato og tid) for, hvornår
+                den nyeste status blev tildelt.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element
+        name="KoeretoejRegistreringGrundlagTilknyttetFasteProeveskilte" type="dmr:BolskType">
+        <xs:annotation>
+            <xs:documentation>Angover om dette registreringsgrundlag er
+                oprettet i forbindelse med registrering af faste
+                prøveskilte eller ej. True/Sand =
+                registreringsgrundlaget tilhører en registrering af
+                faste prøveskilte.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejRegistreringGrundlagPeriodiskSyn" type="dmr:PeriodiskSynTypeType">
+        <xs:annotation>
+            <xs:documentation>En registrering af køretøjets periodisk
+                syns type.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element
+        name="KoeretoejRegistreringGrundlagPeriodiskSynGyldigTil" type="dmr:DatoType">
+        <xs:annotation>
+            <xs:documentation>Feltet skal bruges til at holde styr på at
+                beregne næste indkaldelsesdato til periodisk syn.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+</xs:schema>

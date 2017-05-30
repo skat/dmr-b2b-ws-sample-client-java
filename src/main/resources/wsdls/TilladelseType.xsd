@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+    elementFormDefault="qualified"
+    targetNamespace="http://skat.dk/dmr/2007/05/31/" version="1.0"
+    xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:annotation>
+        <xs:documentation>En tilladelsestype er en samling af typer af
+            forskellige tilladelser, som kan gives til enten køretøjer
+            eller interessenter i forhold til deres anvendelse af
+            køretøjer. Følgende tilladelser er identificeret:
+            Tilladelser: 1 - SYNSFRI SAMMENKOBLING 2 - VARIABEL
+            KOMBINATION 3 - MED MINDST 3 AKSLER 5 - Kun PÅHÆNGSREDSKABER
+            6 - ENSARTEDE PÅHÆNGSKRT. 7 - GODK. TIL BLOKVOGNE 8 -
+            FIRMAKØRSEL 9 - VOGNMANDSKØRSEL 10 - UDRYKNINGSKØRSEL 11 -
+            ØVELSESKØRSEL 12 - LIMOUSINE / SPECIEL HYREKØRSEL 13 -
+            TERMINALTRAKTOR 14 - VETERANKØRSEL 15 - RUTEKØRSEL 16 -
+            BUSKØRSEL 17 - TAXIKØRSEL 18 - SYGETRANSPORT 19 - UDLEJNING
+            UDEN FØRER 20 - SOVEBUS 21 - 50 MM KUGLE, MAX. 2000 KG 22 -
+            50 MM KUGLE, MAX. 3500 KG 30 - MIDLERTIDIGT GODKENDT 31 -
+            KUN GODKENDT FOR REG. EJER 34 - STELNUMMER GENIHUGGET 35 -
+            MILJØVENLIG 40 - FARLIGT GODS 41 - FARLIGT GODS-INT.NAT(ADR)
+            42 - FLERE UDFØRELSER 43 - DYRETRANSPORT 45 - DISPENSATION
+            MOTORLØB 49 - MINITRUCK 50 - INVALIDEKØRETØJ(SYN) 51 -
+            SLÆBNING 52 - MAX. HASTIGHED 15 KM/T 53 - MAX. HASTIGHED 30
+            KM/T 54 - MAX. HASTIGHED 45 KM/T 55 - MAX. HASTIGHED 60 KM/T
+            56 - ÆNDRET AKSELAFSTAND 57 - CHIPTUNING GODKENDT 58 - KUN
+            LUFTAFFJEDRET BIL 76 - PRØVEPLADER IKKE TILLADT 79 - LAVERE
+            TILLÆGSAFGIFT 80 - TEMPO 100 82 - TRÆKKRAFT FOR SÆTTEVOGN 83
+            - TRÆKKRAFT FOR KÆRRE 85 - NEDVEJET, BETALER AFGIFT EFTER
+            2001-2005 90 - GODK. I H.T. SYNSBKG. PGF 71, STK. 2 94- FAST
+            TILKOBLING 95 - DYRETRANSPORT OVER 8 TIMER 96 -
+            DYRETRANSPORT UNDER 8 TIMER I DK. 101 - TIVOLI/CIRKUS
+            KØRETØJER 102 - FRITAGET FOR VEJAFGIFT. 103 - FRITAGET FOR
+            PERIODISKE AFGIFTER 104 - VAREBIL HANDLET FØR 18032009 105 -
+            INVALIDEKØRETØJ (Afgift)</xs:documentation>
+    </xs:annotation>
+    <xs:include schemaLocation="BolskType.xsd"/>
+    <xs:include schemaLocation="PeriodeLaengdeType.xsd"/>
+    <xs:include schemaLocation="TalHelType.xsd"/>
+    <xs:include schemaLocation="TekstKortType.xsd"/>
+    <xs:element name="TilladelseTypeErPeriodeBegraenset" type="dmr:BolskType">
+        <xs:annotation>
+            <xs:documentation>En angivelse af, hvorvidt tilladelsen er periodebegrænset.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="TilladelseTypePeriodeLaengde" type="dmr:PeriodeLaengdeType">
+        <xs:annotation>
+            <xs:documentation>Længden af en standard periode for en
+                given tilladelse.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="TilladelseTypeNummer" type="dmr:TalHelType">
+        <xs:annotation>
+            <xs:documentation>Et nummer, som unikt beskrive den enkelte
+                værdi for en given periode.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="TilladelseTypeNavn" type="dmr:TekstKortType">
+        <xs:annotation>
+            <xs:documentation>En mindre tekst - typisk et eller få ord -
+                som unikt giver mulighed for identifikationen af et
+                givet begreb.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+</xs:schema>

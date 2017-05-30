@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+    elementFormDefault="qualified"
+    targetNamespace="http://skat.dk/dmr/2007/05/31/" version="1.0"
+    xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:annotation>
+        <xs:documentation>En angivelse af med hvilken årsag, at et
+            køretøjs registreringsgrundlag er blokeret. Der kan
+            forekomme flere samtidige årsager for køretøjet.  Listen af
+            typer af årsager er: 1 - Mangel (køretøjet har fået
+            identificeret væsentlige mangler) 2 - Skadet køretøj 3 -
+            Totalskadet køretøj 4 - Henvist til SKAT 5 - Indkaldt til
+            registrering 6 - Skal værdifastsættes 7 - Skal
+            afgiftsberigtiges 8 - Efterlyst 9 - Låst af SKAT</xs:documentation>
+    </xs:annotation>
+    <xs:include schemaLocation="TalHelType.xsd"/>
+    <xs:include schemaLocation="TekstKortType.xsd"/>
+    <xs:element name="KoeretoejBlokeringAarsagTypeNummer" type="dmr:TalHelType">
+        <xs:annotation>
+            <xs:documentation>Unik identifikation af typen af blokeringsårsag.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejBlokeringAarsagTypeNavn" type="dmr:TekstKortType">
+        <xs:annotation>
+            <xs:documentation>Navnet på typen af blokeringsårsag. </xs:documentation>
+        </xs:annotation>
+    </xs:element>
+</xs:schema>

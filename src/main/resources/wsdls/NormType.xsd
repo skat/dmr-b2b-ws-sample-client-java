@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+    elementFormDefault="qualified"
+    targetNamespace="http://skat.dk/dmr/2007/05/31/" version="1.0"
+    xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:annotation>
+        <xs:documentation>En miljønorm er en liste af forskellige
+            miljønormer, hvor hver miljønorm har en række krav til
+            intervaller for forskellige køretøjstekniske data (f.eks.
+            emissionsnormer m.v.) For yderligere informationer omkring
+            miljønormer bør direktiv 97/24/EF rekvireres. Følgende
+            normer er identificeret: 1 - Ingen Norm 26 - Ikke Euro 27 -
+            Euro I 28 - Euro II 29 - Euro III 46 - Euro IV 47 - Euro V
+            49 - Euro VI 50 - Euro VII 77 - Miljønorm 2006 over 150ccm
+            78 - Miljønorm 2006 maks 150ccm 24 - År 2000 miljønorm 25 -
+            År 2005 miljønorm 48 - EEV</xs:documentation>
+    </xs:annotation>
+    <xs:include schemaLocation="TalHelType.xsd"/>
+    <xs:include schemaLocation="TekstKortType.xsd"/>
+    <xs:element name="NormTypeNummer" type="dmr:TalHelType">
+        <xs:annotation>
+            <xs:documentation>NormType nummer.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="NormTypeNavn" type="dmr:TekstKortType">
+        <xs:annotation>
+            <xs:documentation>NormType navn.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+</xs:schema>

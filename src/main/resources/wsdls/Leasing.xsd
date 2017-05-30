@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+    elementFormDefault="qualified"
+    targetNamespace="http://skat.dk/dmr/2007/05/31/" version="1.0"
+    xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:include schemaLocation="TalHelType.xsd"/>
+    <xs:include schemaLocation="DatoType.xsd"/>
+    <xs:include schemaLocation="KodeType.xsd"/>
+    <xs:include schemaLocation="LeasingStatusType.xsd"/>
+    <xs:include schemaLocation="Tekst2000Type.xsd"/>
+    <xs:element name="LeasingMaaneder" type="dmr:TalHelType">
+        <xs:annotation>
+            <xs:documentation>Antallet af måneder leasing aftalen er
+                gældende. Er gældende fra LeasingGyldigFra datoen, hvis
+                denne er sat. Ellers løber gyldigheden fra
+                registreringstidspunktet (hvorved LeasingGyldigFra sættes).</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="LeasingNummer" type="dmr:TalHelType">
+        <xs:annotation>
+            <xs:documentation>Unikt id for en leasingaftale/leasingcertifikat</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="LeasingGyldigFra" type="dmr:DatoType">
+        <xs:annotation>
+            <xs:documentation>Datoen leasingen er gyldig fra.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="LeasingGyldigTil" type="dmr:DatoType">
+        <xs:annotation>
+            <xs:documentation>Datoen leasingen er gyldig til.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="LeasingReelOphoerDato" type="dmr:DatoType">
+        <xs:annotation>
+            <xs:documentation>Den faktiske dato for leasing ophør.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="LeasingKode" type="dmr:KodeType">
+        <xs:annotation>
+            <xs:documentation>Den unikke kode på et leasing certifikat
+                der bruges til at låse certifikatet op med.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="LeasingStatus" type="dmr:LeasingStatusType"/>
+    <xs:element name="LeasingBemaerkning" type="dmr:Tekst2000Type">
+        <xs:annotation>
+            <xs:documentation>Feltet skal  bruges i forbindelse med
+                leasing afgørelse.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+</xs:schema>

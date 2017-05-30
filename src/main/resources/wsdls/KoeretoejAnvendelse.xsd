@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+    elementFormDefault="qualified"
+    targetNamespace="http://skat.dk/dmr/2007/05/31/" version="1.0"
+    xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:annotation>
+        <xs:documentation>Et køretøjets anvendelse. Følgende anvendelser
+            er identificeret: 1 - Privat personkørsel 20 - Godstransport
+            21- Taxikørsel 22 - Sygetransport 23 - Ambulancekørsel 25 -
+            Rutekørsel 26 - Rustvognskørsel 27 -
+            Mandskabs-/Materielkørsel 28 -
+            Brandsluknings-/redningskørsel 29 - Privat buskørsel 30 -
+            Buskørsel 31 - Trækkraft for sættevogn 32 - Særlig
+            anvendelse 33 - Skov-, landbrug- og gartnerikørsel 34 -
+            Beboelse 35 - Arbejdskørsel 38 - Godstransport (½ OMS.) 40 -
+            Godstransport erhverv 41 - Godstransport privat/erhverv 42 -
+            Godstransport privat 43 - Kun godkendt til skov-, landbrug
+            og gartneri 44 - Kun godkendt til rutekørsel </xs:documentation>
+    </xs:annotation>
+    <xs:include schemaLocation="TalHelType.xsd"/>
+    <xs:include schemaLocation="TekstKortType.xsd"/>
+    <xs:include schemaLocation="TekstLangType.xsd"/>
+    <xs:include schemaLocation="DatoType.xsd"/>
+    <xs:include schemaLocation="ForretningParameterVaerdiStatusType.xsd"/>
+    <xs:element name="KoeretoejAnvendelseNummer" type="dmr:TalHelType"/>
+    <xs:element name="KoeretoejAnvendelseNavn" type="dmr:TekstKortType">
+        <xs:annotation>
+            <xs:documentation>En mindre tekst - typisk et eller få ord -
+                som unikt giver mulighed for identifikationen af et
+                givet begreb.  I nogle sammenhænge er det også brugt til
+                mindre forklaringer (sætningsniveau)</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejAnvendelseBeskrivelse" type="dmr:TekstLangType"/>
+    <xs:element name="KoeretoejAnvendelseGyldigFra" type="dmr:DatoType"/>
+    <xs:element name="KoeretoejAnvendelseGyldigTil" type="dmr:DatoType"/>
+    <xs:element name="KoeretoejAnvendelseStatus" type="dmr:ForretningParameterVaerdiStatusType"/>
+</xs:schema>

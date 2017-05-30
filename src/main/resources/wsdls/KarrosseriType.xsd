@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+    elementFormDefault="qualified"
+    targetNamespace="http://skat.dk/dmr/2007/05/31/" version="1.0"
+    xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:annotation>
+        <xs:documentation>Karrosseri er en angivelse af køretøjets
+            primære karrosseri. Hvilke karrosserityper, der kan
+            tilknyttes et køretøj er bestemt af køretøjets art. Indtil
+            nu er følgende karrosserier identificeret (angivet ud fra
+            art):  Personbiler: 101 - Stationcar 102 - Coupe 103 -
+            Cabriolet 104 - Hatchback 105 - Sedan   106 - MPV  303 -
+            Station-pickup 304 - Uden karrosseri  Knallert og
+            motorcykel: 301 - 3-hjulet, åben 302 - 3-hjulet, lukket</xs:documentation>
+    </xs:annotation>
+    <xs:include schemaLocation="TalHelType.xsd"/>
+    <xs:include schemaLocation="TekstKortType.xsd"/>
+    <xs:element name="KarrosseriTypeNummer" type="dmr:TalHelType"/>
+    <xs:element name="KarrosseriTypeNavn" type="dmr:TekstKortType"/>
+</xs:schema>

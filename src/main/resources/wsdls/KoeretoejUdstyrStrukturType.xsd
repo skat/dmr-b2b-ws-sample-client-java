@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+    elementFormDefault="qualified"
+    targetNamespace="http://skat.dk/dmr/2007/05/31/" version="1.0"
+    xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:annotation>
+        <xs:documentation/>
+        <xs:documentation>r15009</xs:documentation>
+    </xs:annotation>
+    <xs:include schemaLocation="KoeretoejUdstyr.xsd"/>
+    <xs:include schemaLocation="KoeretoejUdstyrTypeStrukturType.xsd"/>
+    <xs:element name="KoeretoejUdstyrStruktur" type="dmr:KoeretoejUdstyrStrukturType"/>
+    <xs:complexType name="KoeretoejUdstyrStrukturType">
+        <xs:sequence>
+            <xs:element ref="dmr:KoeretoejUdstyrAntal"/>
+            <xs:element ref="dmr:KoeretoejUdstyrTypeStruktur"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>
