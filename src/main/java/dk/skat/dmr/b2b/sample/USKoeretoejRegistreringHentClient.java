@@ -141,7 +141,7 @@ public class USKoeretoejRegistreringHentClient {
                 }
             }
         } else {
-            sb.append("KoeretoejOplysningStelNummer: ").append(out.getIndhold().getKoeretoejOplysningStelNummer()).append(newLine);
+            sb.append("** RegistreringNummerStatus: ").append(out.getIndhold().getRegistreringNummerStruktur().getRegistreringNummerStatus()).append(newLine);
         }
         sb.append("*******************************************************************").append(newLine);
 

@@ -7,6 +7,9 @@ keytool -list -keystore $CLIENT_TUSTSTORE -storepass storepassword
 
 echo "Importing ..."
 
+# Trust certificate used by server to sign response.
+keytool -noprompt -import -alias skatserver -file pem/dmr-test-system.pem -keystore $CLIENT_TUSTSTORE -storepass storepassword
+
 # Import SSL cert for secure transport (https://..)
 # The full cert. chain is viewable with openssl command: openssl s_client -connect host:port -showcerts
 #
@@ -20,6 +23,7 @@ keytool -list -keystore $CLIENT_TUSTSTORE -storepass storepassword
 
 ### Reverse imports
 ### NOT ACTIVE
+# keytool -delete -alias skatserver -keystore src/main/resources/keystore/client-truststore.jks -storepass storepassword
 # keytool -delete -alias ssl_chain_0 -keystore src/main/resources/keystore/client-truststore.jks -storepass storepassword
 # keytool -delete -alias ssl_chain_1 -keystore src/main/resources/keystore/client-truststore.jks -storepass storepassword
 # keytool -delete -alias ssl_chain_2 -keystore src/main/resources/keystore/client-truststore.jks -storepass storepassword
