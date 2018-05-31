@@ -40,7 +40,7 @@ by printing out relevant values to the log.
 
 The fulfillment of policies required to invoke the Web Service is configured in the file:
 
-[dmr-policy.xml](src/main/resources/dmr-policy.xml)
+[dmr-b2b-policy.xml](src/main/resources/dmr-b2b-policy.xml)
 
 Fulfillment of WS Policy requirements is achieved using CXF's in and out interceptor framework and 
 the `dmr-policy.xml` file details which parts are to be signed and how to present 
