@@ -46,7 +46,15 @@ Fulfillment of WS Policy requirements is achieved using CXF's in and out interce
 the `dmr-policy.xml` file details which parts are to be signed and how to present 
 certificate for authentication on the server side. This configuration file also demonstrates how
 secure transport (https) is enabled client side.
- 
+
+In addition to configuration in `dmr-b2b-policy.xml`, the *Canonicalization Method* required (the request) 
+and produced (the response) by the Web Service is `http://www.w3.org/2001/10/xml-exc-c14n#`, e.g. as
+would be rendered in the request:
+
+```xml
+<ds:CanonicalizationMethod xmlns:ds="http://www.w3.org/2000/09/xmldsig#" Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+```
+
 ## Run clients
 
 > **IMPORTANT** The sample clients must be configured with JVM parameters that are necessary for the client to run and
