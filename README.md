@@ -1,5 +1,7 @@
 # Danish Register of Motor Vehicles - API/B2B Integration - Java Sample
 
+[![Build Status](https://travis-ci.com/skat/dmr-b2b-ws-sample-client-java.svg?branch=master)](https://travis-ci.com/skat/dmr-b2b-ws-sample-client-java)
+
 Sample client for the Register of Motor Vehicles **B2B Web Service Gateway** developed in Java and 
 using open source libraries.
 
