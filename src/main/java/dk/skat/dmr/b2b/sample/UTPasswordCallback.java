@@ -41,9 +41,8 @@ public class UTPasswordCallback implements CallbackHandler {
 
     public UTPasswordCallback() {
         String P12_PASSPHRASE = System.getProperty("dk.skat.dmr.b2b.sample.P12_PASSPHRASE");
-        passwords.put("valid", P12_PASSPHRASE);
-        passwords.put("revoked", P12_PASSPHRASE);
-        passwords.put("expired", P12_PASSPHRASE);
+        String clientCertAlias = System.getProperty("dk.skat.dmr.b2b.sample.ClientCertAlias");
+        passwords.put(clientCertAlias, P12_PASSPHRASE);
     }
 
     /**

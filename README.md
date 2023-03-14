@@ -65,6 +65,7 @@ would be rendered in the request:
 
 The full list of parameters for running a test against the **USKoeretoejRegistreringHent** operation:
 
+* **dk.skat.dmr.b2b.sample.ClientCertAlias** (REQUIRED): The alias of the keypair to be used the call.
 * **dk.skat.dmr.b2b.sample.P12_PASSPHRASE** (REQUIRED): Passphrase to the certificate used for authentication and signing.
 * **dk.skat.dmr.b2b.sample.USImportoerService.ENDPOINT** (REQUIRED): The endpoint of the **USImportoerService** service being invoked.
 * **dk.skat.dmr.b2b.sample.TXID_PREFIX** (OPTIONAL): This parameter sets a custom prefix to the generated transaction id and is very useful when asking SKAT Help Desk to trace a particular request.
@@ -74,6 +75,7 @@ command:
 
 ```sh
 $ mvn clean install \
+  -Ddk.skat.dmr.b2b.sample.ClientCertAlias=<CHANGE_THIS> \
   -Ddk.skat.dmr.b2b.sample.P12_PASSPHRASE=<CHANGE_THIS> \
   -Ddk.skat.dmr.b2b.sample.USImportoerService.ENDPOINT=<CHANGE_THIS>
   -Ddk.skat.dmr.b2b.sample.TXID_PREFIX=ACME_01_
