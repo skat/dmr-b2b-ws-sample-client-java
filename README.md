@@ -309,6 +309,40 @@ Where `P12_PASSPHRASE` and `P12_CURRENT_ALIAS` are passphrase and alias of the O
 respectively. The three keytool command removes the pre configured certificate, changes the the alias
 of the new certificate, and finally imports it into the keystore.
 
+## FAQ
+
+### Fault code: wsse:FailedAuthentication
+
+If the service returns the response below it is very likely that you tried to call the service using a certificate issued
+to an employee of type **OCES3**. These certificates are not permitted for calling the services even if the certificate has
+been registered on skat.dk and granted access to DMR services.
+
+```xml
+<env:Envelope xmlns:env="http://schemas.xmlsoap.org/soap/envelope/">
+<env:Header/>
+<env:Body>
+<env:Fault xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
+<faultcode>wsse:FailedAuthentication</faultcode>
+<faultstring>Failed to derive subject from token.javax.security.auth.login.LoginException: javax.security.auth.callback.UnsupportedCallbackException: Unsupported callback class: NameCallback javax.security.auth.callback.NameCallback@67fb8784</faultstring>
+</env:Fault>
+</env:Body>
+</env:Envelope>
+```
+
+### Fault string: Message-level authorization denied
+
+If the service returns the response below the certificate in use has been registered on skat.dk, but has not been
+granted access to call the service. Please assign the relevant permissions to the registered certificate.
+
+```xml
+<fault_body>
+    <env:Fault xmlns:env="http://schemas.xmlsoap.org/soap/envelope/">
+        <faultcode>soapenv:Server</faultcode>
+        <faultstring>***-******: Message-level authorization denied</faultstring>
+    </env:Fault>
+</fault_body>
+```
+
 ## References
 
 * [Apache CXF](http://cxf.apache.org/)
