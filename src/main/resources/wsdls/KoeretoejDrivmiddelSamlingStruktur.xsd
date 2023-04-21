@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+    elementFormDefault="qualified"
+    targetNamespace="http://skat.dk/dmr/2007/05/31/" version="1.0"
+    xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:annotation>
+        <xs:documentation/>
+        <xs:documentation>r20956</xs:documentation>
+    </xs:annotation>
+    <xs:include schemaLocation="KoeretoejDrivmiddelStrukturType.xsd"/>
+    <xs:element name="KoeretoejDrivmiddelSamlingStruktur" type="dmr:KoeretoejDrivmiddelSamlingStrukturType"/>
+    <xs:complexType name="KoeretoejDrivmiddelSamlingStrukturType">
+        <xs:sequence>
+            <xs:element name="KoeretoejDrivmiddelSamling">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element maxOccurs="2" minOccurs="0" ref="dmr:KoeretoejDrivmiddelStruktur"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

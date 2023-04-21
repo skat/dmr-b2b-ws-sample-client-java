@@ -12,7 +12,8 @@
             (x) 09 - Traktorpåhængsvogn 10 - Campingvogn 11 -
             Påhængsredskab 12 - Motorredskab (x) 16 - Stor knallert (x)
             17 - Lille knallert (x) 91 - Motordrevet blokvogn (x) 92 -
-            Bloksættevogn 93 - Blokpåhængsvogn 94 - Blokvognsdolly 95 - Blokvognsmodul</xs:documentation>
+            Bloksættevogn 93 - Blokpåhængsvogn 94 - Blokvognsdolly 95 -
+            Blokvognsmodul 96 - Blokvogn</xs:documentation>
     </xs:annotation>
     <xs:include schemaLocation="TalHelType.xsd"/>
     <xs:include schemaLocation="TekstKortType.xsd"/>
@@ -20,13 +21,15 @@
     <xs:include schemaLocation="TekstLangType.xsd"/>
     <xs:include schemaLocation="DatoType.xsd"/>
     <xs:include schemaLocation="ForretningParameterVaerdiStatusType.xsd"/>
-    <xs:element name="KoeretoejArtNummer" type="dmr:TalHelType"/>
+    <xs:element name="KoeretoejArtNummer" type="dmr:TalHelType">
+        <xs:annotation>
+            <xs:documentation>Kode som viser Køretøjets art</xs:documentation>
+        </xs:annotation>
+    </xs:element>
     <xs:element name="KoeretoejArtNavn" type="dmr:TekstKortType">
         <xs:annotation>
-            <xs:documentation>En mindre tekst - typisk et eller få ord -
-                som unikt giver mulighed for identifikationen af et
-                givet begreb.  I nogle sammenhænge er det også brugt til
-                mindre forklaringer (sætningsniveau)</xs:documentation>
+            <xs:documentation>Køretøjs art skrevet som tekst, svarende
+                til den værdi der står i KøretøjArtNummer </xs:documentation>
         </xs:annotation>
     </xs:element>
     <xs:element name="KoeretoejArtKraeverForsikring" type="dmr:BolskType">

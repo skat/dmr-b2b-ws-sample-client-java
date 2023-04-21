@@ -15,20 +15,22 @@
             Beboelse 35 - Arbejdskørsel 38 - Godstransport (½ OMS.) 40 -
             Godstransport erhverv 41 - Godstransport privat/erhverv 42 -
             Godstransport privat 43 - Kun godkendt til skov-, landbrug
-            og gartneri 44 - Kun godkendt til rutekørsel </xs:documentation>
+            og gartneri 44 - Kun godkendt til rutekørsel 45 - Særtransport</xs:documentation>
     </xs:annotation>
     <xs:include schemaLocation="TalHelType.xsd"/>
     <xs:include schemaLocation="TekstKortType.xsd"/>
     <xs:include schemaLocation="TekstLangType.xsd"/>
     <xs:include schemaLocation="DatoType.xsd"/>
     <xs:include schemaLocation="ForretningParameterVaerdiStatusType.xsd"/>
-    <xs:element name="KoeretoejAnvendelseNummer" type="dmr:TalHelType"/>
+    <xs:element name="KoeretoejAnvendelseNummer" type="dmr:TalHelType">
+        <xs:annotation>
+            <xs:documentation>Kode for et køretøjs anvendelse.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
     <xs:element name="KoeretoejAnvendelseNavn" type="dmr:TekstKortType">
         <xs:annotation>
-            <xs:documentation>En mindre tekst - typisk et eller få ord -
-                som unikt giver mulighed for identifikationen af et
-                givet begreb.  I nogle sammenhænge er det også brugt til
-                mindre forklaringer (sætningsniveau)</xs:documentation>
+            <xs:documentation>Anvendelsen beskrevet som tekst, svarende
+                til det Nummer der er angivet.</xs:documentation>
         </xs:annotation>
     </xs:element>
     <xs:element name="KoeretoejAnvendelseBeskrivelse" type="dmr:TekstLangType"/>

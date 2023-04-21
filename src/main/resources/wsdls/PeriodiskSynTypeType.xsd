@@ -9,7 +9,8 @@
             <xs:enumeration value="Periodisk1plus1"/>
             <xs:enumeration value="Periodisk2plus2"/>
             <xs:enumeration value="Periodisk4plus2"/>
-            <xs:enumeration value="Periodisk40plus8"/>
+            <xs:enumeration value="Periodisk35plus8"/>
+            <xs:enumeration value="Blokvogn"/>
         </xs:restriction>
     </xs:simpleType>
 </xs:schema>

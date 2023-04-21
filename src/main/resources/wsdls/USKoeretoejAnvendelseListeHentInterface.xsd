@@ -6,7 +6,7 @@
     <xs:annotation>
         <xs:documentation>At hente en liste af anvendelser - eventuelt
             begrænset ud fra en på forhånd fastsat art.</xs:documentation>
-        <xs:documentation>r15009</xs:documentation>
+        <xs:documentation>r20956</xs:documentation>
     </xs:annotation>
     <xs:include schemaLocation="USKoeretoejAnvendelseListeHent_IType.xsd"/>
     <xs:include schemaLocation="USKoeretoejAnvendelseListeHent_OType.xsd"/>

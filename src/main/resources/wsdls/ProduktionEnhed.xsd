@@ -4,7 +4,8 @@
     targetNamespace="http://skat.dk/dmr/2007/05/31/" version="1.0"
     xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
     <xs:annotation>
-        <xs:documentation>En klasse, indeholdende et virksomheds
+        <xs:documentation>Bør ikke anvendes - brug i stedet
+            Produktionsenhed  En klasse, indeholdende et virksomheds
             tilknyttede P-enhednumre</xs:documentation>
     </xs:annotation>
     <xs:include schemaLocation="ProduktionEnhedNummerType.xsd"/>

@@ -6,7 +6,7 @@
     <xs:annotation>
         <xs:documentation>At oprette en køretøjserklæring i forhold til
             et givet køretøj</xs:documentation>
-        <xs:documentation>r15009</xs:documentation>
+        <xs:documentation>r20956</xs:documentation>
     </xs:annotation>
     <xs:include schemaLocation="USKoeretoejErklaeringOpret_IType.xsd"/>
     <xs:include schemaLocation="USKoeretoejErklaeringOpret_OType.xsd"/>

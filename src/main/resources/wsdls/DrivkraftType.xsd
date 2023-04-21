@@ -12,6 +12,11 @@
     </xs:annotation>
     <xs:include schemaLocation="TalHelType.xsd"/>
     <xs:include schemaLocation="TekstKortType.xsd"/>
-    <xs:element name="DrivkraftTypeNummer" type="dmr:TalHelType"/>
+    <xs:element name="DrivkraftTypeNummer" type="dmr:TalHelType">
+        <xs:annotation>
+            <xs:documentation>Et positivt heltal, der kan repræsenterer
+                værdier i intervallet 0 til 999.999.999.999.999.999</xs:documentation>
+        </xs:annotation>
+    </xs:element>
     <xs:element name="DrivkraftTypeNavn" type="dmr:TekstKortType"/>
 </xs:schema>

@@ -24,6 +24,7 @@
             <xs:enumeration value="AnnulleringAfmelding"/>
             <xs:enumeration value="KonverteretRegistrering"/>
             <xs:enumeration value="Pladeskift"/>
+            <xs:enumeration value="RedigerTilladelse"/>
         </xs:restriction>
     </xs:simpleType>
 </xs:schema>

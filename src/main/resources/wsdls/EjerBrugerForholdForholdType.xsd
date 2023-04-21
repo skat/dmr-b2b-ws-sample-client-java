@@ -8,9 +8,10 @@
                 der er tale om.</xs:documentation>
         </xs:annotation>
         <xs:restriction base="xs:string">
-            <xs:maxLength value="10"/>
+            <xs:maxLength value="20"/>
             <xs:enumeration value="Ejer"/>
             <xs:enumeration value="Bruger"/>
+            <xs:enumeration value="Subleasinggiver"/>
         </xs:restriction>
     </xs:simpleType>
 </xs:schema>

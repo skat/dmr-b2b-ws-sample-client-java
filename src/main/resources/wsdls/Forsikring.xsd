@@ -20,6 +20,7 @@
     <xs:include schemaLocation="ForsikringStatusType.xsd"/>
     <xs:include schemaLocation="BolskType.xsd"/>
     <xs:include schemaLocation="ForsikringStatusAArsagType.xsd"/>
+    <xs:include schemaLocation="Tekst50Type.xsd"/>
     <xs:element name="ForsikringAfgangRegistreretDato" type="dmr:DatoTidType">
         <xs:annotation>
             <xs:documentation>Dato og tidspunktet, hvor afgangen er
@@ -115,6 +116,12 @@
             <xs:documentation>Angiver årsagen til at status ændrede sig.
                 Dette felt giver ikke mening uden Status-feltet, og skal
                 altid ses i relation hertil.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="ForsikringAfgangAarsag" type="dmr:Tekst50Type">
+        <xs:annotation>
+            <xs:documentation>Angiver ophørsårsag for forsikringen. Til
+                brug for DFIM</xs:documentation>
         </xs:annotation>
     </xs:element>
 </xs:schema>

@@ -5,7 +5,7 @@
     xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
     <xs:annotation>
         <xs:documentation/>
-        <xs:documentation>r15009</xs:documentation>
+        <xs:documentation>r20956</xs:documentation>
     </xs:annotation>
     <xs:include schemaLocation="KoeretoejRegistrering.xsd"/>
     <xs:include schemaLocation="KoeretoejRegistreringGrundlag.xsd"/>
@@ -20,6 +20,7 @@
             <xs:element minOccurs="0" ref="dmr:KoeretoejRegistreringGyldigTil"/>
             <xs:element ref="dmr:KoeretoejRegistreringGrundlagIdent"/>
             <xs:element ref="dmr:KoeretoejRegistreringSenesteHaendelse"/>
+            <xs:element minOccurs="0" ref="dmr:KoeretoejRegistreringTilknyttetLeasingForhold"/>
         </xs:sequence>
     </xs:complexType>
 </xs:schema>

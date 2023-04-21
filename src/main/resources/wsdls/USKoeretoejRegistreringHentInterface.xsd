@@ -7,7 +7,7 @@
         <xs:documentation>At hente et køretøjs eller fasteprøveskiltes
             registreringsmæssige data, dvs. oplysninger om ejer/bruger,
             forsikringsselskab og art/anvendelse på et givent tidspunkt.</xs:documentation>
-        <xs:documentation>r15009</xs:documentation>
+        <xs:documentation>r20956</xs:documentation>
     </xs:annotation>
     <xs:include schemaLocation="USKoeretoejRegistreringHent_IType.xsd"/>
     <xs:include schemaLocation="USKoeretoejRegistreringHent_OType.xsd"/>

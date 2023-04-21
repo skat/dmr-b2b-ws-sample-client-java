@@ -6,7 +6,7 @@
     <xs:annotation>
         <xs:documentation>At oprette et køretøj ud fra enten et system
             kald eller en brugergrænseflade med tilhørende XML fil opdatering.</xs:documentation>
-        <xs:documentation>r15009</xs:documentation>
+        <xs:documentation>r20956</xs:documentation>
     </xs:annotation>
     <xs:include schemaLocation="USKoeretoejCoCOpret_IType.xsd"/>
     <xs:include schemaLocation="USKoeretoejCoCOpret_OType.xsd"/>
