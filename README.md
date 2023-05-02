@@ -314,8 +314,8 @@ of the new certificate, and finally imports it into the keystore.
 ### Fault code: wsse:FailedAuthentication
 
 If the service returns the response below it is very likely that you tried to call the service using a certificate issued
-to an employee of type **OCES3**. These certificates are not permitted for calling the services even if the certificate has
-been registered on skat.dk and granted access to DMR services.
+to an employee of type **MOCES** in the **OCES3** version series. These certificates are NOT permitted for calling the services 
+even if the certificate has been registered on skat.dk and granted access to DMR services.
 
 ```xml
 <env:Envelope xmlns:env="http://schemas.xmlsoap.org/soap/envelope/">
@@ -328,6 +328,9 @@ been registered on skat.dk and granted access to DMR services.
 </env:Body>
 </env:Envelope>
 ```
+
+From the **OCES3** (MitID Erhverv) certificate solution the only two certificate types permitted
+to call the services are: **FOCES** and **VOCES**.
 
 ### Fault string: Message-level authorization denied
 
