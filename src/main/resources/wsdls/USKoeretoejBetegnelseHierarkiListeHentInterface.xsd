@@ -6,7 +6,7 @@
     <xs:annotation>
         <xs:documentation>At kunne fremsøge relevante dele af hierarkiet
             ud fra enten mærke, model og/eller variant tekster.</xs:documentation>
-        <xs:documentation>r15009</xs:documentation>
+        <xs:documentation>r20956</xs:documentation>
     </xs:annotation>
     <xs:include schemaLocation="USKoeretoejBetegnelseHierarkiListeHent_IType.xsd"/>
     <xs:include schemaLocation="USKoeretoejBetegnelseHierarkiListeHent_OType.xsd"/>

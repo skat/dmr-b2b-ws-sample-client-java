@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+    elementFormDefault="qualified"
+    targetNamespace="http://skat.dk/dmr/2007/05/31/" version="1.0"
+    xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:annotation>
+        <xs:documentation/>
+        <xs:documentation>r24606</xs:documentation>
+    </xs:annotation>
+    <xs:include schemaLocation="KoeretoejMotor.xsd"/>
+    <xs:include schemaLocation="KoeretoejMiljoeOplysning.xsd"/>
+    <xs:element name="KoeretoejBraendstofStruktur" type="dmr:KoeretoejBraendstofStrukturType"/>
+    <xs:complexType name="KoeretoejBraendstofStrukturType">
+        <xs:sequence>
+            <xs:element minOccurs="0" ref="dmr:KoeretoejMotorKmPerLiter"/>
+            <xs:element minOccurs="0" ref="dmr:KoeretoejMotorKMPerLiterPreCalc"/>
+            <xs:element minOccurs="0" ref="dmr:KoeretoejMotorBraendstofforbrugMaalt"/>
+            <xs:element minOccurs="0" ref="dmr:KoeretoejMotorGasforbrug"/>
+            <xs:element minOccurs="0" ref="dmr:KoeretoejMotorCO2UdslipBeregnet"/>
+            <xs:element minOccurs="0" ref="dmr:KoeretoejMiljoeOplysningCO2Udslip"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

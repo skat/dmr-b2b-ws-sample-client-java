@@ -15,6 +15,7 @@
     <xs:include schemaLocation="KoeretoejRegistreringStatusAArsagType.xsd"/>
     <xs:include schemaLocation="KodeEtCifferStartNulType.xsd"/>
     <xs:include schemaLocation="KoeretoejRegistreringHaendelserType.xsd"/>
+    <xs:include schemaLocation="BolskType.xsd"/>
     <xs:element name="KoeretoejRegistreringGyldigFra" type="dmr:DatoTidType">
         <xs:annotation>
             <xs:documentation>Denne dato angiver datoen for
@@ -57,6 +58,12 @@
         </xs:annotation>
     </xs:element>
     <xs:element name="KoeretoejRegistreringSenesteHaendelse" type="dmr:KoeretoejRegistreringHaendelserType">
+        <xs:annotation>
+            <xs:documentation>Angiver den seneste hændelse der er
+                foretaget på registreringen. </xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejRegistreringTilknyttetLeasingForhold" type="dmr:BolskType">
         <xs:annotation>
             <xs:documentation>Angiver den seneste hændelse der er
                 foretaget på registreringen. </xs:documentation>

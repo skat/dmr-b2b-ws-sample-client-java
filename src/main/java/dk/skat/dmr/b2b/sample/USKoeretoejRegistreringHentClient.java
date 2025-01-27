@@ -112,8 +112,8 @@ public class USKoeretoejRegistreringHentClient {
         sbRequest.append("** HovedOplysninger").append(newLine);
         sbRequest.append("**** Transaction Id: ").append(usKoeretoejTekniskDataHentIType.getHovedOplysninger().getTransaktionIdentifikator()).append(newLine);
         sbRequest.append("**** Transaction Time: ").append(usKoeretoejTekniskDataHentIType.getHovedOplysninger().getTransaktionTid()).append(newLine);
-        sbRequest.append("** VirksomhedIdentifikationStruktur").append(newLine);
-        sbRequest.append("**** AfgiftOperatoerPunktAfgiftIdentifikator: ").append(usKoeretoejTekniskDataHentIType.getKoeretoejGenerelIdentifikatorStruktur().getKoeretoejGenerelIdentifikatorValg().getRegistreringNummerNummer()).append(newLine);
+        sbRequest.append("*******************************************************************").append(newLine);
+        sbRequest.append("**** RegistreringNummerNummer: ").append(usKoeretoejTekniskDataHentIType.getKoeretoejGenerelIdentifikatorStruktur().getKoeretoejGenerelIdentifikatorValg().getRegistreringNummerNummer()).append(newLine);
         sbRequest.append("*******************************************************************").append(newLine);
         LOGGER.info(newLine + sbRequest.toString());
 

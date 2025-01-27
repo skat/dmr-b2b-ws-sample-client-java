@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+    elementFormDefault="qualified"
+    targetNamespace="http://skat.dk/dmr/2007/05/31/" version="1.0"
+    xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:annotation>
+        <xs:documentation/>
+        <xs:documentation>r20956</xs:documentation>
+    </xs:annotation>
+    <xs:include schemaLocation="KoeretoejMotor.xsd"/>
+    <xs:include schemaLocation="KoeretoejMiljoeOplysning.xsd"/>
+    <xs:include schemaLocation="DrivkraftTypeStrukturType.xsd"/>
+    <xs:include schemaLocation="KoeretoejBraendstofStrukturType.xsd"/>
+    <xs:include schemaLocation="KoeretoejElforbrugStrukturType.xsd"/>
+    <xs:include schemaLocation="MaaleNormStrukturType.xsd"/>
+    <xs:element name="KoeretoejDrivmiddelStruktur" type="dmr:KoeretoejDrivmiddelStrukturType"/>
+    <xs:complexType name="KoeretoejDrivmiddelStrukturType">
+        <xs:sequence>
+            <!--Sequence removed-->
+            <xs:element minOccurs="0" ref="dmr:MaaleNormStruktur"/>
+            <xs:element minOccurs="0" ref="dmr:DrivkraftTypeStruktur"/>
+            <xs:element minOccurs="0" ref="dmr:KoeretoejBraendstofStruktur"/>
+            <xs:element minOccurs="0" ref="dmr:KoeretoejElforbrugStruktur"/>
+            <xs:element minOccurs="0" ref="dmr:KoeretoejMotorBraendselscelle"/>
+            <xs:element minOccurs="0" ref="dmr:KoeretoejMotorPlugInHybrid"/>
+            <xs:element minOccurs="0" ref="dmr:KøretøjMotorDrivmiddelPrimær"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

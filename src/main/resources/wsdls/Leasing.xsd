@@ -8,6 +8,8 @@
     <xs:include schemaLocation="KodeType.xsd"/>
     <xs:include schemaLocation="LeasingStatusType.xsd"/>
     <xs:include schemaLocation="Tekst2000Type.xsd"/>
+    <xs:include schemaLocation="TekstKortType.xsd"/>
+    <xs:include schemaLocation="DatoTidType.xsd"/>
     <xs:element name="LeasingMaaneder" type="dmr:TalHelType">
         <xs:annotation>
             <xs:documentation>Antallet af måneder leasing aftalen er
@@ -47,6 +49,18 @@
         <xs:annotation>
             <xs:documentation>Feltet skal  bruges i forbindelse med
                 leasing afgørelse.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="LeasingAendringType" type="dmr:TekstKortType">
+        <xs:annotation>
+            <xs:documentation>Angiver om der er tale om en forkortelse
+                eller en forlængelse af leasingperioden. </xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="LeasingSidstAendret" type="dmr:DatoTidType">
+        <xs:annotation>
+            <xs:documentation>Datoen hvor læsingoplysninger sidst er
+                ændret. </xs:documentation>
         </xs:annotation>
     </xs:element>
 </xs:schema>

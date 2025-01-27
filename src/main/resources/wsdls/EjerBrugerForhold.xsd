@@ -22,6 +22,7 @@
     </xs:annotation>
     <xs:include schemaLocation="EjerBrugerForholdForholdType.xsd"/>
     <xs:include schemaLocation="BolskType.xsd"/>
+    <xs:include schemaLocation="EjerBrugerForholdAftaleTypeType.xsd"/>
     <xs:element name="EjerBrugerForholdForhold" type="dmr:EjerBrugerForholdForholdType">
         <xs:annotation>
             <xs:documentation>Angiver hvilken type ejerbrugerforhold der
@@ -29,6 +30,12 @@
         </xs:annotation>
     </xs:element>
     <xs:element name="EjerBrugerForholdPrimaer" type="dmr:BolskType">
+        <xs:annotation>
+            <xs:documentation>Hvis denne attribut er sand, så angives et
+                primært forhold. Ellers et sekundært forhold.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="EjerBrugerForholdAftaleType" type="dmr:EjerBrugerForholdAftaleTypeType">
         <xs:annotation>
             <xs:documentation>Hvis denne attribut er sand, så angives et
                 primært forhold. Ellers et sekundært forhold.</xs:documentation>

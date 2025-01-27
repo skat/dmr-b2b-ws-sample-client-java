@@ -5,7 +5,7 @@
     xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
     <xs:annotation>
         <xs:documentation/>
-        <xs:documentation>r15009</xs:documentation>
+        <xs:documentation>r20956</xs:documentation>
     </xs:annotation>
     <xs:include schemaLocation="KoeretoejMiljoeOplysning.xsd"/>
     <xs:element name="KoeretoejMiljoeOplysningStruktur" type="dmr:KoeretoejMiljoeOplysningStrukturType"/>

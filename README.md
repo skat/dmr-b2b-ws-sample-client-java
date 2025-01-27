@@ -65,6 +65,7 @@ would be rendered in the request:
 
 The full list of parameters for running a test against the **USKoeretoejRegistreringHent** operation:
 
+* **dk.skat.dmr.b2b.sample.ClientCertAlias** (REQUIRED): The alias of the keypair to be used the call.
 * **dk.skat.dmr.b2b.sample.P12_PASSPHRASE** (REQUIRED): Passphrase to the certificate used for authentication and signing.
 * **dk.skat.dmr.b2b.sample.USImportoerService.ENDPOINT** (REQUIRED): The endpoint of the **USImportoerService** service being invoked.
 * **dk.skat.dmr.b2b.sample.TXID_PREFIX** (OPTIONAL): This parameter sets a custom prefix to the generated transaction id and is very useful when asking SKAT Help Desk to trace a particular request.
@@ -74,6 +75,7 @@ command:
 
 ```sh
 $ mvn clean install \
+  -Ddk.skat.dmr.b2b.sample.ClientCertAlias=<CHANGE_THIS> \
   -Ddk.skat.dmr.b2b.sample.P12_PASSPHRASE=<CHANGE_THIS> \
   -Ddk.skat.dmr.b2b.sample.USImportoerService.ENDPOINT=<CHANGE_THIS>
   -Ddk.skat.dmr.b2b.sample.TXID_PREFIX=ACME_01_
@@ -249,63 +251,42 @@ BusFactory.setDefaultBus(bus);
 Finally, clone [USKoeretoejRegistreringHentClientTest.java](src/test/java/dk/skat/dmr/b2b/sample/USKoeretoejRegistreringHentClientTest.java)
 and modify the class to invoke the newly implemented code.
 
-## Advanced Configuration
+## FAQ
 
-### Testing Expired and Revoked Certificates
+### Fault code: wsse:FailedAuthentication
 
-The client keystore includes three certificates:
+If the service returns the response below it is very likely that you tried to call the service using a certificate issued
+to an employee of type **MOCES** in the **OCES3** version series. These certificates are NOT permitted for calling the services 
+even if the certificate has been registered on skat.dk and granted access to DMR services.
 
-1. VOCES_gyldig.p12 with alias = `valid`.
-2. VOCES_spaerret.p12 with alias = `revoked`.
-3. VOCES_udloebet.p12 with alias = `expired`.
-
-By default the client is configured to run with certificate with alias `valid`.
-
-In order to complete a test with any of the other certificates the following files must be
-changed:
-
-* File: **src/main/resources/etc/Client_Sign.properties**
-
-Change as described in the file itself:
-
-```
-# SKAT: Options =
-# - valid (default)
-# - revoked
-# - expired
-org.apache.ws.security.crypto.merlin.keystore.alias=revoked
+```xml
+<env:Envelope xmlns:env="http://schemas.xmlsoap.org/soap/envelope/">
+<env:Header/>
+<env:Body>
+<env:Fault xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
+<faultcode>wsse:FailedAuthentication</faultcode>
+<faultstring>Failed to derive subject from token.javax.security.auth.login.LoginException: javax.security.auth.callback.UnsupportedCallbackException: Unsupported callback class: NameCallback javax.security.auth.callback.NameCallback@67fb8784</faultstring>
+</env:Fault>
+</env:Body>
+</env:Envelope>
 ```
 
-File: **src/main/resources/dmr-b2b-policy.xml**
+From the **OCES3** (MitID Erhverv) certificate solution the only two certificate types permitted
+to call the services are: **FOCES** and **VOCES**.
 
-Change as described in the file itself:
+### Fault string: Message-level authorization denied
 
+If the service returns the response below the certificate in use has been registered on skat.dk, but has not been
+granted access to call the service. Please assign the relevant permissions to the registered certificate.
+
+```xml
+<fault_body>
+    <env:Fault xmlns:env="http://schemas.xmlsoap.org/soap/envelope/">
+        <faultcode>soapenv:Server</faultcode>
+        <faultstring>***-******: Message-level authorization denied</faultstring>
+    </env:Fault>
+</fault_body>
 ```
-<!-- SKAT: Options =
-     - valid
-     - expired
-     - revoked
--->
-<entry key="signatureUser" value="valid"/>
-```
-
-### Installing other OCESII Certificates in the client keystore
-
-The keystore `src/main/resources/keystore/client-keystore.jks` is already prepared with the
-necessary test certificate that is authorized to access the test environment. However, in the
-event that another test certificate has been issued this may be installed as follows:
-
-```
-$ export P12_PASSPHRASE=CHANGE_ME
-$ export P12_CURRENT_ALIAS=CHANGE_ME
-$ keytool -delete -alias valid -keystore src/main/resources/keystore/client-keystore.jks -storepass storepassword
-$ keytool -changealias -keystore target/VOCES_yours.p12 -storepass $P12_PASSPHRASE -alias $P12_CURRENT_ALIAS -destalias "valid"
-$ keytool -v -importkeystore -srckeystore target/VOCES_yours.p12 -srcstoretype PKCS12 -destkeystore src/main/resources/keystore/client-keystore.jks -deststoretype JKS -deststorepass storepassword -srcstorepass $P12_PASSPHRASE
-```
-
-Where `P12_PASSPHRASE` and `P12_CURRENT_ALIAS` are passphrase and alias of the OCESII certificate,
-respectively. The three keytool command removes the pre configured certificate, changes the the alias
-of the new certificate, and finally imports it into the keystore.
 
 ## References
 

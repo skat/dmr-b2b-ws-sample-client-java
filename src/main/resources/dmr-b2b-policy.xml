@@ -96,12 +96,8 @@
                 <constructor-arg>
                     <map>
                         <entry key="action" value="Timestamp Signature"/>
-                        <!-- SKAT: Options =
-                             - valid
-                             - expired
-                             - revoked
-                        -->
-                        <entry key="signatureUser" value="valid"/>
+                        <!-- Provided by -Dparam -->
+                        <entry key="signatureUser" value="#{systemProperties['dk.skat.dmr.b2b.sample.ClientCertAlias']}"/>
                         <entry key="passwordCallbackClass" value="dk.skat.dmr.b2b.sample.UTPasswordCallback"/>
                         <!-- General Configuration -->
                         <entry key="addInclusivePrefixes" value="false"/>

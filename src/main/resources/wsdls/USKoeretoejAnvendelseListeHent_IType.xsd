@@ -6,7 +6,7 @@
     xmlns:kontekst="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
     <xs:annotation>
         <xs:documentation/>
-        <xs:documentation>r15009</xs:documentation>
+        <xs:documentation>r20956</xs:documentation>
     </xs:annotation>
     <xs:import
         namespace="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" schemaLocation="HovedOplysninger.xsd"/>
@@ -18,7 +18,7 @@
                     <xs:attribute name="revision">
                         <xs:simpleType>
                             <xs:restriction base="xs:string">
-                                <xs:pattern value="r15009"/>
+                                <xs:pattern value="r20956"/>
                             </xs:restriction>
                         </xs:simpleType>
                     </xs:attribute>

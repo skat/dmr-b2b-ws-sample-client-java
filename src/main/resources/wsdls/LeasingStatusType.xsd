@@ -10,6 +10,7 @@
             <xs:enumeration value="TilknytningAnnulleret"/>
             <xs:enumeration value="Annulleret"/>
             <xs:enumeration value="Berigtiget"/>
+            <xs:enumeration value="BerigtigetAnnulleret"/>
         </xs:restriction>
     </xs:simpleType>
 </xs:schema>

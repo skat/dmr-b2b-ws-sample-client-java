@@ -13,7 +13,7 @@ USImportoer-soapui-project.xml
 
 ![ChangeEndpoint](/assets/SoapUI-ChangeEndpoint.png)
 
-**Step 2:** Add the file `p12/VOCES_gyldig.p12` as keystore here using the passphrase provided to you:
+**Step 2:** Add the file `p12/B2B_testklient_SIT.p12` as keystore here using the passphrase provided to you: TODO!!!
 
 ![Keystore](/assets/WSSecurityConfig-Keystore.png)
 

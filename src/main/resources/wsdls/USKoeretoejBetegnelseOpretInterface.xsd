@@ -4,7 +4,7 @@
     targetNamespace="http://skat.dk/dmr/2007/05/31/" version="1.0"
     xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
     <xs:annotation>
-        <xs:documentation>r15009</xs:documentation>
+        <xs:documentation>r20956</xs:documentation>
     </xs:annotation>
     <xs:include schemaLocation="USKoeretoejBetegnelseOpret_IType.xsd"/>
     <xs:include schemaLocation="USKoeretoejBetegnelseOpret_OType.xsd"/>

@@ -6,7 +6,7 @@
     <xs:annotation>
         <xs:documentation>At hente de tilgængelige udstyrstyper, som man
             kan oprette udstyr på. </xs:documentation>
-        <xs:documentation>r15009</xs:documentation>
+        <xs:documentation>r20956</xs:documentation>
     </xs:annotation>
     <xs:include schemaLocation="USKoeretoejUdstyrTypeListeHent_IType.xsd"/>
     <xs:include schemaLocation="USKoeretoejUdstyrTypeListeHent_OType.xsd"/>

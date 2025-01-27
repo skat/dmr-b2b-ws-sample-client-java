@@ -6,7 +6,7 @@
     <xs:annotation>
         <xs:documentation>Gør det muligt at angive prisoplysninger for
             køretøjer der skal færdigoprettes ved registreringssyn.</xs:documentation>
-        <xs:documentation>r15009</xs:documentation>
+        <xs:documentation>r20956</xs:documentation>
     </xs:annotation>
     <xs:include schemaLocation="USUkompletKoeretoejOpret_IType.xsd"/>
     <xs:include schemaLocation="USUkompletKoeretoejOpret_OType.xsd"/>

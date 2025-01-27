@@ -6,7 +6,7 @@
     <xs:annotation>
         <xs:documentation>At hente en liste over alle mulige
             køretøjsarter, som man kan vælge under oprettelsen af et nyt køretøj.</xs:documentation>
-        <xs:documentation>r15009</xs:documentation>
+        <xs:documentation>r20956</xs:documentation>
     </xs:annotation>
     <xs:include schemaLocation="USKoeretoejArtListeHent_IType.xsd"/>
     <xs:include schemaLocation="USKoeretoejArtListeHent_OType.xsd"/>

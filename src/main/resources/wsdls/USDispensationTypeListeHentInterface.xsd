@@ -6,7 +6,7 @@
     <xs:annotation>
         <xs:documentation>At stille den komplette liste af supplerende
             data typer til rådighed for andre systemer.</xs:documentation>
-        <xs:documentation>r15009</xs:documentation>
+        <xs:documentation>r20956</xs:documentation>
     </xs:annotation>
     <xs:include schemaLocation="USDispensationTypeListeHent_IType.xsd"/>
     <xs:include schemaLocation="USDispensationTypeListeHent_OType.xsd"/>

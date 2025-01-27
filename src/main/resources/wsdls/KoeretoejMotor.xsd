@@ -4,8 +4,8 @@
     targetNamespace="http://skat.dk/dmr/2007/05/31/" version="1.0"
     xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
     <xs:annotation>
-        <xs:documentation>Begrebet dækker over, hvad motorens
-            drivmiddel, størrelse og effekt.</xs:documentation>
+        <xs:documentation>Begrebet dækker over, motorens drivmiddel,
+            størrelse og effekt.</xs:documentation>
     </xs:annotation>
     <xs:include schemaLocation="TalHelType.xsd"/>
     <xs:include schemaLocation="BolskType.xsd"/>
@@ -13,6 +13,7 @@
     <xs:include schemaLocation="TalFlydendeType.xsd"/>
     <xs:include schemaLocation="TekstKortType.xsd"/>
     <xs:include schemaLocation="FuelmodeTypeType.xsd"/>
+    <xs:include schemaLocation="MarkeringType.xsd"/>
     <xs:element name="KoeretoejMotorCylinderAntal" type="dmr:TalHelType">
         <xs:annotation>
             <xs:documentation>Antallet af cylindre</xs:documentation>
@@ -127,6 +128,58 @@
         <xs:annotation>
             <xs:documentation>En angivelse af hvor mange forskellige
                 drivkrafttyper, der kan anvendes på et køretøj.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejMotorGasforbrug" type="dmr:TalFlydendeType">
+        <xs:annotation>
+            <xs:documentation>Flydene tal</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejMotorElektriskRaekkevidde" type="dmr:TalFlydendeType">
+        <xs:annotation>
+            <xs:documentation>Rækkevidde i km for batteriet</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejMotorBatterikapacitet" type="dmr:TalFlydendeType">
+        <xs:annotation>
+            <xs:documentation>Er værdien af (ElektriskForbrug i Wh/km x
+                ElektriskRækkevidde i km)/1000</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejMotorBraendstofforbrugMaalt" type="dmr:TalFlydendeType">
+        <xs:annotation>
+            <xs:documentation>Et decimaltal på ti cifre hvor kommaet kan
+                stå  hvor som helst, og som kan være positiv eller
+                negativ. </xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejMotorElektriskForbrugMaalt" type="dmr:TalFlydendeType">
+        <xs:annotation>
+            <xs:documentation>Antallet af kilometre pr. Wh Efter WLTP
+                målemetode. </xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejMotorMaaleNormTypeNavn" type="dmr:TekstKortType">
+        <xs:annotation>
+            <xs:documentation>Valg mellem de tre gyldige målenormer:
+                NEDC; NEDC-2; WLTP </xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejMotorMaaleNormTypeNummer" type="dmr:TalHelType">
+        <xs:annotation>
+            <xs:documentation>Valg mellem de tre gyldige målenormer:
+                NEDC; NEDC-2; WLTP </xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejMotorCO2UdslipBeregnet" type="dmr:TalFlydendeType">
+        <xs:annotation>
+            <xs:documentation>Køreøjets CO2-udslip</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="KoeretoejMotorBraendselscelle" type="dmr:MarkeringType"/>
+    <xs:element name="KoeretoejMotorDrivmiddelPrimaer" type="dmr:BolskType">
+        <xs:annotation>
+            <xs:documentation>Bolsk værdi. den kan enten være True eller False.</xs:documentation>
         </xs:annotation>
     </xs:element>
 </xs:schema>
