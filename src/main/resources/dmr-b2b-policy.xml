@@ -22,8 +22,6 @@
        xmlns:http="http://cxf.apache.org/transports/http/configuration"
        xmlns:sec="http://cxf.apache.org/configuration/security"
        xmlns:cxf="http://cxf.apache.org/core"
-       xmlns:wsrm-mgmt="http://cxf.apache.org/ws/rm/manager"
-       xmlns:wsrm-policy="http://schemas.xmlsoap.org/ws/2005/02/rm/policy"
        xsi:schemaLocation="
         http://cxf.apache.org/core
         http://cxf.apache.org/schemas/core.xsd
@@ -33,21 +31,18 @@
         http://www.springframework.org/schema/beans/spring-beans-4.1.xsd">
     <import resource="classpath:META-INF/cxf/cxf.xml"/>
 
-    <!-- Handle secure / TLS Transport
-
-     The keystore client-truststore.jks contains the SSL cert. for the test system
-     as a trusted certificate.
-
-     For more information please see:
-     http://cxf.apache.org/docs/client-http-transport-including-ssl-support.html
-
-     -->
     <http:conduit name="*.http-conduit">
         <!-- Set timeout to 3 minutes -->
         <http:client Connection="Keep-Alive"
                      MaxRetransmits="1"
                      AllowChunking="false"
                      ConnectionTimeout="180000"/>
+        <!-- Comment in if trust is established with own keystore (client-truststore.jks) and
+             not the default JDK cacerts keystore.
+
+             For more information please see:
+             http://cxf.apache.org/docs/client-http-transport-including-ssl-support.html
+
         <http:tlsClientParameters>
             <sec:keyManagers keyPassword="storepassword">
                 <sec:keyStore file="src/main/resources/keystore/client-truststore.jks"
@@ -57,25 +52,20 @@
                 <sec:keyStore file="src/main/resources/keystore/client-truststore.jks"
                               password="storepassword" type="JKS"/>
             </sec:trustManagers>
-            <sec:cipherSuitesFilter>
-                <!-- The following is just sample configuration.
-                 The unix command nmap will list the currently support ciphers, e.g.:
-                 nmap -script ssl-enum-ciphers -p 443 <FQDN>
-
-                -->
-                <sec:include>.*_EXPORT_.*</sec:include>
-                <sec:include>.*_EXPORT1024_.*</sec:include>
-                <sec:include>.*_WITH_DES_.*</sec:include>
-                <sec:include>.*_WITH_AES_.*</sec:include>
-                <sec:include>.*_WITH_NULL_.*</sec:include>
-                <sec:exclude>.*_DH_anon_.*</sec:exclude>
-            </sec:cipherSuitesFilter>
-        </http:tlsClientParameters>
+        </http:tlsClientParameters -->
     </http:conduit>
 
+    <bean id="loggingFeature" class="org.apache.cxf.ext.logging.LoggingFeature">
+        <property name="prettyLogging" value="true" />
+        <property name="limit" value="-1" />
+        <property name="logBinary" value="false" />
+    </bean>
+
     <cxf:bus>
+        <cxf:features>
+            <ref bean="loggingFeature" />
+        </cxf:features>
         <cxf:inInterceptors>
-            <bean id="logInbound" class="org.apache.cxf.interceptor.LoggingInInterceptor"/>
             <!-- Configure WS-Security for RESPONSE -->
             <bean id="ResponseWSPolicyFulfillment" class="org.apache.cxf.ws.security.wss4j.WSS4JInInterceptor">
                 <constructor-arg>
@@ -109,7 +99,6 @@
                     </map>
                 </constructor-arg>
             </bean>
-            <bean id="logOutbound" class="org.apache.cxf.interceptor.LoggingOutInterceptor"/>
         </cxf:outInterceptors>
     </cxf:bus>
 

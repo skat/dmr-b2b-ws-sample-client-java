@@ -20,7 +20,7 @@ using open source libraries.
 ## About the client
 
 The sample client implementation is based on the [Apache CXF](http://cxf.apache.org/) framework,
-the Spring Framework, and Java 8. See `pom.xml` file in this repository for details regarding 
+the Spring Framework, and Java 17+. See `pom.xml` file in this repository for details regarding 
 the current versions of the mentioned frameworks in use.
  
 The sample client currently invokes the service:
@@ -202,7 +202,7 @@ Complete these step when adding another service to the sample client project:
 <plugin>
     <groupId>org.apache.cxf</groupId>
     <artifactId>cxf-codegen-plugin</artifactId>
-    <version>3.1.9</version>
+    <version>${cxf.version}</version>
     <executions>
         <execution>
             <id>generate-sources</id>
