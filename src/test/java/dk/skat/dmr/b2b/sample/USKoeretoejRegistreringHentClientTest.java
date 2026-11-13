@@ -14,10 +14,11 @@ public class USKoeretoejRegistreringHentClientTest {
     public void invoke() throws Exception {
         String endpointURL = System.getProperty("dk.skat.dmr.b2b.sample.USImportoerService.ENDPOINT");
 
-        String registreringNummerNummer = "AB12345";
-
-        USKoeretoejRegistreringHentClient oioLedsageDocumentClient = new USKoeretoejRegistreringHentClient(endpointURL);
-        oioLedsageDocumentClient.invoke(registreringNummerNummer);
+        if (endpointURL != null) {
+            String registreringNummerNummer = "AB12345";
+            USKoeretoejRegistreringHentClient oioLedsageDocumentClient = new USKoeretoejRegistreringHentClient(endpointURL);
+            oioLedsageDocumentClient.invoke(registreringNummerNummer);
+        }
     }
 
 }

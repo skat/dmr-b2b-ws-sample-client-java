@@ -20,7 +20,7 @@ using open source libraries.
 ## About the client
 
 The sample client implementation is based on the [Apache CXF](http://cxf.apache.org/) framework,
-the Spring Framework, and Java 8. See `pom.xml` file in this repository for details regarding 
+the Spring Framework, and Java 17+. See `pom.xml` file in this repository for details regarding 
 the current versions of the mentioned frameworks in use.
  
 The sample client currently invokes the service:

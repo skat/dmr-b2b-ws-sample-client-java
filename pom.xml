@@ -4,12 +4,14 @@
     <groupId>dk.skat.dmr.b2b.sample</groupId>
     <artifactId>dmr-b2b-ws-sample-client-java</artifactId>
     <packaging>jar</packaging>
-    <version>1.0</version>
+    <version>1.1</version>
     <name>dmr-b2b-ws-sample-client-java</name>
     <url>http://www.skat.dk/motorregistret</url>
     <properties>
-        <cxf.version>3.1.16</cxf.version>
-        <cxf.spring.version>5.2.22.RELEASE</cxf.spring.version>
+        <cxf.version>4.2.4</cxf.version>
+        <cxf.spring.version>7.0.10</cxf.spring.version>
+        <slf4j.version>2.0.17</slf4j.version>
+        <maven.compiler.release>17</maven.compiler.release>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
@@ -55,9 +57,24 @@
             <version>${cxf.spring.version}</version>
         </dependency>
         <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-rt-features-logging</artifactId>
+            <version>${cxf.version}</version>
+        </dependency>
+        <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>jcl-over-slf4j</artifactId>
-            <version>1.7.22</version>
+            <version>${slf4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>${slf4j.version}</version>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
@@ -72,7 +89,7 @@
             <plugin>
                 <groupId>org.apache.cxf</groupId>
                 <artifactId>cxf-codegen-plugin</artifactId>
-                <version>3.1.9</version>
+                <version>${cxf.version}</version>
                 <executions>
                     <execution>
                         <id>generate-sources</id>
