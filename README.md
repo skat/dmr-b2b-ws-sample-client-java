@@ -202,7 +202,7 @@ Complete these step when adding another service to the sample client project:
 <plugin>
     <groupId>org.apache.cxf</groupId>
     <artifactId>cxf-codegen-plugin</artifactId>
-    <version>3.1.9</version>
+    <version>${cxf.version}</version>
     <executions>
         <execution>
             <id>generate-sources</id>
